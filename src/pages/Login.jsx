@@ -5,8 +5,11 @@ function Login() {
     return (
       <div>
         <h1>Login</h1>
-        <a href="/Salon">
+        <a href="/salon">
           <button>Salon</button>
+        </a>
+        <a href="/cocina">
+          <button>Cocina</button>
         </a>
       </div>
     );
