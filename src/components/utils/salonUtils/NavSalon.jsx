@@ -6,6 +6,7 @@ function NavSalon(){
       <div>
         <nav>
           <Link to="/">Home</Link>
+          <p>alerta</p>
         </nav>
       </div>
     );

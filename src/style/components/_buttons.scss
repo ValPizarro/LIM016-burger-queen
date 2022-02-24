@@ -1,0 +1,6 @@
+@use '../vars/colors' as color;
+
+button{
+ background-color: color.$buttons-color;
+ color: color.$text-button;
+}

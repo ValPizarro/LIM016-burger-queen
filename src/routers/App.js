@@ -1,6 +1,8 @@
 import React from 'react';
 import { Routes, Route }from 'react-router-dom';
 
+import '../style/app.scss';
+
 import Cocina from '../pages/Cocina';
 import Login from '../pages/Login';
 import Salon from '../pages/Salon';
