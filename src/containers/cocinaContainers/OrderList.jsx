@@ -16,21 +16,26 @@ const OrderList = () => {
     };
 
     const editOrder = (id) => {
-        const edit = orders.map((item) => item.id === id ? { ...item, state: !item.state } : item
-        )
-    setOrders(edit);}
-
+        const editOrders = orders.map((item) =>
+            item.id === id ? { ...item, optionOrder: !item.optionOrder } : item
+        );
+        setOrders(editOrders);
+    };
 
     return (
-        <>
-            <TakeOrder addOrder={addOrder} />
-            <h2>Lista de pedidos</h2>
-            <ul>
-                {orders.map((item) => (
-                <GetOrder
-                    key={item.id} order={item} deleteOrder = {deleteOrder} editOrder={editOrder}/>
-                ))}
-            </ul>
+      <>
+        <TakeOrder addOrder={addOrder} />
+        <h2>Lista de pedidos</h2>
+        <ul>
+          {orders.map((item) => (
+            <GetOrder
+              key={item.id}
+              order={item}
+              deleteOrder={deleteOrder}
+              editOrder={editOrder}
+            />
+          ))}
+        </ul>
       </>
     );
 };

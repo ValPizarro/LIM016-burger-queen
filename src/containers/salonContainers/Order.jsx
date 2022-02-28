@@ -57,6 +57,7 @@ const TakeOrder = ({ addOrder }) => {
     setOrder(initialOrder);
   };
 
+
   /// FUNCIÓN OPTIMIZADA:
   const handleChange = e => {
     const { name, value, checked, type } = e.target;
@@ -111,41 +112,3 @@ const TakeOrder = ({ addOrder }) => {
 };
 
 export default TakeOrder;
-
-///para input tipo "checkbox" se emplea  e.target.checked
-
-/// FUNCION MEJORADA USANDO FUNCIÓN FLECHA:
-// setOrder((old) => ({
-//   ...old,
-//   [e.target.name]:
-//     e.target.type === "checkbox" ? e.target.checked : e.target.value,
-// }));
-
-/// FUNCION ORIGINAL:
-//  setOrder({
-//   ...order,
-//   [e.target.name]: e.target.value
-// })
-
-/// ERRORES: Condicional cuando se tiene que mostrar opciones:
-
-/// Para mostrar un error como texto y no alert
-// const [error, setError] = useState(false);
-// setError(true);
-// {
-//   error ? <ShowError /> : null;
-// }
-
-// tambien se puede usar
-//    {
-//       error && <ShowError />
-//     }
-
-/// Cambiar el estado un valor
-//     const Order = () => {
-// const [order, setOrder] = useState({
-//   nameOrder: "",
-//   itemOrder: "",
-//   noteOrder: "",
-//   optionMeat: false,
-// });
