@@ -1,4 +1,5 @@
 import NavSalon from "../components/utils/salonUtils/NavSalon";
+import OrderList from "../containers/cocinaContainers/OrderList";
 import Menu from "../containers/salonContainers/Menu";
 
 function Salon() {
@@ -6,6 +7,8 @@ function Salon() {
     <div className="ContentLivingRoom">
       <NavSalon />
       <Menu />
+      <Menu />
+      <OrderList />
       <div className="Order">
         hola
       </div>
