@@ -7,19 +7,19 @@ const TakeOrder = ({ addOrder }) => {
     itemOrder: "",
     noteOrder: "",
     optionOrder: false,
-    stateOrder: "generado",
+    stateOrder: "generado"
   };
 
   const [order, setOrder] = useState(initialOrder);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
 
     if (!order.nameOrder.trim() && !order.itemOrder.trim()) {
       return Swal.fire({
         title: "¡Error!",
         text: "Complete la orden",
-        icon: "error",
+        icon: "error"
       });
     }
     if (!order.nameOrder.trim()) {
@@ -27,7 +27,7 @@ const TakeOrder = ({ addOrder }) => {
       return Swal.fire({
         title: "¡Error!",
         text: "Nombre obligatorio",
-        icon: "error",
+        icon: "error"
       });
     }
     if (!order.itemOrder.trim()) {
@@ -35,7 +35,7 @@ const TakeOrder = ({ addOrder }) => {
       return Swal.fire({
         title: "¡Error!",
         text: "Ingresa un pedido",
-        icon: "error",
+        icon: "error"
       });
     }
 
@@ -45,26 +45,25 @@ const TakeOrder = ({ addOrder }) => {
       noteOrder: order.noteOrder,
       optionOrder: order.optionOrder === true ? "carne" : "",
       stateOrder: order.stateOrder,
-      id: "N-011",
+      id: "N-011"
     });
 
     Swal.fire({
       title: "¡Éxito",
       text: "El pedido fue enviado",
-      icon: "success",
+      icon: "success"
     });
 
     setOrder(initialOrder);
-
   };
 
   /// FUNCIÓN OPTIMIZADA:
-  const handleChange = (e) => {
+  const handleChange = e => {
     const { name, value, checked, type } = e.target;
 
-    setOrder((old) => ({
+    setOrder(old => ({
       ...old,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: type === "checkbox" ? checked : value
     }));
   };
 
@@ -113,41 +112,40 @@ const TakeOrder = ({ addOrder }) => {
 
 export default TakeOrder;
 
-  ///para input tipo "checkbox" se emplea  e.target.checked
+///para input tipo "checkbox" se emplea  e.target.checked
 
-  /// FUNCION MEJORADA USANDO FUNCIÓN FLECHA:
-      // setOrder((old) => ({
-      //   ...old,
-      //   [e.target.name]:
-      //     e.target.type === "checkbox" ? e.target.checked : e.target.value,
-      // }));
+/// FUNCION MEJORADA USANDO FUNCIÓN FLECHA:
+// setOrder((old) => ({
+//   ...old,
+//   [e.target.name]:
+//     e.target.type === "checkbox" ? e.target.checked : e.target.value,
+// }));
 
-  /// FUNCION ORIGINAL:
-      //  setOrder({
-      //   ...order,
-      //   [e.target.name]: e.target.value
-      // })
+/// FUNCION ORIGINAL:
+//  setOrder({
+//   ...order,
+//   [e.target.name]: e.target.value
+// })
 
-  /// ERRORES: Condicional cuando se tiene que mostrar opciones:
+/// ERRORES: Condicional cuando se tiene que mostrar opciones:
 
-  /// Para mostrar un error como texto y no alert
-      // const [error, setError] = useState(false);
-        // setError(true);
-      // {
-      //   error ? <ShowError /> : null;
-      // }
+/// Para mostrar un error como texto y no alert
+// const [error, setError] = useState(false);
+// setError(true);
+// {
+//   error ? <ShowError /> : null;
+// }
 
-      // tambien se puede usar
-      //    {
-      //       error && <ShowError />
-      //     }
-
+// tambien se puede usar
+//    {
+//       error && <ShowError />
+//     }
 
 /// Cambiar el estado un valor
-  //     const Order = () => {
-  // const [order, setOrder] = useState({
-  //   nameOrder: "",
-  //   itemOrder: "",
-  //   noteOrder: "",
-  //   optionMeat: false,
-  // });
+//     const Order = () => {
+// const [order, setOrder] = useState({
+//   nameOrder: "",
+//   itemOrder: "",
+//   noteOrder: "",
+//   optionMeat: false,
+// });
