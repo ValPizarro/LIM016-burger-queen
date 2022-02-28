@@ -1,18 +1,18 @@
-const GetOrder = ({ order, deleteOrder }) => {
-  const { id, nameOrder, itemOrder, stateOrder } = order;
+const GetOrder = ({ order, deleteOrder,editOrder }) => {
+  const { id, nameOrder, itemOrder, stateOrder, optionOrder } = order;
   return (
     <li>
       <div>
         <div> {nameOrder} </div>
         <p>{itemOrder}</p>
+        <p>{optionOrder}</p>
       </div>
       <div>
         <button onClick={() => deleteOrder(id)}> Eliminar</button>
-        <button>Editar</button>
-          </div>
-          <p>
-              {stateOrder}
-          </p>
+        <button onClick={() => editOrder(id)}>Editar</button>
+      </div>
+
+      <p>{stateOrder}</p>
     </li>
   );
 };
