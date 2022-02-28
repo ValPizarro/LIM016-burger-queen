@@ -1,6 +1,7 @@
 @use '../vars/colors' as color;
 
 button{
- background-color: color.$buttons-color;
- color: color.$text-button;
+ background-color: map-get(color.$buttons , color );
+
+ color: map-get( color.$text,"button" ) ;
 }

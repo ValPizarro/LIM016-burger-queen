@@ -1,7 +1,7 @@
 @use '../vars/colors' as color;
 
 nav{
-    background-color: color.$background-conteiners;
+    background-color:map-get(color.$background, "conteiners" );
     p{
         color:red;
 }

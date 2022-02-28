@@ -1,4 +1,3 @@
-import React from "react";
 import NavSalon from "../components/utils/salonUtils/NavSalon";
 
 function Cocina() {
