@@ -1,18 +1,15 @@
-import React from "react";
-
 function Login() {
-
-    return (
-      <div>
-        <h1>Login</h1>
-        <a href="/salon">
-          <button>Salon</button>
-        </a>
-        <a href="/cocina">
-          <button>Cocina</button>
-        </a>
-      </div>
-    );
+  return (
+    <>
+      <h1>Login</h1>
+      <a href="/salon">
+        <button>Salon</button>
+      </a>
+      <a href="/cocina">
+        <button>Cocina</button>
+      </a>
+    </>
+  );
 }
 
-export default Login
+export default Login;
