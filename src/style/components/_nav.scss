@@ -1,8 +1,28 @@
 @use '../vars/colors' as color;
 
 nav{
-    background-color:map-get(color.$background, "conteiners" );
     p{
         color:red;
     }
+}
+
+.NavSalon {
+    border: solid 1px #1F1D2B;
+    border-radius: 20px;
+    background: #1F1D2B;
+    margin: 15px;
+    height: 98%;
+    width: 10%;
+    max-width: 74px;
+}
+.NavSalonIcon {
+    display: flex;
+    height: 25%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.NavSalonIcon >img{
+    width: 90%;
+    display: flex;
 }

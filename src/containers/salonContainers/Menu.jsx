@@ -3,7 +3,7 @@ import SelectMenu from "../../components/utils/salonUtils/menuUtils/SelectMenu";
 
 function Menu() {
   return (
-    <div>
+    <div className="Menu">
       <h2>Carta: Desayuno</h2>
       <SelectMenu/>
       <div>

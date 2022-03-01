@@ -1,7 +1,5 @@
 @use '../vars/colors' as color;
-
-button{
+.BtnLogin{
  background-color: map-get(color.$buttons , color );
-
  color: map-get( color.$text,"button" ) ;
 }

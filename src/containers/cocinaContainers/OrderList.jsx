@@ -24,6 +24,7 @@ const OrderList = () => {
 
     return (
       <>
+      <div className="Order">
         <TakeOrder addOrder={addOrder} />
         <h2>Lista de pedidos</h2>
         <ul>
@@ -36,6 +37,7 @@ const OrderList = () => {
             />
           ))}
         </ul>
+      </div>
       </>
     );
 };

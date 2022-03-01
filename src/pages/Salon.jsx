@@ -4,13 +4,10 @@ import Menu from "../containers/salonContainers/Menu";
 
 function Salon() {
   return (
-    <div>
+    <div className="ContentLivingRoom">
       <NavSalon />
-      <div>
-        <h1>Esta es la vista de salón</h1>
-        <Menu />
-        <OrderList />
-      </div>
+      <Menu />
+      <OrderList />
     </div>
   );
 }
