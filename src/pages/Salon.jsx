@@ -7,11 +7,7 @@ function Salon() {
     <div className="ContentLivingRoom">
       <NavSalon />
       <Menu />
-      <Menu />
       <OrderList />
-      <div className="Order">
-        hola
-      </div>
     </div>
   );
 }

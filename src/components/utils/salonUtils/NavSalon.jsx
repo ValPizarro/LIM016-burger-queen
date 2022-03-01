@@ -1,12 +1,28 @@
 import { Link } from "react-router-dom";
+const LogoQuickly=require("../../../img/brand/quickly_logo.png");
 
 function NavSalon(){
     return (
       <div className="NavSalon">
-        <nav>
-          <Link to="/">Home</Link>
-          <p>alerta</p>
-        </nav>
+        <div className="NavSalonIcon">
+
+          <img src={LogoQuickly} alt="" />
+        </div>
+        <div className="NavSalonIcon">
+          <Link to="/">
+     {/*      <i class="fal fa-home-alt iconNav"></i> */}
+     Home
+          </Link>
+        </div>
+        <div className="NavSalonIcon">
+          <i class="far fa-bell iconNav"></i>
+        </div>
+        <div className="NavSalonIcon">
+          <i class="far fa-cog iconNav"></i>
+        </div>
+        <div className="NavSalonIcon">
+          <i class="far fa-portal-exit"></i>
+        </div>
       </div>
     );
 }

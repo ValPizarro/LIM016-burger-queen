@@ -70,14 +70,14 @@ const TakeOrder = ({ addOrder }) => {
 
   return (
     <>
-      <h2>Ingrese el Pedido</h2>
 
-      <form onSubmit={handleSubmit}>
+      <form className="FormOrder" onSubmit={handleSubmit}>
+      <button className="btnSubmitOder" type="submit">Enviar pedido</button>
         <input
           name="nameOrder"
           placeholder="Nombre del cliente"
           type="text"
-          className="nameOrder"
+          className="nameOrder InputOrder"
           onChange={handleChange}
           value={order.nameOrder}
         />
@@ -85,14 +85,14 @@ const TakeOrder = ({ addOrder }) => {
           name="itemOrder"
           placeholder="Ingrese pedido"
           type="text"
-          className="itemOrder"
+          className="itemOrder InputOrder"
           onChange={handleChange}
           value={order.itemOrder}
         />
         <textarea
           name="noteOrder"
           placeholder="Anotación para el chef"
-          className="note"
+          className="note InputOrder"
           onChange={handleChange}
           value={order.noteOrder}
         />
@@ -105,7 +105,6 @@ const TakeOrder = ({ addOrder }) => {
           />
           <label> Carne</label>
         </div>
-        <button type="submit">Enviar pedido</button>
       </form>
     </>
   );
