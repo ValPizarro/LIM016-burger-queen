@@ -1,52 +1,46 @@
-import { useState } from "react"
-import Menu from "../../dataMenu/DataMenu.json"
+// import { useState } from "react"
+// import Menu from "../../dataMenu/DataMenu.json"
 
-const ShowDish = (menu) => {
-   console.log(menu);
-
-}
+// // const menus = Menu;
 
 
 const SelectMenu = () => {
+  const optionsMenu = ["Desayuno", "Almuerzo"];
 
-    const menus = Menu;
+//   const [currentMenu, setCurrentMenu] = useState("Desayuno");
 
-    const [IdMenu, setIdMenu] = useState('Desayuno')
+  // // const ChangeMenu = (e) => {
+  // //     //   const currentMenu = e.target.value;
+  // //     setIdMenu(e.target.value);
 
-    const ChangeMenu = (e) => {
-        //   const currentMenu = e.target.value;
-        setIdMenu(e.target.value);
+  // //     IdMenu === "Desayuno"
+  // //       ? ShowDish(menus.Almuerzo)
+  // //       : ShowDish(menus.Desayuno);
 
-        IdMenu === "Desayuno"
-          ? ShowDish(menus.Almuerzo)
-          : ShowDish(menus.Desayuno);
+  // //     console.log(IdMenu);
+  // // };
+  const ChangeMenu = (e) => {
+    console.log(e.target.value);
+    // setCurrentMenu=e.target.value;
+  };
 
+  return (
+    <div>
+      <p>Carta</p>
+      <select onChange={ChangeMenu}>
+        {optionsMenu.map((option) => {
+          return (
+            <>
+              <option key={option} value={option}>
 
-        console.log(IdMenu);
-    };
-
-    const ShowDish = (menu) => {
-      console.log(menu);
-
-      const dishes = menu.map((item) => <li key={item.id}>{item.name}</li>);
-      return (
-        <>
-          <ul>{dishes}</ul>
-        </>
-      );
-    };
-
-
-    return (
-      <div>
-        <p>Carta</p>
-        <select onChange={ChangeMenu}>
-          <option value="Desayuno">Desayuno</option>
-          <option value="Almuerzo">Almuerzo</option>
-        </select>
-        <ShowDish />
-      </div>
-    );
-}
+                {option}
+              </option>
+            </>
+          );
+        })}
+      </select>
+    </div>
+  );
+};
 
 export default SelectMenu;
