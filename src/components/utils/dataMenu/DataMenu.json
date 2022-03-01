@@ -1,30 +1,30 @@
 {
-  "Menu1": [
-    {
-        "id": "M1-001",
-        "name": "Café Americano",
-        "price": "$5.00",
-        "image": "../../img/menu/menu1/coffee_V2.png"
-    },
-    {
-        "id": "M1-002",
-        "name": "Café con leche",
-        "price": "$7.00",
-        "image": "../../img/menu/menu1/coffeeWhitMilk_V2.png"
-    }
-  ],
-  "Menu2": [
-      {
-        "id": "M2-001",
-        "name": "Hamburguesa clásica",
-        "price": "$10.00",
-        "image": "../../img/menu/menu2/burger_V2.png"
-    },
-    {
-        "id": "M2-002",
-        "name": "Hamburguesa doble",
-        "price": "$15.00",
-        "image": "../../img/menu/menu2/burgerDouble_V2.png"
-    }
-]
+    "Desayuno": [
+        {
+            "id": "M1-001",
+            "name": "Café Americano",
+            "price": "$5.00",
+            "image": "../../img/menu/menu1/coffee_V2.png"
+        },
+        {
+            "id": "M1-002",
+            "name": "Café con leche",
+            "price": "$7.00",
+            "image": "../../img/menu/menu1/coffeeWhitMilk_V2.png"
+        }
+    ],
+    "Almuerzo": [
+        {
+            "id": "M2-001",
+            "name": "Hamburguesa clásica",
+            "price": "$10.00",
+            "image": "../../img/menu/menu2/burger_V2.png"
+        },
+        {
+            "id": "M2-002",
+            "name": "Hamburguesa doble",
+            "price": "$15.00",
+            "image": "../../img/menu/menu2/burgerDouble_V2.png"
+        }
+    ]
 }

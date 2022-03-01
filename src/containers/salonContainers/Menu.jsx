@@ -1,12 +1,13 @@
+import CardDish from "../../components/utils/salonUtils/menuUtils/CardDish";
+import SelectMenu from "../../components/utils/salonUtils/menuUtils/SelectMenu";
+
 function Menu() {
   return (
     <div>
       <h2>Carta: Desayuno</h2>
+      <SelectMenu/>
       <div>
-        Hamburguesa
-        <a href="/salon">
-          <button>Agregar</button>
-        </a>
+        <CardDish />
       </div>
     </div>
   );
