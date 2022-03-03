@@ -1,15 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  getDoc,
-  addDoc,
-  updateDoc,
-  deleteDoc,
-  doc,
-  onSnapshot,
-} from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -26,14 +16,4 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
-export {
-  db,
-  collection,
-  getDocs,
-  getDoc,
-  addDoc,
-  updateDoc,
-  deleteDoc,
-  doc,
-  onSnapshot,
-};
+export default db;
