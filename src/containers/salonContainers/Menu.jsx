@@ -1,7 +1,7 @@
 import CardDish from "../../components/utils/salonUtils/menuUtils/CardDish";
 import SelectMenu from "../../components/utils/salonUtils/menuUtils/SelectMenu";
 import { getDocs, collection } from "firebase/firestore";
-import { db } from "../../firebase/config";
+import  db  from "../../firebase/config";
 
 function Menu() {
 
