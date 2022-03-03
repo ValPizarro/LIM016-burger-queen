@@ -25,3 +25,61 @@
     margin: 10px;
     height: 40px;
 }
+.itemOrderBox{
+    display: flex;
+    width: 98%;
+}
+
+.firstDescriptionOrderBox {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.descriptionOrder{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.noteOrder{
+    width: 80%;
+}
+.secondDescriptionOrderBox {
+    display: flex;
+}
+
+
+
+// .noteOrder {
+//   width: 80%;
+//   display: flex;
+//   justify-content: end;
+// }
+
+// .secondDescriptionOrderBox {
+//     display: grid;
+//     grid-template-columns: repeat(6, 1fr);
+//     grid-auto-rows: 20px;
+//     grid-template-areas:
+//      "a a b b c c"
+//      "a a b b c c"
+//      "d d d f e e"
+//      "d d d f e e";
+//     .item1{
+//         grid-area: a;
+//     }
+//     .item2{
+//         grid-area: b;
+//         align-self: center;
+//         justify-self: center;
+//     }
+//     .item3{
+//         grid-area: c;
+//     }
+//     .item4{
+//         grid-area: d;
+//     }
+//     .item5{
+//         grid-area: e;
+//     }
+
+// }

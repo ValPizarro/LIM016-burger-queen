@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
 
+import ItemOrderGeneral from "../../components/utils//salonUtils/orderutils/ItemOrder"
+
 const TakeOrder = ({ addOrder }) => {
   const initialOrder = {
     nameOrder: "",
@@ -81,6 +83,7 @@ const TakeOrder = ({ addOrder }) => {
           onChange={handleChange}
           value={order.nameOrder}
         />
+          <ItemOrderGeneral/>
         <input
           name="itemOrder"
           placeholder="Ingrese pedido"
