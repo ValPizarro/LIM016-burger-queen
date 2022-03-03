@@ -1,10 +1,8 @@
 
 const CardDish = () => {
-
-
     return (
         <div>
-            los platos
+        <button>Almuerzo</button>
         </div>
     )
 }

@@ -1,5 +1,16 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, getDoc, addDoc, query, orderBy, onSnapshot, deleteDoc, doc, updateDoc, where} from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  getDoc,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+  onSnapshot,
+} from "firebase/firestore";
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
@@ -15,7 +26,14 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
-
 export {
-  collection, getDocs, getDoc, addDoc, query, orderBy, onSnapshot, deleteDoc, doc, updateDoc, where,db
-}
+  db,
+  collection,
+  getDocs,
+  getDoc,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+  onSnapshot,
+};

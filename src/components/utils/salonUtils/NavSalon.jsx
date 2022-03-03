@@ -15,13 +15,10 @@ function NavSalon(){
           </Link>
         </div>
         <div className="NavSalonIcon">
-          <i class="far fa-bell iconNav"></i>
         </div>
         <div className="NavSalonIcon">
-          <i class="far fa-cog iconNav"></i>
         </div>
         <div className="NavSalonIcon">
-          <i class="far fa-portal-exit"></i>
         </div>
       </div>
     );

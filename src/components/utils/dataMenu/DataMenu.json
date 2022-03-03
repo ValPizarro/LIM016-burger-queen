@@ -16,9 +16,11 @@
     "Almuerzo": [
         {
             "id": "M2-001",
+            "type": "Almuerzo",
             "name": "Hamburguesa clásica",
             "price": "$10.00",
-            "image": "../../img/menu/menu2/burger_V2.png"
+            "image": "../../img/menu/menu2/burger_V2.png",
+            "info":""
         },
         {
             "id": "M2-002",
