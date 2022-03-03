@@ -10,11 +10,11 @@ function NavSalon(){
         </div>
         <div className="NavSalonIcon">
           <Link to="/">
-     {/*      <i class="fal fa-home-alt iconNav"></i> */}
+
      Home
           </Link>
         </div>
-        <div className="NavSalonIcon">
+        {/* <div className="NavSalonIcon">
           <i class="far fa-bell iconNav"></i>
         </div>
         <div className="NavSalonIcon">
@@ -22,7 +22,7 @@ function NavSalon(){
         </div>
         <div className="NavSalonIcon">
           <i class="far fa-portal-exit"></i>
-        </div>
+        </div> */}
       </div>
     );
 }

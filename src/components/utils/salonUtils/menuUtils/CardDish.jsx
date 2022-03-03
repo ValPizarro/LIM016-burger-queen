@@ -1,6 +1,6 @@
 
 const CardDish = () => {
-
+//  const q = query (collection( db, "menu"), where(""))
 
     return (
         <div>

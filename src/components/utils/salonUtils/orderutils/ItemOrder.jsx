@@ -12,7 +12,7 @@ const ItemOrderGeneral = () => {
               <p> $15.00 </p>
             </div>
           </div>
-          <div classname="noteOrder">
+          <div className="noteOrder">
             <textarea placeholder="Indicaciones para el chef" />
           </div>
         </div>
