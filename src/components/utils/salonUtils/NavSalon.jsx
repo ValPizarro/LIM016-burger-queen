@@ -10,7 +10,7 @@ function NavSalon(){
         </div>
         <div className="NavSalonIcon">
           <Link to="/">
-     {/*      <i class="fal fa-home-alt iconNav"></i> */}
+
      Home
           </Link>
         </div>

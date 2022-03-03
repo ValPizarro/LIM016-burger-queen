@@ -19,10 +19,13 @@ export const saveOrdeFS = (client, dishes, total, state) => {
   });
 };
 
-export const getOrders = () => {
+export const GetOrdersFs = async () => {
   const orders = collection(db, "order");
-  return getDocs(orders);
-};
+  const showOrders = await getDocs(orders)
+  return console.log(showOrders.docs);;
+}; GetOrdersFs();
+
+
 
 export const getOrder = (id) => {
   const order = doc(db, "order", id)
