@@ -1,14 +1,14 @@
-/* import { onSnapshot, collection } from "firebase/firestore";
+ import { onSnapshot, collection } from "firebase/firestore";
 import { useEffect } from "react";
-import { db } from "../../../../firebase/config"; */
+import  db from "../../../../firebase/config";
 
 const CardDish = () => {
 
-/*     useEffect(()=>{
+   useEffect(()=>{
         onSnapshot(collection(db,"menu"),(snapshot)=>{
             console.log(snapshot.docs);
         });
-    }); */
+    });
 
 
     return (

@@ -34,17 +34,28 @@
     display: flex;
     flex-direction: column;
     width: 80%;
-}
-.descriptionOrder{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.noteOrder{
-    width: 80%;
+    .item1{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .item2{
+        width: 80%;
+    }
 }
 .secondDescriptionOrderBox {
     display: flex;
+    flex-direction: column;
+
+    .item1{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .item2{
+       display: flex;
+       flex-direction: row;
+    }
 }
 
 
