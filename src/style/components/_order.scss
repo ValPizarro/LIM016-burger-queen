@@ -5,16 +5,17 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    font-family: "Barlow", sans-serif;
+
 }
 .btnSubmitOder {
     font-size: 20px;
-    font-family: "Barlow", sans-serif;
     border: none;
     border-radius: 5px;
-    display: flex; 
+    display: flex;
     width: 98%;
-    background-color: #EA7C69;
-    color: #ffff;
+    background-color: map-get(color.$buttons , "color");
+    color: map-get(color.$background , "general");
     align-items: center;
     justify-content: center;
     height: 45px;
@@ -26,45 +27,110 @@
     height: 40px;
 }
 .itemOrderBox{
+    margin: 0.5rem;
     display: flex;
     width: 98%;
+    height: 7rem;
+    color: map-get(color.$background , "title");
+    border: map-get(color.$background , "border") solid 1px;
+    border-radius: 8px;
 }
 
 .firstDescriptionOrderBox {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    justify-content: space-evenly;
+    width: 70%;
     .item1{
         display: flex;
         justify-content: space-around;
         align-items: center;
-    }
-    .item2{
         width: 80%;
+        .photo{
+            display: flex;
+            justify-content: center;
+            width: 30%;
+            img{
+                width: 60%;
+                border-radius: 100%;
+                // box-shadow: 0 2px 5px rgb(151 148 148 / 50%);
+            }
+        }
+    }
+        .description{
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            p{
+                width: 100%;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 130%;
+            }
+        }
+
+    .item2{
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 2%;
+            textarea{
+                padding: 5px;
+                width: 75%;
+                height: 2rem;
+                background-color: map-get(color.$background , "conteiners");
+                color: map-get(color.$text , "color");
+                border: 1px solid #393C49;
+                box-sizing: border-box;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 8px;
+            }
+            textarea:hover{
+                background-color: map-get(color.$buttons, "color5");
+            }
     }
 }
 .secondDescriptionOrderBox {
     display: flex;
     flex-direction: column;
-
+    justify-content: space-evenly;
+    width: 30%;
+    padding: 0 2%;
     .item1{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        p{
+            align-self: center;
+            font-weight: bold;
+        }
+        button{
+            background: none;
+            border:none;
+            font-size:2rem;
+            color: map-get(color.$buttons , "icon3");
+        }
     }
     .item2{
-       display: flex;
-       flex-direction: row;
+        display: flex;
+        p{
+            width: 75%;
+            align-self: center;
+            // font-weight: bold;
+        }
+        button{
+            margin-right: 2%;
+            background: none;
+            border:none;
+            color: map-get(color.$buttons , "icon3");
+            font-size:1.8rem;
+        }
+    }
+    button:hover{
+        color: map-get(color.$buttons , "color");
+        border:none
     }
 }
 
-
-
-// .noteOrder {
-//   width: 80%;
-//   display: flex;
-//   justify-content: end;
-// }
 
 // .secondDescriptionOrderBox {
 //     display: grid;

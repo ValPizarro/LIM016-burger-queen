@@ -72,9 +72,10 @@ const TakeOrder = ({ addOrder }) => {
 
   return (
     <>
-
       <form className="FormOrder" onSubmit={handleSubmit}>
-      <button className="btnSubmitOder" type="submit">Enviar pedido</button>
+        <button className="btnSubmitOder" type="submit">
+          Enviar pedido
+        </button>
         <input
           name="nameOrder"
           placeholder="Nombre del cliente"
@@ -83,31 +84,33 @@ const TakeOrder = ({ addOrder }) => {
           onChange={handleChange}
           value={order.nameOrder}
         />
-          <ItemOrderGeneral/>
-        <input
+        <ItemOrderGeneral />
+        <ItemOrderGeneral />
+
+        {/* <input
           name="itemOrder"
           placeholder="Ingrese pedido"
           type="text"
           className="itemOrder InputOrder"
           onChange={handleChange}
           value={order.itemOrder}
-        />
-        <textarea
+        /> */}
+        {/* <textarea
           name="noteOrder"
           placeholder="Anotación para el chef"
           className="note InputOrder"
           onChange={handleChange}
           value={order.noteOrder}
-        />
-        <div>
+        /> */}
+        {/* <div>
           <input
             name="optionOrder"
             type="checkbox"
             onChange={handleChange}
             checked={order.optionMeat}
-          />
-          <label> Carne</label>
-        </div>
+          /> */}
+          {/* <label> Carne</label> */}
+        {/* </div> */}
       </form>
     </>
   );

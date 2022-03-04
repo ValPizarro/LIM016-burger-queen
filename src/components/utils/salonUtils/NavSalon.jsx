@@ -1,28 +1,27 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 const LogoQuickly=require("../../../img/brand/quickly_logo.png");
 
 function NavSalon(){
     return (
-      <div className="NavSalon">
-        <div className="NavSalonIcon">
-
+      <div className="navSalon">
+        <div className="navSalonIcon">
           <img src={LogoQuickly} alt="" />
         </div>
-        <div className="NavSalonIcon">
-          <Link to="/">
-
-     Home
-          </Link>
-        </div>
-        {/* <div className="NavSalonIcon">
-          <i class="far fa-bell iconNav"></i>
-        </div>
-        <div className="NavSalonIcon">
-          <i class="far fa-cog iconNav"></i>
-        </div>
-        <div className="NavSalonIcon">
-          <i class="far fa-portal-exit"></i>
-        </div> */}
+        <nav>
+          <NavLink to="/" className="navSalonIcon">
+            <i class="fa-solid fa-house fa-3x fa-fw" />
+          </NavLink>
+          <NavLink to="/alert" className="navSalonIcon">
+            <i class="fa-solid fa-bell fa-3x fa-fw" />
+          </NavLink>
+          <NavLink to="/config" className="navSalonIcon">
+            <i class="fa-solid fa-gear fa-3x fa-fw" />
+          </NavLink>
+          <NavLink to="/out" className="navSalonIcon">
+            <i class="fa-solid fa-right-from-bracket fa-3x fa-fw" />
+          </NavLink>
+        </nav>
       </div>
     );
 }
