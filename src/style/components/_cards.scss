@@ -1,0 +1,47 @@
+@use '../vars/colors' as color;
+
+.dishGeneral{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top:10px;
+    column-gap: 16px;
+    row-gap: 16px;
+    font-family: "Barlow", sans-serif;
+
+}
+
+.carDish{
+    display: flex;
+    border: solid 1px black;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    height: 170px;
+    background-color: map-get(color.$background, "conteiners");
+    color: map-get(color.$text, "button");
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 130%;
+
+    .photoDish{
+        display: flex;
+        width: 60%;
+
+    }
+    .infoDish{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: map-get(color.$text, "button");
+        .item1{
+            font-weight: bold;
+        }
+    }
+}
+.carDish:hover{
+    box-shadow: 0 0 5px map-get(color.$buttons, "color"),
+                0 0 10px map-get(color.$buttons, "color"),
+                0 0 20px map-get(color.$buttons, "color");
+}

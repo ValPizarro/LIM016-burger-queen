@@ -26,7 +26,7 @@ const OrderList = () => {
       <>
       <div className="Order">
         <TakeOrder addOrder={addOrder} />
-        <h2>Lista de pedidos</h2>
+        {/* <h2>Lista de pedidos</h2> */}
         <ul>
           {orders.map((item) => (
             <GetOrder

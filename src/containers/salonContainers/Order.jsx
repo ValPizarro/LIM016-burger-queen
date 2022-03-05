@@ -69,6 +69,8 @@ const TakeOrder = ({ addOrder }) => {
       [name]: type === "checkbox" ? checked : value,
     }));
   };
+  let numOrder = 345
+  let totalOrder = 45.001;
 
   return (
     <>
@@ -76,16 +78,22 @@ const TakeOrder = ({ addOrder }) => {
         <button className="btnSubmitOder" type="submit">
           Enviar pedido
         </button>
-        <input
-          name="nameOrder"
-          placeholder="Nombre del cliente"
-          type="text"
-          className="nameOrder InputOrder"
-          onChange={handleChange}
-          value={order.nameOrder}
-        />
-        <ItemOrderGeneral />
-        <ItemOrderGeneral />
+        <div className="headerOrder">
+          <input
+            name="nameOrder"
+            placeholder="Nombre del cliente"
+            type="text"
+            className="nameOrder"
+            onChange={handleChange}
+            value={order.nameOrder}
+          />
+          <p>Orden N°: {numOrder}</p>
+        </div>
+        <div className="itemsTotalOrder">
+          <ItemOrderGeneral />
+          <ItemOrderGeneral />
+          <ItemOrderGeneral />
+        </div>
 
         {/* <input
           name="itemOrder"
@@ -109,8 +117,12 @@ const TakeOrder = ({ addOrder }) => {
             onChange={handleChange}
             checked={order.optionMeat}
           /> */}
-          {/* <label> Carne</label> */}
+        {/* <label> Carne</label> */}
         {/* </div> */}
+        <div className="priceOrder">
+          <p className="item1">Total: </p>
+          <p className="item2">$ {totalOrder}</p>
+        </div>
       </form>
     </>
   );

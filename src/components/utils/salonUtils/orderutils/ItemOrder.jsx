@@ -25,10 +25,9 @@ const ItemOrderGeneral = () => {
         <div className="secondDescriptionOrderBox">
           <div className="item1">
             {/* <i class="fa-regular fa-pen-to-square"></i> */}
-            <button class="fa-regular fa-square-plus">
-            </button>
+            <button className="fa-regular fa-square-plus"></button>
             <p>1</p>
-            <button class="fa-regular fa-square-minus"></button>
+            <button className="fa-regular fa-square-minus"></button>
           </div>
           <div className="item2">
             <p>$15.00 </p>

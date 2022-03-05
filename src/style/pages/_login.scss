@@ -11,6 +11,9 @@
     flex-direction: column;
     background:url(../../img/quickly-background.jpg);
     background-size: cover;
+    img{
+        margin: 20px;
+    }
 }
 .SectionBtnLogin{
     width: 60%;
@@ -45,4 +48,10 @@
 }
 .BtnLogin:hover{
     opacity: 1;
+    box-shadow: 0 0 5px map-get(color.$buttons, "color"),
+                0 0 15px map-get(color.$buttons, "color"),
+                0 0 25px map-get(color.$buttons, "color"),
+                0 0 50px map-get(color.$buttons, "color");
+    background:map-get(color.$background, "general");
+    color: map-get(color.$buttons, "color");
 }
