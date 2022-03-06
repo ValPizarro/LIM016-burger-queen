@@ -16,10 +16,10 @@ function Menu() {
   return (
     <div className="Menu">
       <h2>Carta: Desayuno</h2>
-      <SelectMenu/>
-      <div>
+      <SelectMenu />
+      <di className="dishGeneral">
         <CardDish />
-      </div>
+      </di>
     </div>
   );
 }

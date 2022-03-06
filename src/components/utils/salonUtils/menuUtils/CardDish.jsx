@@ -1,6 +1,7 @@
  import { onSnapshot, collection, doc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import  db from "../../../../firebase/config";
+const Hamburguesa = require("../../../../img/menu/menu2/burgerDouble_V1.png");
 
 const CardDish = () => {
     const [menu, setMenu]=useState([{ name:"Loading..." ,id:"initial" }]);
@@ -13,27 +14,24 @@ const CardDish = () => {
         []
     );
 
-
     return (
-        <div>
-            <button>Almuerzo</button>
-                <div>
-
+        <>
                 {menu.map((menu)=>(
-                    <>
-                    <div key={menu.id}>
-                    <img src="" alt="" />
-                    <p>{menu.name}</p>
-                    <p>{menu.price}</p>
+                <>
+                    <div className="carDish" key={menu.id}>
+                        <div className="photoDish">
+                            <img src={Hamburguesa} alt="Food" />
+                        </div>
+                        <div className="infoDish">
+                            <p className="item1">{menu.name}</p>
+                            <p className="item2">${menu.price}.00</p>
+                        </div>
                     </div>
                 </>
-
                 ))}
-
-
-
-                </div>
-        </div>
+        </>
     )
 }
 export default CardDish;
+
+

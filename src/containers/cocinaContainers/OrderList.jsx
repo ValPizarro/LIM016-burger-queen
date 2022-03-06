@@ -26,8 +26,8 @@ const OrderList = () => {
       <>
       <div className="Order">
         <TakeOrder addOrder={addOrder} />
-        <h2>Lista de pedidos</h2>
-        <li>
+        {/* <h2>Lista de pedidos</h2> */}
+        <ul>
           {orders.map((item) => (
             <GetOrder
               key={item.id}
@@ -36,7 +36,7 @@ const OrderList = () => {
               editOrder={editOrder}
             />
           ))}
-        </li>
+        </ul>
       </div>
       </>
     );
