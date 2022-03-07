@@ -49,16 +49,22 @@
             text-align: center;
         }
     }
+    .carDish:hover{
+        box-shadow: 0 0 20px map-get(color.$buttons, "color");
+    }
+    .dishGeneral::-webkit-scrollbar{
+        width: 7px;
+        background: map-get(color.$background, "conteiners");
+    }
+    .dishGeneral::-webkit-scrollbar-thumb{
+        background: map-get(color.$buttons, "color");
+        border-radius: 8px;
+    }
+}
 
-}
-.carDish:hover{
-    box-shadow: 0 0 20px map-get(color.$buttons, "color");
-}
-.dishGeneral::-webkit-scrollbar{
-    width: 7px;
-    background: map-get(color.$background, "conteiners");
-}
-.dishGeneral::-webkit-scrollbar-thumb{
-    background: map-get(color.$buttons, "color");
-    border-radius: 8px;
-}
+
+// @media (min-width:830) {
+//     .dishGeneral{
+//         height: 550px;
+//     }
+// }

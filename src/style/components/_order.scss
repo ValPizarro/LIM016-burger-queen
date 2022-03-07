@@ -25,7 +25,6 @@
     box-shadow:
                 0 0 25px map-get(color.$buttons, "color");
 }
-
 .headerOrder{
     display: flex;
     flex-direction: column;
@@ -52,7 +51,6 @@
         line-height: 130%;
     }
 }
-
 .itemsTotalOrder{
     display: flex;
     padding-bottom: 10px;
@@ -61,6 +59,15 @@
     overflow-y: scroll;
     overflow-x: hidden;
     height: 510px;
+    .itemsTotalOrder::-webkit-scrollbar{
+        width: 7px;
+        height: 90%;
+        background: map-get(color.$background, "conteiners");
+    }
+    .itemsTotalOrder::-webkit-scrollbar-thumb{
+        background: map-get(color.$buttons, "color");
+        border-radius: 8px;
+    }
 }
 .itemOrderBox{
     margin: 0.5rem;
@@ -76,6 +83,7 @@
         flex-direction: column;
         justify-content: space-evenly;
         width: 70%;
+        padding: 2% 0;
         .infoDish{
             display: flex;
             justify-content: space-around;
@@ -123,55 +131,45 @@
                 }
         }
     }
-    .buttonsOrderBox{
+.buttonsOrderBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 30%;
+    padding: 0 2%;
+    .firstRowButtons{
         display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        width: 30%;
-        padding: 0 2%;
-        .firstRowButtons{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            p{
-                align-self: center;
-                font-weight: bold;
-            }
-            button{
-                background: none;
-                border:none;
-                font-size:2rem;
-                color: map-get(color.$buttons , "icon2");
-            }
+        flex-direction: row;
+        justify-content: space-around;
+        p{
+            align-self: center;
+            font-weight: bold;
         }
-        .secondRowButtons{
-            display: flex;
-            p{
-                width: 75%;
-                align-self: center;
-            }
-            button{
-                margin-right: 2%;
-                background: none;
-                border:none;
-                color: map-get(color.$buttons , "icon2");
-                font-size:1.8rem;
-            }
-        }
-        button:hover{
-            color: map-get(color.$buttons , "color");
-            border:none
+        button{
+            background: none;
+            border:none;
+            font-size:2rem;
+            color: map-get(color.$buttons , "icon2");
         }
     }
-
-.itemsTotalOrder::-webkit-scrollbar{
-    width: 7px;
-    height: 90%;
-    background: map-get(color.$background, "conteiners");
-}
-.itemsTotalOrder::-webkit-scrollbar-thumb{
-    background: map-get(color.$buttons, "color");
-    border-radius: 8px;
+    .secondRowButtons{
+        display: flex;
+        p{
+            width: 75%;
+            align-self: center;
+        }
+        button{
+            margin-right: 2%;
+            background: none;
+            border:none;
+            color: map-get(color.$buttons , "icon2");
+            font-size:1.8rem;
+        }
+    }
+    button:hover{
+        color: map-get(color.$buttons , "color");
+        border:none
+    }
 }
 
 .priceOrder{
