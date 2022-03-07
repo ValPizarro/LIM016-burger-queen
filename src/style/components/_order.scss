@@ -6,7 +6,6 @@
     flex-direction: column;
     align-items: center;
     font-family: "Barlow", sans-serif;
-
 }
 .btnSubmitOder {
     font-size: 20px;
@@ -23,19 +22,15 @@
 }
 .btnSubmitOder:hover{
     opacity: 1;
-    box-shadow: 
-    // 0 0 5px map-get(color.$buttons, "color"),
+    box-shadow:
                 0 0 25px map-get(color.$buttons, "color");
-                // 0 0 25px map-get(color.$buttons, "color");
-    // background:map-get(color.$background, "general");
-    // color: map-get(color.$buttons, "color") ;
 }
 
 .headerOrder{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 98%;
+    width: 90%;
     margin: 10px;
     height: 50px;
     color: map-get(color.$text , "color");
@@ -55,16 +50,17 @@
         font-weight: 500;
         font-size: 14px;
         line-height: 130%;
-        // color: map-get(color.$text , "color");
     }
 }
 
 .itemsTotalOrder{
     display: flex;
     padding-bottom: 10px;
-    border-bottom: solid 2px;
     flex-direction: column;
     align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 510px;
 }
 .itemOrderBox{
     margin: 0.5rem;
@@ -168,12 +164,25 @@
         }
     }
 
+.itemsTotalOrder::-webkit-scrollbar{
+    width: 7px;
+    height: 90%;
+    background: map-get(color.$background, "conteiners");
+}
+.itemsTotalOrder::-webkit-scrollbar-thumb{
+    background: map-get(color.$buttons, "color");
+    border-radius: 8px;
+}
+
 .priceOrder{
     display: flex;
     width: 90%;
-    margin: 10px;
+    margin: 15px;
+    padding-top: 15px;
     color: map-get(color.$background , "title");
     justify-content: center;
+    border-top: solid 2px;
+
     .item1{
         margin:  0 10px 0 20px;
         width: 60%;

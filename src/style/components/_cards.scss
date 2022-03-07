@@ -4,10 +4,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top:10px;
+    margin-top:25px;
     column-gap: 16px;
     row-gap: 16px;
     font-family: "Barlow", sans-serif;
+    overflow-y: scroll;
+    height: 600px;
 }
 
 .carDish{
@@ -51,4 +53,12 @@
 }
 .carDish:hover{
     box-shadow: 0 0 20px map-get(color.$buttons, "color");
+}
+.dishGeneral::-webkit-scrollbar{
+    width: 7px;
+    background: map-get(color.$background, "conteiners");
+}
+.dishGeneral::-webkit-scrollbar-thumb{
+    background: map-get(color.$buttons, "color");
+    border-radius: 8px;
 }

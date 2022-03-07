@@ -18,8 +18,8 @@ const SelectMenu = () => {
   // //       : ShowDish(menus.Desayuno);
 
   // //     console.log(IdMenu);
-  // // };  
-  /* <i class="fa-solid fa-mug-hot"></i>; */ 
+  // // };
+  /* <i class="fa-solid fa-mug-hot"></i>; */
 
 // <i class="fa-solid fa-burger"></i>;
   // <i class="fa-solid fa-angle-up"></i>;
@@ -28,8 +28,6 @@ const SelectMenu = () => {
     console.log(e.target.value);
     // setCurrentMenu=e.target.value;
   };
-
-
 
   return (
     <div className="selectMenu">

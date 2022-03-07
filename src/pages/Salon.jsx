@@ -4,7 +4,7 @@ import Menu from "../containers/salonContainers/Menu";
 
 function Salon() {
   return (
-    <div className="ContentLivingRoom">
+    <div className="salonGeneral">
       <NavSalon />
       <Menu />
       <OrderList />
