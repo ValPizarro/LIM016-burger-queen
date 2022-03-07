@@ -1,13 +1,23 @@
-// import { useState } from "react"
+import { useState } from "react"
 // import Menu from "../../dataMenu/DataMenu.json"
 
 // // const menus = Menu;
 
 
 const SelectMenu = () => {
-  const optionsMenu = ["Desayuno", "Almuerzo"];
+  // const optionsMenu = ["Desayuno", "Almuerzo","Bebida"];
 
-//   const [currentMenu, setCurrentMenu] = useState("Desayuno");
+  // const [currentMenu, setCurrentMenu] = useState("Desayuno");
+
+  const ChangeMenu = (e) => {
+    const selectValue = (e.target.value);
+    // setCurrentMenu(selectValue)
+    console.log(selectValue);
+
+    return selectValue === "Desayuno"
+      ? console.log("desayuno")
+      : console.log("almuerzo");
+  };
 
   // // const ChangeMenu = (e) => {
   // //     //   const currentMenu = e.target.value;
@@ -21,28 +31,28 @@ const SelectMenu = () => {
   // // };
   /* <i class="fa-solid fa-mug-hot"></i>; */
 
-// <i class="fa-solid fa-burger"></i>;
+  // <i class="fa-solid fa-burger"></i>;
   // <i class="fa-solid fa-angle-up"></i>;
-/* <i class="fa-solid fa-angle-down"></i>; */
-  const ChangeMenu = (e) => {
-    console.log(e.target.value);
-    // setCurrentMenu=e.target.value;
-  };
+  /* <i class="fa-solid fa-angle-down"></i>; */
+
+  // {optionsMenu.map((option) => {
+  //   return (
+  //     <>
+  //       <option value={option}>
+  //         {option}
+  //       </option>
+  //     </>
 
   return (
     <div className="selectMenu">
-        <select onChange={ChangeMenu}>
-        {optionsMenu.map((option) => {
-          return (
-            <>
-              <option key={option} value={option}>
-
-                {option}
-              </option>
-            </>
-          );
-        })}
-        </select>
+      <select onChange={ChangeMenu}>
+        <option key={"select-01"} value={"Desayuno"}>
+          Desayuno
+        </option>
+        <option key={"select-02"} value={"Almuerzo"}>
+          Almuerzo
+        </option>
+      </select>
     </div>
   );
 };

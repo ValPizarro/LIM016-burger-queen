@@ -4,21 +4,28 @@ import  db from "../../../../firebase/config";
 const Hamburguesa = require("../../../../img/menu/menu2/burgerDouble_V1.png");
 
 const CardDish = () => {
-    const [menu, setMenu]=useState([{ name:"Loading..." ,id:"initial" }]);
-    console.log(menu)
+    const [menus, setMenus]=useState([{ name:"Loading..." ,id:"initial" }]);
    useEffect(
        ()=>
         onSnapshot(collection(db,"menu"),(snapshot)=>
-            setMenu(snapshot.docs.map(doc =>({...doc.data(), id:doc.id})))
+            setMenus(snapshot.docs.map(doc =>({...doc.data(), id:doc.id})))
         ),
         []
-    );
+  );
+  const SelectCard = (e) => {
+ 
+      console.log(e.target.className);
+    }
 
     return (
       <>
-        {menu.map((menu) => (
+        {menus.map((menu) => (
           <>
-            <div className="carDish" key={menu.id}>
+            <div
+              className="carDish"
+              id={menu.id}
+              onClick={SelectCard}
+            >
               <div className="photoDish">
                 <img src={Hamburguesa} alt="Food" />
               </div>
