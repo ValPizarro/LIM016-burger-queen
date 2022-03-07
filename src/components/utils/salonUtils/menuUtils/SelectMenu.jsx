@@ -33,8 +33,7 @@ const SelectMenu = () => {
 
   return (
     <div className="selectMenu">
-      <p>Carta</p>
-      <select onChange={ChangeMenu}>
+        <select onChange={ChangeMenu}>
         {optionsMenu.map((option) => {
           return (
             <>
@@ -45,7 +44,7 @@ const SelectMenu = () => {
             </>
           );
         })}
-      </select>
+        </select>
     </div>
   );
 };
