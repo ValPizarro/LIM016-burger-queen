@@ -14,7 +14,7 @@ function Login() {
         <section className="SectionBtnLogin">
           <a href="/salon" className="BoxButton">
             <button className="BtnLogin" onClick={saludoClick}>
-              Salon
+              Salón
             </button>
 
           </a>

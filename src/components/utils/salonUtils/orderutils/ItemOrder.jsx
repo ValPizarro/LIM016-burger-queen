@@ -32,7 +32,7 @@ const ItemOrderGeneral = () => {
           <div className="secondRowButtons">
             <p>$15.00 </p>
 
-            <button class="fa-regular fa-trash-can"></button>
+            <button className="fa-regular fa-trash-can"></button>
           </div>
         </div>
       </div>

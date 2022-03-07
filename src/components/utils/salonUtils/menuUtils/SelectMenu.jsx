@@ -18,14 +18,21 @@ const SelectMenu = () => {
   // //       : ShowDish(menus.Desayuno);
 
   // //     console.log(IdMenu);
-  // // };
+  // // };  
+  /* <i class="fa-solid fa-mug-hot"></i>; */ 
+
+// <i class="fa-solid fa-burger"></i>;
+  // <i class="fa-solid fa-angle-up"></i>;
+/* <i class="fa-solid fa-angle-down"></i>; */
   const ChangeMenu = (e) => {
     console.log(e.target.value);
     // setCurrentMenu=e.target.value;
   };
 
+
+
   return (
-    <div>
+    <div className="selectMenu">
       <p>Carta</p>
       <select onChange={ChangeMenu}>
         {optionsMenu.map((option) => {

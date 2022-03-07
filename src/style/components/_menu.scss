@@ -1,0 +1,33 @@
+@use '../vars/colors' as color;
+
+.headerMenu{
+    display: flex;
+
+    .titleMenu{
+        display: flex;
+        align-items: center;
+        width: 60%;
+        h2{
+            color: map-get(color.$text , "title");
+            font-family: "Barlow", sans-serif;
+            font-weight: normal;
+            font-size: 2rem;
+            line-height: 5rem;
+        }
+
+    }
+    .selectMenu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        row-gap: 5px;
+        p{
+            font-family: "Barlow", sans-serif;
+            font-size: 1rem;
+
+        }
+    }
+}
+
+

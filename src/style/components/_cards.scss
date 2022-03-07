@@ -50,7 +50,5 @@
 
 }
 .carDish:hover{
-    box-shadow: 0 0 5px map-get(color.$buttons, "color"),
-                0 0 10px map-get(color.$buttons, "color"),
-                0 0 20px map-get(color.$buttons, "color");
+    box-shadow: 0 0 20px map-get(color.$buttons, "color");
 }

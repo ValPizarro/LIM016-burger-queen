@@ -23,11 +23,12 @@
 }
 .btnSubmitOder:hover{
     opacity: 1;
-    box-shadow: 0 0 5px map-get(color.$buttons, "color"),
-                0 0 15px map-get(color.$buttons, "color"),
+    box-shadow: 
+    // 0 0 5px map-get(color.$buttons, "color"),
                 0 0 25px map-get(color.$buttons, "color");
-    background:map-get(color.$background, "general");
-    color: map-get(color.$buttons, "color") ;
+                // 0 0 25px map-get(color.$buttons, "color");
+    // background:map-get(color.$background, "general");
+    // color: map-get(color.$buttons, "color") ;
 }
 
 .headerOrder{
@@ -152,7 +153,6 @@
             p{
                 width: 75%;
                 align-self: center;
-                // font-weight: bold;
             }
             button{
                 margin-right: 2%;
