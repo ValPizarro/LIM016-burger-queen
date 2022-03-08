@@ -7,8 +7,8 @@ const Hamburguesa = require("../../../../img/menu/menu2/burgerDouble_V1.png");
 
 const CardDish = (data) => {
 
-  // const dataDish = data
-  // console.table(dataDish);
+  const dataDish = data
+  console.table(dataDish);
 
   const [menus, setMenus] = useState([{ name: "Loading...", id: "initial" }]);
   useEffect(
