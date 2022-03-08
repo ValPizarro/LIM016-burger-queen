@@ -13,11 +13,9 @@ const CardDish = () => {
         ),
         []
     );
-
     return (
         <>
                 {menu.map((menu)=>(
-                <>
                     <div className="carDish" key={menu.id}>
                         <div className="photoDish">
                             <img src={Hamburguesa} alt="Food" />
@@ -27,7 +25,6 @@ const CardDish = () => {
                             <p className="item2">${menu.price}.00</p>
                         </div>
                     </div>
-                </>
                 ))}
         </>
     )
