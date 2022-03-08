@@ -1,11 +1,12 @@
 @forward '../../style/components/order';
-.ContentLivingRoom {
+.salonGeneral{
     height: 100vh;
     display: flex;
     align-items: center;
     width: 100%;
+    overflow-y: hidden;
 }
-.Menu {
+.menu{
     height: 100vh;
     width: 45%;
     margin: 10px 10px;
@@ -14,4 +15,5 @@
     height: 100%;
     margin: 10px;
     width: 45%;
+    margin-top: 2%;
 }

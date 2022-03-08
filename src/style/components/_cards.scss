@@ -4,11 +4,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top:10px;
+    margin-top:25px;
     column-gap: 16px;
     row-gap: 16px;
     font-family: "Barlow", sans-serif;
-
+    overflow-y: scroll;
+    height: 600px;
+    max-height: 545px;
 }
 
 .carDish{
@@ -39,18 +41,31 @@
         color: map-get(color.$text, "button");
         row-gap: 10px;
         text-align: center;
-        p{
+        .textInfo1{
           text-align: center;
         }
-        .item1{
+        .textInfo1{
+            width: 90%;
             font-weight: bold;
             text-align: center;
         }
     }
 
 }
-.carDish:hover{
-    box-shadow: 0 0 5px map-get(color.$buttons, "color"),
-                0 0 10px map-get(color.$buttons, "color"),
-                0 0 20px map-get(color.$buttons, "color");
-}
+    .carDish:hover{
+        box-shadow: 0 0 20px map-get(color.$buttons, "color");
+    }
+    .dishGeneral::-webkit-scrollbar{
+        width: 7px;
+        background: map-get(color.$background, "conteiners");
+    }
+    .dishGeneral::-webkit-scrollbar-thumb{
+        background: map-get(color.$buttons, "color");
+        border-radius: 8px;
+    }
+
+// @media (min-width:830) {
+//     .dishGeneral{
+//         height: 550px;
+//     }
+// }

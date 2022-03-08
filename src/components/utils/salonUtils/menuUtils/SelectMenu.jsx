@@ -1,43 +1,47 @@
-// import { useState } from "react"
-// import Menu from "../../dataMenu/DataMenu.json"
+import { onSnapshot, collection } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import db from "../../../../firebase/config";
 
-// // const menus = Menu;
-
+import CardDish from "./CardDish";
 
 const SelectMenu = () => {
-  const optionsMenu = ["Desayuno", "Almuerzo"];
 
-//   const [currentMenu, setCurrentMenu] = useState("Desayuno");
+  const [menus, setMenus] = useState([]);
 
-  // // const ChangeMenu = (e) => {
-  // //     //   const currentMenu = e.target.value;
-  // //     setIdMenu(e.target.value);
+  useEffect(
+    () =>
+      onSnapshot(collection(db, "menu"), (snapshot) =>
+        setMenus(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+      ),
+    []
+  );
 
-  // //     IdMenu === "Desayuno"
-  // //       ? ShowDish(menus.Almuerzo)
-  // //       : ShowDish(menus.Desayuno);
+  const dataDesayuno = menus.filter((menu) => menu.menu === "Desayuno");
 
-  // //     console.log(IdMenu);
-  // // };
-  const ChangeMenu = (e) => {
-    console.log(e.target.value);
-    // setCurrentMenu=e.target.value;
-  };
+  const dataAlmuerzo = menus.filter((menu) => menu.menu === "Almuerzo");
+
+  const SelectMenuValue = (e) => {
+    const selectValue = e.target.value;
+
+    return selectValue === "Desayuno"
+      ? CardDish(dataDesayuno)
+      : CardDish(dataAlmuerzo);
+  }
+
+  // return selectValue === "Desayuno"
+  //   ? CardDish("Desayuno")
+  //   : CardDish("Almuerzo");
+
 
   return (
-    <div>
-      <p>Carta</p>
-      <select onChange={ChangeMenu}>
-        {optionsMenu.map((option) => {
-          return (
-            <>
-              <option key={option} value={option}>
-
-                {option}
-              </option>
-            </>
-          );
-        })}
+    <div className="selectMenu">
+      <select onChange={SelectMenuValue}>
+        <option key={"select-01"} value={"Desayuno"}>
+          Desayuno
+        </option>
+        <option key={"select-02"} value={"Almuerzo"}>
+          Almuerzo
+        </option>
       </select>
     </div>
   );

@@ -14,12 +14,16 @@ function Menu() {
 
 
   return (
-    <div className="Menu">
-      <h2>Carta: Desayuno</h2>
-      <SelectMenu />
-      <di className="dishGeneral">
+    <div className="menu">
+      <div className="headerMenu">
+        <div className="titleMenu">
+          <h2>Salón</h2>
+        </div>
+        <SelectMenu />
+      </div>
+      <div className="dishGeneral">
         <CardDish />
-      </di>
+      </div>
     </div>
   );
 }

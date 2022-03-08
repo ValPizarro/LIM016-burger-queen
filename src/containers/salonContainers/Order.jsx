@@ -93,6 +93,9 @@ const TakeOrder = ({ addOrder }) => {
           <ItemOrderGeneral />
           <ItemOrderGeneral />
           <ItemOrderGeneral />
+          <ItemOrderGeneral />
+          <ItemOrderGeneral />
+          <ItemOrderGeneral />
         </div>
 
         {/* <input
