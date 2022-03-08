@@ -37,17 +37,19 @@ const ItemOrderGeneral = (id) => {
       </div>
 
       <div className="buttonsOrderBox">
+        <div className="deleteOrder">
+          <button className="fa-regular fa-trash-can trash"></button>
+        </div>
+        <div className="secondRowButtons">
+          <p>$15.00 </p>
+        </div>
         <div className="firstRowButtons">
           {/* <i class="fa-regular fa-pen-to-square"></i> */}
           <button className="fa-regular fa-square-plus"></button>
           <p>1</p>
           <button className="fa-regular fa-square-minus"></button>
         </div>
-        <div className="secondRowButtons">
-          <p>$15.00 </p>
 
-          <button className="fa-regular fa-trash-can"></button>
-        </div>
       </div>
     </div>
   );

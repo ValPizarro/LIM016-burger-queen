@@ -17,8 +17,12 @@ const SelectMenu = () => {
   );
 
   const dataDesayuno = menus.filter((menu) => menu.menu === "Desayuno");
+  console.log(dataDesayuno);
 
   const dataAlmuerzo = menus.filter((menu) => menu.menu === "Almuerzo");
+  console.log(dataDesayuno);
+
+
 
   const SelectMenuValue = (e) => {
     const selectValue = e.target.value;
@@ -35,14 +39,10 @@ const SelectMenu = () => {
 
   return (
     <div className="selectMenu">
-      <select onChange={SelectMenuValue}>
-        <option key={"select-01"} value={"Desayuno"}>
-          Desayuno
-        </option>
-        <option key={"select-02"} value={"Almuerzo"}>
-          Almuerzo
-        </option>
-      </select>
+      <button value={"Desayuno"}>Desayuno</button>
+      <button value={"Almuerzo"}>
+        Almuerzo
+      </button>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
 
-import ItemOrderGeneral from "../../components/utils//salonUtils/orderutils/ItemOrder"
+import ItemOrderGeneral from "./ItemOrder"
 
 const TakeOrder = ({ addOrder }) => {
   const initialOrder = {

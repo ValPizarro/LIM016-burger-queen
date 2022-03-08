@@ -131,13 +131,24 @@
                     box-sizing: border-box;
                     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                     border-radius: 8px;
+                    outline: none;
+                    overflow-x: hidden;
+                    resize: none;
                 }
                 textarea:hover{
                     background-color: map-get(color.$background, "textarea2");
                     color:map-get(color.$text, "button") ;
                 }
                 textarea::placeholder{
-                    color: map-get(color.$text , "color");
+                    color: map-get(color.$text , "textarea");
+                    border: none;
+                }
+                textarea::-webkit-scrollbar{
+                    height: 90%;
+                    width: 7px;
+                    background-color: map-get(color.$background, "textarea");
+                    border-radius: 9px;
+
                 }
         }
     }
@@ -147,6 +158,22 @@
     justify-content: space-evenly;
     width: 30%;
     padding: 0 2%;
+    .deleteOrder{
+        display: flex;
+        justify-content: flex-end;
+        .trash{
+            margin-right: 2%;
+            background: none;
+            border:none;
+            color: map-get(color.$buttons , "icon2");
+            font-size: 1.2rem;
+        }
+        .trash:hover{
+        color: map-get(color.$buttons , "color");
+        border:none
+    }
+    }
+
     .firstRowButtons{
         display: flex;
         flex-direction: row;
@@ -158,22 +185,15 @@
         button{
             background: none;
             border:none;
-            font-size:2rem;
+            font-size:2.6rem;
             color: map-get(color.$buttons , "icon2");
         }
     }
     .secondRowButtons{
         display: flex;
         p{
-            width: 75%;
-            align-self: center;
-        }
-        button{
-            margin-right: 2%;
-            background: none;
-            border:none;
-            color: map-get(color.$buttons , "icon2");
-            font-size:1.8rem;
+            width: 100%;
+            text-align: center;
         }
     }
     button:hover{
