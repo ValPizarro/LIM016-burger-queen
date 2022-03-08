@@ -1,8 +1,4 @@
 const Hamburguesa = require ("../../../../img/menu/menu2/burgerDouble_V1.png")
-// const Trash  = require("../../../../img/icon/trash.png");
-// const Less = require("../../../../img/icon/less.png");
-// const More = require("../../../../img/icon/more.png");
-
 
 const ItemOrderGeneral = () => {
     return (

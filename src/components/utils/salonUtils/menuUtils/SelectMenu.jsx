@@ -1,51 +1,43 @@
-import { useState } from "react"
-// import Menu from "../../dataMenu/DataMenu.json"
+import { onSnapshot, collection } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import db from "../../../../firebase/config";
 
-// // const menus = Menu;
-
+import CardDish from "./CardDish";
 
 const SelectMenu = () => {
-  // const optionsMenu = ["Desayuno", "Almuerzo","Bebida"];
 
-  // const [currentMenu, setCurrentMenu] = useState("Desayuno");
+  const [menus, setMenus] = useState([]);
 
-  const ChangeMenu = (e) => {
-    const selectValue = (e.target.value);
-    // setCurrentMenu(selectValue)
-    console.log(selectValue);
+  useEffect(
+    () =>
+      onSnapshot(collection(db, "menu"), (snapshot) =>
+        setMenus(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+      ),
+    []
+  );
+
+  const dataDesayuno = menus.filter((menu) => menu.menu === "Desayuno");
+  console.log(dataDesayuno);
+
+  const dataAlmuerzo = menus.filter((menu) => menu.menu === "Almuerzo");
+  console.log(dataAlmuerzo);
+
+  const SelectMenuValue = (e) => {
+    const selectValue = e.target.value;
 
     return selectValue === "Desayuno"
-      ? console.log("desayuno")
-      : console.log("almuerzo");
-  };
+      ? CardDish(dataDesayuno)
+      : CardDish(dataAlmuerzo);
+  }
 
-  // // const ChangeMenu = (e) => {
-  // //     //   const currentMenu = e.target.value;
-  // //     setIdMenu(e.target.value);
+  // return selectValue === "Desayuno"
+  //   ? CardDish("Desayuno")
+  //   : CardDish("Almuerzo");
 
-  // //     IdMenu === "Desayuno"
-  // //       ? ShowDish(menus.Almuerzo)
-  // //       : ShowDish(menus.Desayuno);
-
-  // //     console.log(IdMenu);
-  // // };
-  /* <i class="fa-solid fa-mug-hot"></i>; */
-
-  // <i class="fa-solid fa-burger"></i>;
-  // <i class="fa-solid fa-angle-up"></i>;
-  /* <i class="fa-solid fa-angle-down"></i>; */
-
-  // {optionsMenu.map((option) => {
-  //   return (
-  //     <>
-  //       <option value={option}>
-  //         {option}
-  //       </option>
-  //     </>
 
   return (
     <div className="selectMenu">
-      <select onChange={ChangeMenu}>
+      <select onChange={SelectMenuValue}>
         <option key={"select-01"} value={"Desayuno"}>
           Desayuno
         </option>
