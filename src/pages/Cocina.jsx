@@ -1,4 +1,4 @@
-import NavSalon from "../components/utils/salonUtils/NavSalon";
+import NavSalon from "../pages/components/salonComp/nav/NavSalon";
 
 function Cocina() {
 

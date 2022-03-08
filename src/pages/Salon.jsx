@@ -1,6 +1,6 @@
-import NavSalon from "../components/utils/salonUtils/NavSalon";
-import OrderList from "../containers/cocinaContainers/OrderList";
-import Menu from "../containers/salonContainers/Menu";
+import NavSalon from "../pages/components/salonComp/nav/NavSalon";
+import OrderList from "../pages/components/salonComp/order/Order";
+import Menu from "../pages/components/salonComp/menu/Menu";
 
 function Salon() {
   return (

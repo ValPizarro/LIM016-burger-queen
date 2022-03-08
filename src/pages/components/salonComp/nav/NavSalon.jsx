@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const LogoQuickly=require("../../../img/brand/quickly_logo.png");
+const LogoQuickly=require("../../../../img/brand/quickly_logo.png");
 
 function NavSalon(){
     return (

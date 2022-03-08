@@ -1,7 +1,7 @@
 import { onSnapshot, collection } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import db from "../../../../firebase/config";
-import ItemOrderGeneral from "../orderutils/ItemOrder"
+import ItemOrderGeneral from "../order/ItemOrder"
 
 const Hamburguesa = require("../../../../img/menu/menu2/burgerDouble_V1.png");
 

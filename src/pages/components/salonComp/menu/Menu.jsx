@@ -1,5 +1,5 @@
-import CardDish from "../../components/utils/salonUtils/menuUtils/CardDish";
-import SelectMenu from "../../components/utils/salonUtils/menuUtils/SelectMenu";
+import CardDish from "./CardDish";
+import SelectMenu from "./SelectMenu";
 /* import { getDocs, collection } from "firebase/firestore";
 import db from "../../firebase/config"; */
 

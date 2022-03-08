@@ -1,6 +1,6 @@
 import { useState } from "react";
 import TakeOrder from "../salonContainers/Order";
-import GetOrder from "../../components/utils/cocinaUtils/GetOrder";
+import GetOrder from "./GetOrder";
 
 const OrderList = () => {
 
