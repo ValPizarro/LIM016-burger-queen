@@ -17,10 +17,8 @@ const SelectMenu = () => {
   );
 
   const dataDesayuno = menus.filter((menu) => menu.menu === "Desayuno");
-  console.log(dataDesayuno);
 
   const dataAlmuerzo = menus.filter((menu) => menu.menu === "Almuerzo");
-  console.log(dataAlmuerzo);
 
   const SelectMenuValue = (e) => {
     const selectValue = e.target.value;
