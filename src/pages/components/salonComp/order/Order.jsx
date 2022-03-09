@@ -74,20 +74,23 @@ const TakeOrder = ({ addOrder }) => {
 
   return (
     <>
-      <form className="FormOrder" onSubmit={handleSubmit}>
-        <button className="btnSubmitOder" type="submit">
-          Enviar pedido
-        </button>
+      <form className="formOrder sectionC" onSubmit={handleSubmit}>
         <div className="headerOrder">
-          <input
-            name="nameOrder"
-            placeholder="Nombre del cliente"
-            type="text"
-            className="nameOrder"
-            onChange={handleChange}
-            value={order.nameOrder}
-          />
-          <p>Orden N°: {numOrder}</p>
+          <button className="btnSubmitOrder" type="submit">
+            Enviar pedido
+          </button>
+          <div className="infoOrder">
+              <input
+              name="nameOrder"
+              placeholder="Nombre del cliente"
+              type="text"
+              className="nameOrder"
+              onChange={handleChange}
+              value={order.nameOrder}
+            />
+            <p>Orden N°: {numOrder}</p>
+          </div>
+
         </div>
         <div className="itemsTotalOrder">
           <ItemOrderGeneral />

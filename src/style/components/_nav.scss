@@ -1,38 +1,84 @@
 @use '../vars/colors' as color;
 
+.headerSalon{
+    display: flex;
+    width: 10%;
+    height: 98%;
+    align-items: center;
+    justify-content: center;
+}
+
 .navSalon {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     height: 98%;
-    margin: 15px;
-    row-gap: 15px;
+    width: 80%;
+    max-width: 80px;
+    min-width: 20px;
     border: solid 1px #1F1D2B;
     border-radius: 20px;
     background: #1F1D2B;
-    max-width: 74px;
     .logoNav{
         display: flex;
-        align-items: center;
         justify-content: center;
-        width: 96%;
-        margin: 20px 10px;
+        align-items: center;
+        width: 90%;
+        height: 20%;
+        padding: 5% 3%;
         img{
-            width: 100%;
+            height: 5rem;
+            width: 5rem;
         }
     }
     .optionsNav{
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80%;
+        row-gap: 15%;
         i{
-            margin: 3rem;
+            font-size: 3.5rem;
             color: map-get(color.$background, "general");
         }
         i:hover{
             color: map-get(color.$buttons, "color");
-
         }
     }
 
 }
+// .navSalon {
+//     display: flex;
+//     height: 98%;
+//     width: 5rem;
+//     border: solid 1px #1F1D2B;
+//     border-radius: 20px;
+//     background: #1F1D2B;
+//     .logoNav{
+//         display: flex;
+//         justify-content: center;
+//         height: 20%;
+//         img{
+//             width: 100%;
+//         }
+//     }
+//     .optionsNav{
+//         display: flex;
+//         justify-content: center;
+//         height: 80%;
+// }
+//         i{
+//             margin: 3rem;
+//             font-size: 1rem;
+//             color: map-get(color.$background, "general");
+//         }
+//         i:hover{
+//             color: map-get(color.$buttons, "color");
+
+//         }
+// }
+
+
 

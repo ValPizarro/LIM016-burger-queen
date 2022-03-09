@@ -5,9 +5,14 @@ import Menu from "../pages/components/salonComp/menu/Menu";
 function Salon() {
   return (
     <div className="salonGeneral">
-      <NavSalon />
-      <Menu />
-      <OrderList />
+      <header className="headerSalon sectionA">
+        <NavSalon />
+      </header>
+      <body className="bodySalon">
+        <Menu />
+        <OrderList />
+      </body>
+
     </div>
   );
 }

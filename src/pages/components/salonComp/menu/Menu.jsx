@@ -14,7 +14,7 @@ function Menu() {
 
 
   return (
-    <div className="menu">
+    <div className="menu sectionB">
       <div className="headerMenu">
         <div className="titleMenu">
           <h2>Salón</h2>

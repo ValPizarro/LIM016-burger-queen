@@ -5,6 +5,9 @@
 
 @forward '../style/pages/login';
 @forward '../style/pages/salon';
+
+@forward '../style/components/utils/mediaSalon';
+
 *{
     margin: 0;
     padding: 0;
