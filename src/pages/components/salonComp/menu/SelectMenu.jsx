@@ -5,8 +5,8 @@ import db from "../../../../firebase/config";
 import CardDish from "./CardDish";
 
 const SelectMenu = () => {
-
-  const [menus, setMenus] = useState([]);
+    
+  /* const [menus, setMenus] = useState([]);
 
   useEffect(
     () =>
@@ -30,7 +30,7 @@ const SelectMenu = () => {
     return selectValue === "Desayuno"
       ? CardDish(dataDesayuno)
       : CardDish(dataAlmuerzo);
-  }
+  } */
 
   // return selectValue === "Desayuno"
   //   ? CardDish("Desayuno")
@@ -39,7 +39,7 @@ const SelectMenu = () => {
 
   return (
     <div className="selectMenu">
-      <button value={"Desayuno"}>Desayuno</button>
+      <button value={"Desayuno"} >Desayuno</button>
       <button value={"Almuerzo"}>
         Almuerzo
       </button>
