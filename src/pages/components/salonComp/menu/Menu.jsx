@@ -23,7 +23,10 @@ const ShowMenu = () => {
   useEffect(
     () => {
       SetMenuDishes(allDishes.filter((dishes) => dishes.menu === curretMenu));
+
     }, [curretMenu, allDishes]);
+
+    console.table(MenuDishes);
 
   return (
     <div className="menu sectionB">
