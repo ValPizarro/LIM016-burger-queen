@@ -4,13 +4,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top:25px;
-    column-gap: 16px;
-    row-gap: 16px;
+    margin-top: 25px;
+    column-gap: 10px;
+    row-gap: 10px;
     font-family: "Barlow", sans-serif;
     overflow-y: scroll;
-    height: 600px;
-    max-height: 545px;
+    height: 100%;
 }
 
 .carDish{
@@ -63,9 +62,3 @@
         background: map-get(color.$buttons, "color");
         border-radius: 8px;
     }
-
-// @media (min-width:830) {
-//     .dishGeneral{
-//         height: 550px;
-//     }
-// }

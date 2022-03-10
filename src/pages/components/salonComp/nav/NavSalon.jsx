@@ -4,27 +4,28 @@ const LogoQuickly=require("../../../../img/brand/quickly_logo.png");
 
 function NavSalon(){
     return (
-      <div className="navSalon">
-        <div className="logoNav">
-          <img src={LogoQuickly} alt="Quickly" />
-        </div>
-        <div className="optionsNav">
-          <nav>
-            <NavLink to="/" className="navSalonIcon">
-              <i className="fa-solid fa-house fa-3x fa-fw" />
+      <>
+          <nav className="navSalon" >
+            <div className="logoNav">
+              <img src={LogoQuickly} alt="Quickly" />
+            </div>
+          <div className="optionsNav">
+            <NavLink to="/">
+              <i className="fa-solid fa-house" />
             </NavLink>
-            <NavLink to="/alert" className="navSalonIcon">
-              <i className="fa-solid fa-bell fa-3x fa-fw" />
+            <NavLink to="/alert">
+              <i className="fa-solid fa-bell" />
             </NavLink>
-            <NavLink to="/config" className="navSalonIcon">
-              <i className="fa-solid fa-clock-rotate-left fa-3x fa-fw" />
+            <NavLink to="/config">
+              <i className="fa-solid fa-clock-rotate-left" />
             </NavLink>
-            <NavLink to="/out" className="navSalonIcon">
-              <i className="fa-solid fa-right-from-bracket fa-3x fa-fw" />
+            <NavLink to="/out">
+              <i className="fa-solid fa-right-from-bracket" />
             </NavLink>
+          </div>
+
           </nav>
-        </div>
-      </div>
+      </>
     );
 }
 
