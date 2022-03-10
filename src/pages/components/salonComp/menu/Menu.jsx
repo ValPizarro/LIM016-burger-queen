@@ -1,34 +1,29 @@
-import CardDish from "./CardDish";
+import { CardDish } from "./CardDish";
 import SelectMenu from "./SelectMenu";
 import { useEffect, useState } from "react";
 import { onSnapshot, collection } from "firebase/firestore";
 import db from "../../../../firebase/config";
 
+const ShowMenu = () => {
 
-/* import { getDocs, collection } from "firebase/firestore";
-import db from "../../firebase/config"; */
+  const [allDishes, setAllDishes] = useState([]);
+  const [MenuDishes, SetMenuDishes] = useState([]);
+  const [curretMenu, SetCurrentMenu] = useState("Desayuno");
 
-function ShowMenu(currentMenu) {
-  const [allDishes, setAllDishes] = useState([{ name: "Loading...", id: "initial" }]);
   useEffect(
     () =>
-      onSnapshot(collection(db, "menu"), (snapshot) =>
-        setAllDishes(
-          snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-        )
-      ),
+       onSnapshot(collection(db, "menu"), (snapshot) =>
+      setAllDishes(
+      snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+    )
+  ),
     []
   );
 
-  const filterDishes = allDishes.filter((dishes) => dishes.menu === currentMenu);
-  console.log(filterDishes);
-
-  /*  const GetMenus = async () => {
-  const menus = await getDocs(collection(db, "menu"));
-  menus.forEach((doc) => {
-      console.log(doc.id, "=>", doc.data());
-    });
-  }; GetMenus(); */
+  useEffect(
+    () => {
+      SetMenuDishes(allDishes.filter((dishes) => dishes.menu === curretMenu));
+    }, [curretMenu, allDishes]);
 
   return (
     <div className="menu sectionB">
@@ -36,13 +31,9 @@ function ShowMenu(currentMenu) {
         <div className="titleMenu">
           <h2>Salón</h2>
         </div>
-        <SelectMenu />
+        <SelectMenu SetCurrentMenu={SetCurrentMenu} />
       </div>
-      <div className="dishGeneral">
-        {filterDishes.map((dish) => (
-          <CardDish />
-        ))}
-      </div>
+        <CardDish MenuDishes={MenuDishes} />
     </div>
   );
 }
