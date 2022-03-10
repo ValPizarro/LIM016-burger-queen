@@ -2,7 +2,7 @@
 
 const Hamburguesa = require("../../../../img/menu/menu2/burgerDouble_V1.png");
 
-const CardDish = (dish, price,id) => {
+const CardDish = (dish, price, id) => {
 
     const SelectCard = (e) => {
       // const IdDish = e.target.id;
