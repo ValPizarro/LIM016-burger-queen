@@ -15,9 +15,9 @@ const Hamburguesa = require("../../../../img/menu/menu2/burgerDouble_V1.png");
 //     })
 // }
 
-const ItemOrderGeneral = (id) => {
+const ItemOrderGeneral = () => {
 
-  console.log(id);
+  // console.log(id);
 
   return (
     <div className="itemOrderBox">
