@@ -1,6 +1,6 @@
 import NavSalon from "../pages/components/salonComp/nav/NavSalon";
 import OrderList from "../pages/components/salonComp/order/Order";
-import Menu from "../pages/components/salonComp/menu/Menu";
+import ShowMenu from "../pages/components/salonComp/menu/Menu";
 
 function Salon() {
   return (
@@ -8,11 +8,10 @@ function Salon() {
       <header className="headerSalon sectionA">
         <NavSalon />
       </header>
-      <body className="bodySalon">
-        <Menu />
+      <div className="bodySalon">
+        <ShowMenu />
         <OrderList />
-      </body>
-
+      </div>
     </div>
   );
 }

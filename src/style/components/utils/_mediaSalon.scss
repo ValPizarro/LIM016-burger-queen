@@ -1,22 +1,25 @@
-
  @media (min-width: 480px) and (max-width: 820px) {
-    //  .bodySalon{
-    //      background-color: bisque;
-    //  }
+     .bodySalon{
+         background-color: bisque;
+     }
     .headerSalon{
         width: 12%;
         .navSalon{
-            width:80%;
+            width:90%;
             .logoNav{
+                margin: 0;
+                padding: 0;
+                height: 15%;
+                width: 100%;
                 img{
-                    width: 2.5rem;
-                    height: 2.5rem;
+                    width: 70%;
                 }
-
             }
             .optionsNav{
+                height: 85%;
+                row-gap: 20%;
                 i{
-                    font-size: 2.5rem;
+                    font-size: 3rem;
                 }
             }
         }
@@ -46,7 +49,6 @@
                 height: 12%;
                 width: 98%;
                 margin: 0px 10px 10px 10px;
-
                 .btnSubmitOrder{
                     width: 53%;
                 }
@@ -69,9 +71,9 @@
  }
 
  @media (min-width: 820px) and (max-width: 1180px) {
-// .bodySalon{
-//     background-color: pink;
-// }
+.bodySalon{
+    background-color: pink;
+}
     .headerSalon{
         width: 12%;
     }
@@ -134,6 +136,15 @@
         .navSalon{
             display: flex;
             height: 100%;
+            .logoNav{
+                margin: 0;
+                padding: 0;
+                width: 80%;
+                img{
+                    height: 5rem;
+                    width: 100%;
+                }
+            }
         }
     }
     .bodySalon{
@@ -154,7 +165,6 @@
                 .selectMenu{
                     width: 100%;
                     justify-content: center;
-
                 }
             }
             .dishGeneral{
@@ -186,7 +196,6 @@
             .priceOrder{
                 height: 10%;
                 align-items: center;
-
             }
         }
     }
@@ -195,7 +204,6 @@
  @media (min-width: 1024px) and (max-width: 1180px) and (orientation: landscape){
     .headerSalon{
         width: 10%;
-
     }
     .bodySalon{
         display: flex;
@@ -203,7 +211,6 @@
         width: 98%;
         height: 100%;
         background-color: yellowgreen;
-
         .menu{
             height: 95%;
             .headerMenu{

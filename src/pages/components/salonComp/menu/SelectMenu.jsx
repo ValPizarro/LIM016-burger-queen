@@ -1,36 +1,34 @@
-import { onSnapshot, collection } from "firebase/firestore";
-import { useEffect, useState } from "react";
-import db from "../../../../firebase/config";
+// import { onSnapshot, collection } from "firebase/firestore";
+import { useState } from "react";
+import ShowMenu from "../menu/Menu";
 
-import CardDish from "./CardDish";
+// import db from "../../../../firebase/config";
+
 
 const SelectMenu = () => {
+  const [menu, setMenu] = useState("Desayuno");
 
-  const [menus, setMenus] = useState([]);
+  const HandleMenu = (e) => {
+    const currentMenu = e.target.value;
+    console.log(currentMenu);
+    setMenu(currentMenu);
+    return ShowMenu(menu);
+  };
 
-  useEffect(
-    () =>
-      onSnapshot(collection(db, "menu"), (snapshot) =>
-        setMenus(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-      ),
-    []
-  );
+  // useEffect(
+  //   () =>
+  //     onSnapshot(collection(db, "menu"), (snapshot) =>
+  //       setMenu(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+  //     ),
+  //   []
+  // );
 
-  const dataDesayuno = menus.filter((menu) => menu.menu === "Desayuno");
-  console.log(dataDesayuno);
+  // const dataDesayuno = menu.filter((menu) => menu.menu === "Desayuno");
+  // console.log(dataDesayuno);
 
-  const dataAlmuerzo = menus.filter((menu) => menu.menu === "Almuerzo");
-  console.log(dataDesayuno);
+  // const dataAlmuerzo = menu.filter((menu) => menu.menu === "Almuerzo");
+  // console.log(dataAlmuerzo);
 
-
-
-  const SelectMenuValue = (e) => {
-    const selectValue = e.target.value;
-
-    return selectValue === "Desayuno"
-      ? CardDish(dataDesayuno)
-      : CardDish(dataAlmuerzo);
-  }
 
   // return selectValue === "Desayuno"
   //   ? CardDish("Desayuno")
@@ -39,8 +37,10 @@ const SelectMenu = () => {
 
   return (
     <div className="selectMenu">
-      <button value={"Desayuno"}>Desayuno</button>
-      <button value={"Almuerzo"}>
+      <button value={"Desayuno"} onClick={HandleMenu}>
+        Desayuno
+      </button>
+      <button value={"Almuerzo"} onClick={HandleMenu}>
         Almuerzo
       </button>
     </div>

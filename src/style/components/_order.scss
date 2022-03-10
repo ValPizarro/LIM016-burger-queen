@@ -11,28 +11,34 @@
     color: map-get(color.$text , "color");
     border-bottom: solid 2px;
 
-    input{
-        margin: 2% 0%;
+    .infoOrder{
+        display: flex;
+        flex-direction: column;
         align-self: flex-start;
-        height: 25px;
-        color: map-get(color.$text , "color");
-        font-family: "Barlow", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 130%;
-        border: none;
-        outline: none;
-    }
-    input:active{
-        border: none;
-        border-radius: 8px;
-    }
-    p{
-        margin: 0% 0% 5% 0%;
-        align-self: flex-start;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 130%;
+
+        input{
+            margin: 2% 0%;
+            align-self: flex-start;
+            height: 25px;
+            color: map-get(color.$text , "color");
+            font-family: "Barlow", sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 130%;
+            border: none;
+            outline: none;
+        }
+        input:active{
+            border: none;
+            border-radius: 8px;
+        }
+        p{
+            margin: 0% 0% 5% 0%;
+            align-self: flex-start;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 130%;
+        }
     }
 }
 
