@@ -1,5 +1,5 @@
 import NavSalon from "../pages/components/salonComp/nav/NavSalon";
-import OrderList from "../pages/components/salonComp/order/Order";
+import TakeOrder from "../pages/components/salonComp/order/Order";
 import ShowMenu from "../pages/components/salonComp/menu/Menu";
 
 function Salon() {
@@ -9,8 +9,8 @@ function Salon() {
         <NavSalon />
       </header>
       <div className="bodySalon">
-        <ShowMenu />
-        <OrderList />
+        <ShowMenu/>
+        <TakeOrder/>
       </div>
     </div>
   );

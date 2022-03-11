@@ -4,6 +4,8 @@ import Swal from "sweetalert2";
 import ItemOrderGeneral from "./ItemOrder"
 
 const TakeOrder = ({ addOrder }) => {
+
+
   const initialOrder = {
     nameOrder: "",
     itemOrder: "",
