@@ -4,27 +4,6 @@ import Swal from "sweetalert2";
 import ItemOrderGeneral from "./ItemOrder"
 
 const TakeOrder = ({ addOrder }) => {
-  const pokemon=[
-    {
-      nombre:"pikachu",
-      color:"blue",
-      id:10,
-      precio:10
-    },
-    {
-      nombre:"bulbasour",
-      color:"green",
-      id:9,
-      precio:9
-    },
-    {
-      nombre:"charmander",
-      color:"orange",
-      id:11,
-      precio:15
-    },
- ]
-
   const initialOrder = {
     nameOrder: "",
     itemOrder: "",
@@ -38,7 +17,7 @@ const TakeOrder = ({ addOrder }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-/*     if (!order.nameOrder.trim() && !order.itemOrder.trim()) {
+    if (!order.nameOrder.trim() && !order.itemOrder.trim()) {
       return Swal.fire({
         title: "¡Error!",
         text: "Complete la orden",
@@ -75,7 +54,7 @@ const TakeOrder = ({ addOrder }) => {
       title: "¡Éxito",
       text: "El pedido fue enviado",
       icon: "success",
-    }); */
+    });
 
     setOrder(initialOrder);
 
@@ -113,8 +92,9 @@ const TakeOrder = ({ addOrder }) => {
           </div>
 
         </div>
-        <div >
-          <ItemOrderGeneral pokemon={pokemon} />
+        <div className="itemsTotalOrder">
+          <ItemOrderGeneral />
+
         </div>
 
         {/* <input
