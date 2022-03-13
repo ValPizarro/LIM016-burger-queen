@@ -1,13 +1,7 @@
-// import {ItemOrderGeneral} from "../order/ItemOrder"
-
 const Hamburguesa = require("../../../../img/menu/menu2/burgerDouble_V1.png");
 
-export const CardDish = ({ MenuDishes }) => {
+export const CardDish = ({ MenuDishes, ShowItem }) => {
 
-  const SelectCard = (e) => {
-    const IdDish = e.target.dataset.id;
-    console.log(IdDish);
-  };
 
   return (
     <div className="dishGeneral">
@@ -15,7 +9,12 @@ export const CardDish = ({ MenuDishes }) => {
         const { id, name, price } = menuDish;
 
         return (
-          <div className="carDish" data-id={id} key={id} onClick={SelectCard}>
+          <div
+            className="carDish"
+            data-id={id}
+            key={id}
+            onClick={() => ShowItem(id)}
+          >
             <div className="photoDish">
               <img data-id={id} src={Hamburguesa} alt="Food" />
             </div>
@@ -30,7 +29,6 @@ export const CardDish = ({ MenuDishes }) => {
           </div>
         );
       })}
-
     </div>
   );
 };

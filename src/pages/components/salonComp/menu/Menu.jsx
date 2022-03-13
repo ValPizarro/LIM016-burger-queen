@@ -2,31 +2,26 @@ import { CardDish } from "./CardDish";
 import SelectMenu from "./SelectMenu";
 import { useEffect, useState } from "react";
 import { onSnapshot, collection } from "firebase/firestore";
-import db from "../../../../firebase/config";
+import { db } from "../../../../firebase/config";
 
-const ShowMenu = () => {
-
+export const ShowMenu = ({ ShowItem }) => {
   const [allDishes, setAllDishes] = useState([]);
   const [MenuDishes, SetMenuDishes] = useState([]);
   const [curretMenu, SetCurrentMenu] = useState("Desayuno");
 
   useEffect(
     () =>
-       onSnapshot(collection(db, "menu"), (snapshot) =>
-      setAllDishes(
-      snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-    )
-  ),
+      onSnapshot(collection(db, "menu"), (snapshot) =>
+        setAllDishes(
+          snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+        )
+      ),
     []
   );
 
-  useEffect(
-    () => {
-      SetMenuDishes(allDishes.filter((dishes) => dishes.menu === curretMenu));
-
-    }, [curretMenu, allDishes]);
-
-    console.table(MenuDishes);
+  useEffect(() => {
+    SetMenuDishes(allDishes.filter((dishes) => dishes.menu === curretMenu));
+  }, [curretMenu, allDishes]);
 
   return (
     <div className="menu sectionB">
@@ -36,9 +31,7 @@ const ShowMenu = () => {
         </div>
         <SelectMenu SetCurrentMenu={SetCurrentMenu} />
       </div>
-        <CardDish MenuDishes={MenuDishes} />
+      <CardDish MenuDishes={MenuDishes} ShowItem={ShowItem} />
     </div>
   );
-}
-
-export default ShowMenu;
+};
