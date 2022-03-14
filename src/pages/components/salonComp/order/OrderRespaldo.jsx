@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
-
-import ItemOrderGeneral from "./ItemOrder"
+import ShowItems from "./ShowItems";
 
 const TakeOrder = ({ addOrder }) => {
+
   const initialOrder = {
     nameOrder: "",
     itemOrder: "",
@@ -80,7 +80,7 @@ const TakeOrder = ({ addOrder }) => {
             Enviar pedido
           </button>
           <div className="infoOrder">
-              <input
+            <input
               name="nameOrder"
               placeholder="Nombre del cliente"
               type="text"
@@ -90,11 +90,9 @@ const TakeOrder = ({ addOrder }) => {
             />
             <p>Orden N°: {numOrder}</p>
           </div>
-
         </div>
-        <div className="itemsTotalOrder">
-          <ItemOrderGeneral />
-
+        <div>
+          <ShowItems />
         </div>
 
         {/* <input
