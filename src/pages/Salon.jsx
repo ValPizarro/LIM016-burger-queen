@@ -31,8 +31,6 @@ function Salon() {
     setListDishes([...listDishes, dataByID ])
     }
     fetchData()
-
-    console.log(listDishes);
   }, [dishID])
 
   return (

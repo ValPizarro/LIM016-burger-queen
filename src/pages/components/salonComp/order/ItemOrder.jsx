@@ -1,8 +1,26 @@
+import { useState } from "react";
+
 const Hamburguesa = require("../../../../img/menu/menu2/burgerDouble_V1.png");
 
 const ItemOrder = ({ dish }) => {
-      const { name, price } = dish;
 
+  const { name, price } = dish;
+
+  let [num, setNum] = useState(1);
+  const totalPrice = price * num;
+
+  const aumentar = (e) => {
+    e.preventDefault();
+    setNum(++num);
+  };
+  const disminuir = (e) => {
+    e.preventDefault();
+    if (num === 1) {
+      setNum(1);
+    } else {
+      setNum(--num);
+    }
+  };
         return (
           <div className="itemOrderBox">
             <div className="descriptionOrderItem">
@@ -12,7 +30,7 @@ const ItemOrder = ({ dish }) => {
                 </div>
                 <div className="info">
                   <p>{name}</p>
-                  <p> {price}</p>
+                  <p>$ {price}.00</p>
                 </div>
               </div>
               <div className="noteOrder">
@@ -25,16 +43,22 @@ const ItemOrder = ({ dish }) => {
                 <button className="fa-regular fa-trash-can trash"></button>
               </div>
               <div className="secondRowButtons">
-                <p>$15.00 </p>
+                <p>$ {totalPrice}.00 </p>
               </div>
               <div className="firstRowButtons">
-                <button className="fa-regular fa-square-plus"></button>
-                <p>1</p>
-                <button className="fa-regular fa-square-minus"></button>
+                <button
+                  className="fa-regular fa-square-plus"
+                  onClick={aumentar}
+                ></button>
+                <p>{num}</p>
+                <button
+                  className="fa-regular fa-square-minus"
+                  onClick={disminuir}
+                ></button>
               </div>
             </div>
           </div>
-    );
+        );
 };
 
 export default ItemOrder;
