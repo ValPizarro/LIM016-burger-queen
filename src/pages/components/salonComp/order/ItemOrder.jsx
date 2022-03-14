@@ -21,6 +21,10 @@ const ItemOrder = ({ dish }) => {
       setNum(--num);
     }
   };
+  const deleteItem = (e) => {
+    e.preventDefault();
+    e.target.parentNode.parentNode.parentNode.remove();
+  };
         return (
           <div className="itemOrderBox">
             <div className="descriptionOrderItem">
@@ -40,7 +44,7 @@ const ItemOrder = ({ dish }) => {
 
             <div className="buttonsOrderBox">
               <div className="deleteOrder">
-                <button className="fa-regular fa-trash-can trash"></button>
+                <button className="fa-regular fa-trash-can trash" onClick={deleteItem}/>
               </div>
               <div className="secondRowButtons">
                 <p>{price}</p>
@@ -49,12 +53,12 @@ const ItemOrder = ({ dish }) => {
                 <button
                   className="fa-regular fa-square-plus"
                   onClick={aumentar}
-                ></button>
+                />
                 <p>{num}</p>
                 <button
                   className="fa-regular fa-square-minus"
                   onClick={disminuir}
-                ></button>
+                />
               </div>
             </div>
           </div>
