@@ -9,13 +9,11 @@ import { ShowOrder } from "./components/salonComp/order/Order";
 import { ShowMenu } from "../pages/components/salonComp/menu/Menu";
 
 function Salon() {
-  // const [dataDish, setDataDish] = useState([]);
   const [listDishes, setListDishes] = useState([]);
   const [dishID, setDishID] = useState([]);
 
   const ShowItem = async (id) => {
     setDishID(id);
-    // listDishes.push(dataDish);
   }
 
   const getDataByID = async (id) => {
