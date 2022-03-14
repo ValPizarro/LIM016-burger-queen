@@ -1,11 +1,7 @@
 const Hamburguesa = require("../../../../img/menu/menu2/burgerDouble_V1.png");
 
-const ItemOrder = ({ listDishes }) => {
-  return (
-    <div className="itemsTotalOrder">
-      {listDishes.map((dish) => {
-
-        const { name, price } = dish;
+const ItemOrder = ({ dish }) => {
+      const { name, price } = dish;
 
         return (
           <div className="itemOrderBox">
@@ -38,10 +34,7 @@ const ItemOrder = ({ listDishes }) => {
               </div>
             </div>
           </div>
-        );
-      })}
-    </div>
-  );
+    );
 };
 
 export default ItemOrder;

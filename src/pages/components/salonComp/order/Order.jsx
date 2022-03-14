@@ -1,4 +1,4 @@
-import ItemOrder from "./ItemOrder";
+import TotalItems from "./TotalItemsOrder";
 
 export const ShowOrder = ({ listDishes }) => {
   const numOrder = 345;
@@ -20,7 +20,7 @@ export const ShowOrder = ({ listDishes }) => {
             <p>Orden N°: {numOrder}</p>
           </div>
         </div>
-        <ItemOrder listDishes={listDishes} />
+        <TotalItems listDishes={listDishes} />
         <div className="priceOrder">
           <p className="item1">Total: </p>
           <p className="item2">$ {totalOrder}</p>
