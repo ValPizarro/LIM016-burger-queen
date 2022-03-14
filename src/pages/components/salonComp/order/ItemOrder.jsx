@@ -2,7 +2,7 @@
 // import { getDoc, doc } from "firebase/firestore";
 // import db from "../../../../firebase/config";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 
 const Hamburguesa = require("../../../../img/menu/menu2/burgerDouble_V1.png");
@@ -20,19 +20,27 @@ const Hamburguesa = require("../../../../img/menu/menu2/burgerDouble_V1.png");
 
 const ItemOrderGeneral = ({pokemon}) => {
   let [num, setNum]=useState(1)
+  
+  let refCount=useRef();
+  /* console.log(pokemon) */
 
-  console.log(pokemon)
   const eliminar=(e)=>{
    e.target.parentNode.parentNode.parentNode.remove() ;
  }
+  const prueba=(e)=>{
+    console.log(e.target.dataset.id)
+  /*   console.log(refCount.current.dataset.id) */
+ }
 
  const incrementar=(e)=>{
-   const idIncremenatar=e.target.dataset.id;
 
-   const valor= e.target.parentNode;
-   console.log(valor);
-   console.log(idIncremenatar)
-  /*  setNum(++num ) */
+ console.log(refCount.current.dataset.id)
+  console.log(e.target.id)
+   if (refCount.target.dataset.id===e.target.id){
+
+  setNum(++num )
+   }
+
 };
  const disminuir=()=>{setNum(--num)};
 
@@ -65,9 +73,9 @@ const ItemOrderGeneral = ({pokemon}) => {
         <p>$15.00 </p>
       </div>
       <div className="firstRowButtons">
-        <button className="fa-regular fa-square-plus" data-id={pokemon.id} onClick={incrementar}></button>
-        <p data-p={pokemon.id} className="num">{num}</p>
-        <button className="fa-regular fa-square-minus" data-id={pokemon.id} onClick={disminuir}></button>
+        <button className="fa-regular fa-square-plus" id={pokemon.id} onClick={incrementar}></button>
+        <p className="num" data-id={pokemon.id} onClick={prueba} ref={refCount}>{num}</p>
+        <button className="fa-regular fa-square-minus" data-minus={pokemon.id} onClick={disminuir}></button>
       </div>
     </div>
     </div>

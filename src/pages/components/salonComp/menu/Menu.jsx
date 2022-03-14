@@ -26,7 +26,7 @@ const ShowMenu = () => {
 
     }, [curretMenu, allDishes]);
 
-    console.table(MenuDishes);
+    /* console.table(MenuDishes); */
 
   return (
     <div className="menu sectionB">
