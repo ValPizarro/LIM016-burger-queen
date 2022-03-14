@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // import Swal from "sweetalert2";
 import { getDoc, doc } from "firebase/firestore";
@@ -7,23 +7,38 @@ import { db } from "../firebase/config";
 import NavSalon from "../pages/components/salonComp/nav/NavSalon";
 import { ShowOrder } from "./components/salonComp/order/Order";
 import { ShowMenu } from "../pages/components/salonComp/menu/Menu";
+import { async } from "@firebase/util";
 
 function Salon() {
-  const [dataDish, setDataDish] = useState([]);
+  // const [dataDish, setDataDish] = useState([]);
   const [listDishes, setListDishes] = useState([]);
+  const [dishID, setDishID] = useState([]);
 
   const ShowItem = async (id) => {
+    setDishID(id);
+    // listDishes.push(dataDish);
+  }
+
+  const getDataByID = async (id) => {
     const dishRef = doc(db, "menu", id);
     const dish = await getDoc(dishRef);
-    const infoDish = dish.data();
+    return dish.data();
+  };
 
 
-    setDataDish(infoDish);
 
-   listDishes.push(dataDish);
+  useEffect(() => {
 
-    // setDataDish(infoDish);
-  
+    async function fetchData () {
+    const dataByID = await getDataByID(dishID);
+    setListDishes([...listDishes, dataByID ])
+    }
+    fetchData()
+
+    console.log(listDishes);
+  },[dishID])
+
+ 
     // if (listDishes.length !== 0) {
     //   setListDishes([...listDishes, dataDish]);
     //   console.table(listDishes);
@@ -31,12 +46,10 @@ function Salon() {
 
     // setListDishes(infoDish);
 
-
-      // const newDataDishes = listDishes.push(dataDish);
-      // setListDishes(newDataDishes);
-      // console.table(listDishes);
-    
-  }
+    // const newDataDishes = listDishes.push(dataDish);
+    // setListDishes(newDataDishes);
+    // console.table(listDishes);
+  
 
   //   if (listDishes.length === 0) {
   //     console.log("no hay platos");
@@ -76,8 +89,7 @@ function Salon() {
       <div className="bodySalon">
         <ShowMenu ShowItem={ShowItem} />
         <div className="Order">
-          <ShowOrder />
-          {/* <ShowOrder dataDish={dataDish} listDishes={listDishes} /> */}
+          <ShowOrder listDishes={listDishes} />
         </div>
       </div>
     </div>
