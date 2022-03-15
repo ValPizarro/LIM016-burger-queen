@@ -6,7 +6,7 @@ export const CardDish = ({ MenuDishes, ShowItem }) => {
   return (
     <div className="dishGeneral">
       {MenuDishes.map((menuDish) => {
-        const { id, name, price } = menuDish;
+        const { id, name,img, price } = menuDish;
 
         return (
           <div
@@ -16,7 +16,7 @@ export const CardDish = ({ MenuDishes, ShowItem }) => {
             onClick={() => ShowItem(id)}
           >
             <div className="photoDish">
-              <img data-id={id} src={Hamburguesa} alt="Food" />
+              <img data-id={id} src={img} alt="Food" />
             </div>
             <div className="infoDish">
               <p data-id={id} className="textInfo1">

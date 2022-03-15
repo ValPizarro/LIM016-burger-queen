@@ -12,6 +12,8 @@ function Salon() {
   const [listDishes, setListDishes] = useState([]);
   const [dishID, setDishID] = useState([]);
 
+  // const [orders, setOrders] = useState([]);
+
   const ShowItem = async (id) => {
     setDishID(id);
   }
@@ -24,12 +26,17 @@ function Salon() {
 
   useEffect(() => {
 
-    async function fetchData () {
-    const dataByID = await getDataByID(dishID);
-    setListDishes([...listDishes, dataByID ])
+    async function fetchData() {
+      const dataByID = await getDataByID(dishID);
+      setListDishes([...listDishes, dataByID])
     }
     fetchData()
-  }, [dishID])
+  }, [dishID]);
+
+
+  const addOrder = (order) => {
+    console.log(order);
+  };
 
   return (
     <div className="salonGeneral">
@@ -38,7 +45,9 @@ function Salon() {
       </header>
       <div className="bodySalon">
         <ShowMenu ShowItem={ShowItem} />
-        <ShowOrder listDishes={listDishes} />
+        <ShowOrder listDishes={listDishes}
+          addOrder={addOrder}
+        />
       </div>
     </div>
   );
