@@ -1,10 +1,8 @@
 import { useRef, useState } from "react";
 
-const Hamburguesa = require("../../../../img/menu/menu2/burgerDouble_V1.png");
-
 const ItemOrder = ({ dish, addItems }) => {
 
-  const { name, price,img } = dish;
+  const { name, img, price } = dish;
   let [num, setNum] = useState(1);
   const totalPrice = price * num;
   let [noteItemOrder, setNoteItemOrder] = useState("");
@@ -72,12 +70,13 @@ const ItemOrder = ({ dish, addItems }) => {
           />
         </div>
         <div className="secondRowButtons">
-          <p >$ {totalPrice}.00 </p>
+          <p>$ {totalPrice}.00 </p>
         </div>
         <div className="firstRowButtons">
-          <button className="fa-regular fa-square-plus" onClick={aumentar} />
-          <p>{num}</p>
           <button className="fa-regular fa-square-minus" onClick={disminuir} />
+          <p>{num}</p>
+          <button className="fa-regular fa-square-plus" onClick={aumentar} />
+
         </div>
       </div>
     </div>

@@ -20,7 +20,13 @@ export const ShowMenu = ({ ShowItem }) => {
   );
 
   useEffect(() => {
-    SetMenuDishes(allDishes.filter((dishes) => dishes.menu === curretMenu));
+    if (curretMenu === "Bebida") {
+      SetMenuDishes(
+        allDishes.filter((dishes) => dishes.type === curretMenu)
+      );
+    } else {
+      SetMenuDishes(allDishes.filter((dishes) => dishes.menu === curretMenu));
+    }
   }, [curretMenu, allDishes]);
 
   return (

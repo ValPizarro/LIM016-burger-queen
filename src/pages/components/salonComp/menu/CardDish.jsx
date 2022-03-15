@@ -1,4 +1,3 @@
-const Hamburguesa = require("../../../../img/menu/menu2/burgerDouble_V1.png");
 
 export const CardDish = ({ MenuDishes, ShowItem }) => {
 
@@ -6,7 +5,7 @@ export const CardDish = ({ MenuDishes, ShowItem }) => {
   return (
     <div className="dishGeneral">
       {MenuDishes.map((menuDish) => {
-        const { id, name,img, price } = menuDish;
+        const { id, name, img, price } = menuDish;
 
         return (
           <div
