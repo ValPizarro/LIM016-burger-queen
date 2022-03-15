@@ -17,15 +17,11 @@ const ItemOrder = ({ dish, addItems }) => {
   });
 
   const aumentar = (e) => {
-  /*console.log(refTotalPrice.current.innerHTML)
-    console.log(refCantidad.current.innerHTML)*/
     e.preventDefault();
     setNum(++num);
   };
 
   const disminuir = (e) => {
-   /*console.log(refTotalPrice.current.innerHTML)
-     console.log(refCantidad.current.innerHTML)*/
     e.preventDefault();
     if (num === 1) {
       setNum(1);

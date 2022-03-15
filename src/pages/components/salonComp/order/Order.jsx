@@ -36,6 +36,7 @@ export const ShowOrder = ({ listDishes, addOrder }) => {
   };
 
   const handleChange = (e) => {
+    console.log(e.target.name)
      setOrder({
       ...order,
       [e.target.name]: e.target.value
