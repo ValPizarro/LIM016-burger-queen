@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { onSnapshot, collection } from "firebase/firestore";
 import { db } from "../../../../firebase/config";
 
-export const ShowMenu = ({ ShowItem }) => {
+export const Menu = ({ ShowItem }) => {
   const [allDishes, setAllDishes] = useState([]);
   const [MenuDishes, SetMenuDishes] = useState([]);
   const [curretMenu, SetCurrentMenu] = useState("Desayuno");

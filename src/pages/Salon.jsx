@@ -5,8 +5,8 @@ import { getDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 import NavSalon from "../pages/components/salonComp/nav/NavSalon";
-import { ShowOrder } from "./components/salonComp/order/Order";
-import { ShowMenu } from "../pages/components/salonComp/menu/Menu";
+import { Order } from "./components/salonComp/order/Order";
+import { Menu } from "../pages/components/salonComp/menu/Menu";
 
 function Salon() {
   const [listDishes, setListDishes] = useState([]);
@@ -39,8 +39,8 @@ function Salon() {
         <NavSalon />
       </header>
       <div className="bodySalon">
-        <ShowMenu ShowItem={ShowItem} />
-        <ShowOrder listDishes={listDishes}
+        <Menu ShowItem={ShowItem} />
+        <Order listDishes={listDishes}
 
         />
       </div>
