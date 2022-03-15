@@ -1,19 +1,23 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const Hamburguesa = require("../../../../img/menu/menu2/burgerDouble_V1.png");
 
 const ItemOrder = ({ dish }) => {
 
   const { name, price } = dish;
-
+  const refTotalPrice=useRef();
+  const refCantidad=useRef();
   let [num, setNum] = useState(1);
   const totalPrice = price * num;
-
   const aumentar = (e) => {
+    console.log(refTotalPrice.current.innerHTML)
+    console.log(refCantidad.current.innerHTML)
     e.preventDefault();
     setNum(++num);
   };
   const disminuir = (e) => {
+    console.log(refTotalPrice.current.innerHTML)
+    /* console.log(refCantidad.current.innerHTML) */
     e.preventDefault();
     if (num === 1) {
       setNum(1);
@@ -21,9 +25,13 @@ const ItemOrder = ({ dish }) => {
       setNum(--num);
     }
   };
+
   const deleteItem = (e) => {
     e.preventDefault();
     e.target.parentNode.parentNode.parentNode.remove();
+  };
+  const valueTotalPrice = () => {
+    console.log(refTotalPrice)
   };
         return (
           <div className="itemOrderBox">
@@ -47,14 +55,14 @@ const ItemOrder = ({ dish }) => {
                 <button className="fa-regular fa-trash-can trash" onClick={deleteItem}/>
               </div>
               <div className="secondRowButtons">
-                <p>{price}</p>
+                <p onChage={valueTotalPrice} ref={refTotalPrice}>{totalPrice}</p>
               </div>
               <div className="firstRowButtons">
                 <button
                   className="fa-regular fa-square-plus"
                   onClick={aumentar}
                 />
-                <p>{num}</p>
+                <p ref={refCantidad}>{num}</p>
                 <button
                   className="fa-regular fa-square-minus"
                   onClick={disminuir}
