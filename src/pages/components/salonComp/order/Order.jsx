@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import TotalItems from "./TotalItemsOrder";
 
-export const ShowOrder = ({ listDishes }) => {
+export const Order = ({ listDishes }) => {
   const initialOrderInfo = {
     nameOrder: "",
     numOrder: "",
@@ -40,8 +40,6 @@ export const ShowOrder = ({ listDishes }) => {
     });
   };
 
-  const [totalOrder, setTotalOrder] = useState(0)
-
   return (
     <>
       <form className="formOrder" onSubmit={handleSubmit}>
@@ -72,13 +70,8 @@ export const ShowOrder = ({ listDishes }) => {
           listDishes={listDishes}
           infoOrder={infoOrder}
           handleSubmit={handleSubmit}
-          setTotalOrder={setTotalOrder}
           addOrder={addOrder}
         />
-        <div className="priceOrder">
-          <p className="item1">Total: </p>
-          <p className="item2">$ {totalOrder}.00</p>
-        </div>
       </form>
     </>
   );
