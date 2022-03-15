@@ -4,6 +4,8 @@ import TotalItems from "./TotalItemsOrder";
 
 export const ShowOrder = ({ listDishes, addOrder }) => {
 
+  // ¿Cómo realizamos extraemos el precio total? (Suma de todos los platos)
+
   // const [arrayItemsOrder, setArrayItemsOrder] = useState([]);
 
   // const [getItemOrder, setGetItemOrder] = useState([]);
