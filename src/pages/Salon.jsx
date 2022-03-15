@@ -12,8 +12,6 @@ function Salon() {
   const [listDishes, setListDishes] = useState([]);
   const [dishID, setDishID] = useState([]);
 
-  // const [orders, setOrders] = useState([]);
-
   const ShowItem = async (id) => {
     setDishID(id);
   }
@@ -34,10 +32,6 @@ function Salon() {
   }, [dishID]);
 
 
-  const addOrder = (order) => {
-    console.log(order);
-  };
-
   return (
     <div className="salonGeneral">
       <header className="headerSalon sectionA">
@@ -46,7 +40,7 @@ function Salon() {
       <div className="bodySalon">
         <ShowMenu ShowItem={ShowItem} />
         <ShowOrder listDishes={listDishes}
-          addOrder={addOrder}
+
         />
       </div>
     </div>

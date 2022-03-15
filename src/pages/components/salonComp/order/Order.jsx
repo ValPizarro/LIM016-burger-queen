@@ -2,44 +2,53 @@ import { useState } from "react";
 
 import TotalItems from "./TotalItemsOrder";
 
-export const ShowOrder = ({ listDishes, addOrder }) => {
+export const ShowOrder = ({ listDishes }) => {
+
 
   // ¿Cómo realizamos extraemos el precio total? (Suma de todos los platos)
 
-  // const [arrayItemsOrder, setArrayItemsOrder] = useState([]);
+  // const initialOrder = {
+  //   nameOrder: "",
+  //   numOrder: "",
+  //   itemsOrder: [],
+  //   totalPriceOrder: 0,
+  //   stateOrder: "generado",
+  // };
 
-  // const [getItemOrder, setGetItemOrder] = useState([]);
-
-  const initialOrder = {
+  const initialOrderInfo = {
     nameOrder: "",
     numOrder: "",
-    itemsOrder: [],
     totalPriceOrder: 0,
     stateOrder: "generado",
   };
 
-  const [order, setOrder] = useState(initialOrder);
+  const [infoOrder, setinfoOrder] = useState(initialOrderInfo);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const [order, setOrder] = useState(initialOrder);
 
-    addOrder({
-      nameOrder: order.nameOrder,
-      numOrder: order.numOrder,
-      itemsOrder: [],
-      totalPriceOrder: totalOrder,
-      stateOrder: "generado",
-    });
-
-    setOrder(initialOrder);
-
+  const addOrder = (order) => {
+    console.log(order);
   };
 
+  const handleSubmit = (order) => {
+  //   e.preventDefault();
+
+  //   setinfoOrder({
+  //     nameOrder: infoOrder.nameOrder,
+  //     numOrder: infoOrder.numOrder,
+  //     totalPriceOrder: totalOrder,
+  //     stateOrder: "generado",
+  //   })
+  };
+
+    // setinfoOrder(initialOrderInfo);
+
+
   const handleChange = (e) => {
-     setOrder({
-      ...order,
-      [e.target.name]: e.target.value
-    })
+     setinfoOrder({
+       ...infoOrder,
+       [e.target.name]: e.target.value,
+     });
   };
 
 const totalOrder = 0
@@ -58,7 +67,7 @@ const totalOrder = 0
               type="text"
               className="nameOrder"
               onChange={handleChange}
-              value={order.nameOrder}
+              value={infoOrder.nameOrder}
             />
             <input
               name="numOrder"
@@ -66,11 +75,11 @@ const totalOrder = 0
               type="text"
               className="numOrder"
               onChange={handleChange}
-              value={order.numOrder}
+              value={infoOrder.numOrder}
             />
           </div>
         </div>
-        <TotalItems listDishes={listDishes}  />
+        <TotalItems listDishes={listDishes} infoOrder={infoOrder} addOrder={addOrder}/>
         <div className="priceOrder">
           <p className="item1">Total: </p>
           <p className="item2">$ {totalOrder}</p>

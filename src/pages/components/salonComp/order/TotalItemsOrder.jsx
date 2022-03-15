@@ -1,18 +1,41 @@
+import { useState } from "react";
 import ItemOrder from "./ItemOrder";
+//recibe info
+const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
+  console.log(infoOrder);
 
-const TotalItems = ({ listDishes }) => {
+  const initialOrder = {
+    nameOrder: "",
+    numOrder: "",
+    itemsOrder: [],
+    totalPriceOrder: 0,
+    stateOrder: "generado",
+  };
 
-  // ¿Crear el array de platos aquí?
+  const [order, setOrder] = useState(initialOrder);
+  const [arrayItemsOrder, setArrayItemsOrder] = useState([]);
 
-    const addItems = async (itemsOrder) => {
-        const arrayItemsOrder = itemsOrder;
-        console.log(arrayItemsOrder);
-    };
+  const { nameOrder, numOrder, totalPriceOrder } = infoOrder;
+
+  addOrder({
+    nameOrder: nameOrder,
+    numOrder: numOrder,
+    itemsOrder: [arrayItemsOrder],
+    totalPriceOrder: totalPriceOrder,
+    stateOrder: "generado",
+  });
+
+  const addItems = async (itemsOrder) => {
+    setArrayItemsOrder([...arrayItemsOrder, itemsOrder]);
+    console.log(arrayItemsOrder);
+  };
 
   return (
+    // boton de enviar pedido ( prop nombre / resto de info)
+
     <div className="itemsTotalOrder">
       {listDishes.map((dish) => (
-          <ItemOrder dish={dish} addItems={addItems}/>
+        <ItemOrder dish={dish} addItems={addItems} />
       ))}
     </div>
   );

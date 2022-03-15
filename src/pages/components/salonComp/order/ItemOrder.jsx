@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ItemOrder = ({ dish, addItems }) => {
 
@@ -7,14 +7,17 @@ const ItemOrder = ({ dish, addItems }) => {
   const totalPrice = price * num;
   let [noteItemOrder, setNoteItemOrder] = useState("");
 
-  addItems({
-    nameItemOrder: name,
-    priceItemOrder: price,
-    numItemOrder: num,
-    priceTotalItemOrder: totalPrice,
-    noteOrder: noteItemOrder,
-    optionOrder: false,
-  });
+  useEffect(() => {
+    addItems({
+      nameItemOrder: name,
+      priceItemOrder: price,
+      numItemOrder: num,
+      priceTotalItemOrder: totalPrice,
+      noteOrder: noteItemOrder,
+      optionOrder: false,
+    });
+  }, [noteItemOrder, num]);
+
 
   const aumentar = (e) => {
     e.preventDefault();
