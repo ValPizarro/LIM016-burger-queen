@@ -40,7 +40,7 @@ export const ShowOrder = ({ listDishes }) => {
     });
   };
 
-  // const [totalOrder, setTotalOrder] = useState(0)
+  const [totalOrder, setTotalOrder] = useState(0)
 
   return (
     <>
@@ -72,11 +72,12 @@ export const ShowOrder = ({ listDishes }) => {
           listDishes={listDishes}
           infoOrder={infoOrder}
           handleSubmit={handleSubmit}
+          setTotalOrder={setTotalOrder}
           addOrder={addOrder}
         />
         <div className="priceOrder">
           <p className="item1">Total: </p>
-          <p className="item2">$ 1.00</p>
+          <p className="item2">$ {totalOrder}.00</p>
         </div>
       </form>
     </>
