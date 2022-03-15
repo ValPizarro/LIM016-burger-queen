@@ -29,6 +29,7 @@ function Salon() {
       setListDishes([...listDishes, dataByID])
     }
     fetchData()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dishID]);
 
 
