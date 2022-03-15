@@ -2,13 +2,13 @@ import { useState } from "react";
 
 import TotalItems from "./TotalItemsOrder";
 
-export const ShowOrder = ({ listDishes, addOrder }) => {
-
-  // ¿Cómo realizamos extraemos el precio total? (Suma de todos los platos)
-
-  // const [arrayItemsOrder, setArrayItemsOrder] = useState([]);
-
-  // const [getItemOrder, setGetItemOrder] = useState([]);
+export const ShowOrder = ({ listDishes }) => {
+  const initialOrderInfo = {
+    nameOrder: "",
+    numOrder: "",
+    totalPriceOrder: 0,
+    stateOrder: "generado",
+  };
 
   const initialOrder = {
     nameOrder: "",
@@ -18,32 +18,29 @@ export const ShowOrder = ({ listDishes, addOrder }) => {
     stateOrder: "generado",
   };
 
+  const [infoOrder, setinfoOrder] = useState(initialOrderInfo);
   const [order, setOrder] = useState(initialOrder);
 
-  const handleSubmit = (e) => {
+  const addOrder = async (newOrder) => {
+    setOrder(newOrder);
+    console.log(order);
+  };
+
+  const handleSubmit = (order, e) => {
     e.preventDefault();
 
-    addOrder({
-      nameOrder: order.nameOrder,
-      numOrder: order.numOrder,
-      itemsOrder: [],
-      totalPriceOrder: totalOrder,
-      stateOrder: "generado",
-    });
-
-    setOrder(initialOrder);
-
+    // aqui va el firestore - addDoc
+    console.log(order);
   };
 
   const handleChange = (e) => {
-    console.log(e.target.name)
-     setOrder({
-      ...order,
-      [e.target.name]: e.target.value
-    })
+    setinfoOrder({
+      ...infoOrder,
+      [e.target.name]: e.target.value,
+    });
   };
 
-const totalOrder = 0
+  // const [totalOrder, setTotalOrder] = useState(0)
 
   return (
     <>
@@ -59,7 +56,7 @@ const totalOrder = 0
               type="text"
               className="nameOrder"
               onChange={handleChange}
-              value={order.nameOrder}
+              value={infoOrder.nameOrder}
             />
             <input
               name="numOrder"
@@ -67,14 +64,19 @@ const totalOrder = 0
               type="text"
               className="numOrder"
               onChange={handleChange}
-              value={order.numOrder}
+              value={infoOrder.numOrder}
             />
           </div>
         </div>
-        <TotalItems listDishes={listDishes}  />
+        <TotalItems
+          listDishes={listDishes}
+          infoOrder={infoOrder}
+          handleSubmit={handleSubmit}
+          addOrder={addOrder}
+        />
         <div className="priceOrder">
           <p className="item1">Total: </p>
-          <p className="item2">$ {totalOrder}</p>
+          <p className="item2">$ 1.00</p>
         </div>
       </form>
     </>

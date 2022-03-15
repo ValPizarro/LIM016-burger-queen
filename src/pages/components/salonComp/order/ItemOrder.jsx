@@ -1,20 +1,25 @@
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const ItemOrder = ({ dish, addItems }) => {
 
-  const { name, img, price } = dish;
+  const { id, name, img, price } = dish;
   let [num, setNum] = useState(1);
   const totalPrice = price * num;
   let [noteItemOrder, setNoteItemOrder] = useState("");
 
-  addItems({
-    nameItemOrder: name,
-    priceItemOrder: price,
-    numItemOrder: num,
-    priceTotalItemOrder: totalPrice,
-    noteOrder: noteItemOrder,
-    optionOrder: false,
-  });
+  useEffect(() => {
+    addItems({
+      idItemOrder: id,
+      nameItemOrder: name,
+      priceItemOrder: price,
+      numItemOrder: num,
+      priceTotalItemOrder: totalPrice,
+      noteOrder: noteItemOrder,
+      optionOrder: false,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [num, noteItemOrder]);
+
 
   const aumentar = (e) => {
     e.preventDefault();
