@@ -9,13 +9,15 @@ const ItemOrder = ({ dish, addItems }) => {
 
   useEffect(() => {
     addItems({
+      extraOrder1:'huevo',
+      extraOrder2:'queso',
       idItemOrder: id,
       nameItemOrder: name,
-      priceItemOrder: price,
-      numItemOrder: num,
-      priceTotalItemOrder: totalPrice,
       noteOrder: noteItemOrder,
-      optionOrder: false,
+      numItemOrder: num,
+      optionOrder:'carne',
+      priceItemOrder: price,
+      priceTotalItemOrder: totalPrice,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [num, noteItemOrder]);
