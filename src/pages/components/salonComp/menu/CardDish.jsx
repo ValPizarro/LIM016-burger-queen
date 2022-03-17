@@ -1,23 +1,21 @@
-// import {ItemOrderGeneral} from "../order/ItemOrder"
 
-const Hamburguesa = require("../../../../img/menu/menu2/burgerDouble_V1.png");
+export const CardDish = ({ MenuDishes, ShowItem }) => {
 
-export const CardDish = ({ MenuDishes }) => {
-
-  const SelectCard = (e) => {
-    const IdDish = e.target.dataset.id;
-    console.log(IdDish);
-  };
 
   return (
     <div className="dishGeneral">
       {MenuDishes.map((menuDish) => {
-        const { id, name, price } = menuDish;
+        const { id, name, img, price } = menuDish;
 
         return (
-          <div className="carDish" data-id={id} key={id} onClick={SelectCard}>
+          <div
+            className="carDish"
+            data-id={id}
+            key={id}
+            onClick={() => ShowItem(id)}
+          >
             <div className="photoDish">
-              <img data-id={id} src={Hamburguesa} alt="Food" />
+              <img data-id={id} src={img} alt="Food" />
             </div>
             <div className="infoDish">
               <p data-id={id} className="textInfo1">
@@ -30,7 +28,6 @@ export const CardDish = ({ MenuDishes }) => {
           </div>
         );
       })}
-
     </div>
   );
 };

@@ -14,6 +14,9 @@ const SelectMenu = ({ SetCurrentMenu }) => {
       <button value={"Almuerzo"} onClick={HandleMenu}>
         Almuerzo
       </button>
+      <button value={"Bebida"} onClick={HandleMenu}>
+        Bebidas
+      </button>
     </div>
   );
 };

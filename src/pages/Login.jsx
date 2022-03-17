@@ -1,4 +1,5 @@
-const quicklyWhite=require("../img/brand/quickly_white.png");
+const quicklyWhite = require("../img/brand/quickly_white.png");
+
 function Login() {
 
     return (
