@@ -8,7 +8,7 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
 
   useEffect(() => {
     addOrder({
-      /* itemsOrder: [arrayItemsOrder], */
+      itemsOrder:arrayItemsOrder,
       nameOrder: nameOrder,
       numOrder: numOrder,
       stateOrder: "generado",

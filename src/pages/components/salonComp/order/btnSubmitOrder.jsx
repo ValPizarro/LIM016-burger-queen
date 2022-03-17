@@ -4,15 +4,19 @@ import { db } from "../../../../firebase/config";
 const BtnSubmitOrder=({ order })=>{
     const handleSubmit =  async  (e) => {
         e.preventDefault();
-        const docRef = await addDoc(collection(db, "prueba"), {
-          nameOrder: 'hola',
-          numOrder: 22,
-          stateOrder: "generado",
-          totalPriceOrder: 22,
-        });
+        console.log(order)
+        try{
+        const docRef = await addDoc(collection(db, "order"), 
+         order
+
+        );
         console.log("Document written with ID: ", docRef.id);
         // aqui va el firestore - addDoc
         console.log(order)
+        }catch(error){
+            console.log(error)
+        }
+
     };
     return(
     <button className="btnSubmitOrder" type="submit" onClick={handleSubmit}>
