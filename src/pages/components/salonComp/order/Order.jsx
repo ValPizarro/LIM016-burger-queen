@@ -65,6 +65,7 @@ export const Order = ({ listDishes }) => {
               value={infoOrder.numOrder}
             />
           </div>
+
         </div>
         <TotalItems
           listDishes={listDishes}

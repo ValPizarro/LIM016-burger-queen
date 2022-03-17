@@ -8,6 +8,7 @@ import NavSalon from "../pages/components/salonComp/nav/NavSalon";
 import { Order } from "./components/salonComp/order/Order";
 import { Menu } from "../pages/components/salonComp/menu/Menu";
 
+
 function Salon() {
   const [listDishes, setListDishes] = useState([]);
   const [dishID, setDishID] = useState([]);
@@ -40,9 +41,7 @@ function Salon() {
       </header>
       <div className="bodySalon">
         <Menu ShowItem={ShowItem} />
-        <Order listDishes={listDishes}
-
-        />
+        <Order listDishes={listDishes}/>
       </div>
     </div>
   );
