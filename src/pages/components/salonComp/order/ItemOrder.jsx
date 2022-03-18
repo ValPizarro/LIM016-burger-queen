@@ -79,7 +79,6 @@ const ItemOrder = ({ dish, addItems }) => {
           <button className="fa-regular fa-square-minus" onClick={disminuir} />
           <p>{num}</p>
           <button className="fa-regular fa-square-plus" onClick={aumentar} />
-
         </div>
       </div>
     </div>
