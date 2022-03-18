@@ -6,7 +6,7 @@ const BtnSubmitOrder=({ order })=>{
         e.preventDefault();
         console.log(order)
         try{
-        const docRef = await addDoc(collection(db, "order"), 
+        const docRef = await addDoc(collection(db, "order"),
          order
 
         );
