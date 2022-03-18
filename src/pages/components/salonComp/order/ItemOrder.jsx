@@ -82,6 +82,18 @@ const ItemOrder = ({ dish, addItems }) => {
 
         </div>
       </div>
+      <div className="secondRowButtons">
+        <p>$15.00 </p>
+      </div>
+      <div className="firstRowButtons">
+        <button className="fa-regular fa-square-plus" data-id={pokemon.id} onClick={incrementar}></button>
+        <p data-p={pokemon.id} className="num">{num}</p>
+        <button className="fa-regular fa-square-minus" data-id={pokemon.id} onClick={disminuir}></button>
+      </div>
+    </div>
+    </div>
+    )})}
+
     </div>
   );
 };
