@@ -1,10 +1,11 @@
+
 const GetOrder = ({ order, deleteOrder,editOrder }) => {
-  const { id, nameOrder, itemOrder, stateOrder, optionOrder } = order;
+  const { id, nameOrder, optionOrder } = order;
   return (
     <li>
       <div>
         <div> {nameOrder} </div>
-        <p>{itemOrder}</p>
+        {/* <p>{itemOrder}</p> */}
         <p>{optionOrder}</p>
       </div>
       <div>
@@ -12,7 +13,7 @@ const GetOrder = ({ order, deleteOrder,editOrder }) => {
         <button onClick={() => editOrder(id)}>Editar</button>
       </div>
 
-      <p>{stateOrder}</p>
+      {/* <p>{stateOrder}</p> */}
     </li>
   );
 };

@@ -1,7 +1,11 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
+import ShowItems from "./ShowItems";
 
 const TakeOrder = ({ addOrder }) => {
+
+  // 
+
   const initialOrder = {
     nameOrder: "",
     itemOrder: "",
@@ -67,43 +71,59 @@ const TakeOrder = ({ addOrder }) => {
       [name]: type === "checkbox" ? checked : value,
     }));
   };
+  let numOrder = 345
+  let totalOrder = 45.001;
 
   return (
     <>
+      <form className="formOrder sectionC" onSubmit={handleSubmit}>
+        <div className="headerOrder">
+          <button className="btnSubmitOrder" type="submit">
+            Enviar pedido
+          </button>
+          <div className="infoOrder">
+            <input
+              name="nameOrder"
+              placeholder="Nombre del cliente"
+              type="text"
+              className="nameOrder"
+              onChange={handleChange}
+              value={order.nameOrder}
+            />
+            <p>Orden N°: {numOrder}</p>
+          </div>
+        </div>
+        <div>
+          <ShowItems />
+        </div>
 
-      <form className="FormOrder" onSubmit={handleSubmit}>
-      <button className="btnSubmitOder" type="submit">Enviar pedido</button>
-        <input
-          name="nameOrder"
-          placeholder="Nombre del cliente"
-          type="text"
-          className="nameOrder InputOrder"
-          onChange={handleChange}
-          value={order.nameOrder}
-        />
-        <input
+        {/* <input
           name="itemOrder"
           placeholder="Ingrese pedido"
           type="text"
           className="itemOrder InputOrder"
           onChange={handleChange}
           value={order.itemOrder}
-        />
-        <textarea
+        /> */}
+        {/* <textarea
           name="noteOrder"
           placeholder="Anotación para el chef"
           className="note InputOrder"
           onChange={handleChange}
           value={order.noteOrder}
-        />
-        <div>
+        /> */}
+        {/* <div>
           <input
             name="optionOrder"
             type="checkbox"
             onChange={handleChange}
             checked={order.optionMeat}
-          />
-          <label> Carne</label>
+          /> */}
+        {/* <label> Carne</label> */}
+        {/* </div> */}
+        <div className="priceOrder">
+          <p className="item1">Total: </p>
+          <p className="item2">$ {totalOrder}</p>
         </div>
       </form>
     </>

@@ -1,17 +1,34 @@
 @forward '../../style/components/order';
-.ContentLivingRoom {
+
+.salonGeneral{
     height: 100vh;
+    width: 100%;
+    max-width: 10000px;
     display: flex;
     align-items: center;
-    width: 100%;
+    overflow-y: hidden;
 }
-.Menu {
-    height: 100vh;
-    width: 45%;
+.bodySalon{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 98%;
+    width: 90%;
+}
+.menu{
+    height: 90%;
+    width: 50%;
     margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
 }
-.Order{
-    height: 100%;
-    margin: 10px;
-    width: 45%;
+.formOrder {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 95%;
+    font-family: "Barlow", sans-serif;
+
 }

@@ -1,27 +1,247 @@
 @use '../vars/colors' as color;
 
-.FormOrder {
+.headerOrder{
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    margin: 10px;
+    width: 95%;
+    height: 20%;
+    color: map-get(color.$text , "color");
+    border-bottom: solid 2px;
+
+    .infoOrder{
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        height: 60%;
+
+        input{
+            margin: 2% 0%;
+            align-self: flex-start;
+            height: 25px;
+            color: map-get(color.$text , "color");
+            font-family: "Barlow", sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 130%;
+            border: none;
+            outline: none;
+        }
+        input:active{
+            border: none;
+            border-radius: 8px;
+        }
+        p{
+            align-self: flex-start;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 130%;
+        }
+    }
 }
-.btnSubmitOder {
+
+.btnSubmitOrder {
+    margin: 10px;
+    height: 40%;
+    width: 100%;
     font-size: 20px;
-    font-family: "Barlow", sans-serif;
     border: none;
     border-radius: 5px;
-    display: flex; 
-    width: 98%;
-    background-color: #EA7C69;
-    color: #ffff;
+    background-color: map-get(color.$buttons , "color");
+    color: map-get(color.$background , "general");
+}
+.btnSubmitOrder:hover{
+    opacity: 1;
+    box-shadow:
+                0 0 25px map-get(color.$buttons, "color");
+}
+
+.itemsTotalOrder{
+    display: flex;
+    padding-bottom: 10px;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 45px;
-    margin: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 510px;
+    width: 96%;
 }
-.InputOrder {
+.itemsTotalOrder::-webkit-scrollbar{
+    height: 90%;
+    width: 7px;
+    background: map-get(color.$background, "conteiners");
+}
+.itemsTotalOrder::-webkit-scrollbar-thumb{
+    background: map-get(color.$buttons, "color");
+    border-radius: 8px;
+}
+.itemOrderBox{
+    margin: 0.5rem;
+    display: flex;
     width: 98%;
-    margin: 10px;
-    height: 40px;
+    height: 7rem;
+    color: map-get(color.$background , "title");
+    border: map-get(color.$background , "border") solid 1px;
+    border-radius: 8px;
 }
+    .descriptionOrderItem{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 70%;
+        padding: 2% 0;
+        .infoDish{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            .photo{
+                display: flex;
+                justify-content: center;
+                width: 30%;
+                img{
+                    width: 60%;
+                }
+            }
+        }
+            .info{
+                display: flex;
+                flex-direction: column;
+                width: 70%;
+                p{
+                    width: 100%;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 130%;
+                    color: map-get(color.$text , "title");
+                }
+            }
+        .noteOrder{
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 2%;
+                textarea{
+                    padding: 5px;
+                    width: 75%;
+                    height: 2rem;
+                    background-color: map-get(color.$background, "textarea");
+                    color: map-get(color.$text , "button");
+                    border: 1px solid #393C49;
+                    box-sizing: border-box;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    border-radius: 8px;
+                    outline: none;
+                    overflow-x: hidden;
+                    resize: none;
+                }
+                textarea:hover{
+                    background-color: map-get(color.$background, "textarea2");
+                    color:map-get(color.$text, "button") ;
+                }
+                textarea::placeholder{
+                    color: map-get(color.$text , "textarea");
+                    border: none;
+                }
+                textarea::-webkit-scrollbar{
+                    height: 90%;
+                    width: 7px;
+                    background-color: map-get(color.$background, "textarea");
+                    border-radius: 9px;
+
+                }
+        }
+    }
+.buttonsOrderBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 30%;
+    padding: 0 2%;
+    .deleteOrder{
+        display: flex;
+        justify-content: flex-end;
+        .trash{
+            margin-right: 2%;
+            background: none;
+            border:none;
+            color: map-get(color.$buttons , "icon2");
+            font-size: 1.2rem;
+        }
+        .trash:hover{
+        color: map-get(color.$buttons , "color");
+        border:none
+    }
+    }
+
+    .firstRowButtons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        p{
+            align-self: center;
+            font-weight: bold;
+        }
+        button{
+            background: none;
+            border:none;
+            font-size:2.6rem;
+            color: map-get(color.$buttons , "icon2");
+        }
+    }
+    .secondRowButtons{
+        display: flex;
+        p{
+            width: 100%;
+            text-align: center;
+        }
+    }
+    button:hover{
+        color: map-get(color.$buttons , "color");
+        border:none
+    }
+}
+
+.priceOrder{
+    display: flex;
+    width: 90%;
+    margin: 15px;
+    padding-top: 15px;
+    color: map-get(color.$background , "title");
+    justify-content: center;
+    border-top: solid 2px;
+
+    .item1{
+        margin:  0 10px 0 20px;
+        width: 60%;
+        font-weight: bold;
+    }
+}
+
+//  @media (min-width: 768px) and (max-width: 1180px) and (orientation: landscape) {
+
+    
+
+//     .salonGeneral{
+//         background-color: aqua;
+//         display: grid;
+//         grid-template-columns: repeat(4, 1fr);
+//         grid-auto-rows: 20px;
+//         grid-template-areas:
+//         "a b b b "
+//         "a b b b "
+//         "a c c c "
+//         "a c c c ";
+
+//         .sectionA{
+//             grid-area: a;
+//         }
+//         .sectionB{
+//             grid-area: b;
+//         }
+//         .SectionC{
+//             grid-area: c;
+//         }
+//     }
+// }

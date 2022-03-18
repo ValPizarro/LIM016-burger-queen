@@ -11,6 +11,9 @@
     flex-direction: column;
     background:url(../../img/quickly-background.jpg);
     background-size: cover;
+    img{
+        margin: 20px;
+    }
 }
 .SectionBtnLogin{
     width: 60%;
@@ -30,19 +33,20 @@
     justify-content: center;
 }
 .BtnLogin {
-    font-size: 16px;
-    font-family: 'Barlow', sans-serif;
-    border: none;
-    border-radius: 5px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: 90%;
     width: 80%;
+    border: none;
+    border-radius: 5px;
     background-color: #EA7C69;
-    color: #ffff;
-    align-items: center;
-    justify-content: center;
     opacity: 0.8;
+    font-size: 20px;
+    font-family: 'Barlow', sans-serif;
+    color: #ffff;
 }
 .BtnLogin:hover{
     opacity: 1;
+    box-shadow:0 0 20px map-get(color.$buttons, "color"),
 }
