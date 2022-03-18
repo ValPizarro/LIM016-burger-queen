@@ -1,20 +1,20 @@
 import { useState } from "react";
 import TotalItems from "./TotalItemsOrder";
 
-import BtnSubmitOrder from './btnSubmitOrder';
+import BtnSubmitOrder from "./btnSubmitOrder";
 
 export const Order = ({ listDishes }) => {
   const initialOrderInfo = {
     nameOrder: "",
     numOrder: 0,
-    totalPriceOrder: 0,
+    // totalPriceOrder: 0,
     stateOrder: "generado",
   };
-/*orden*/
+  /*orden*/
   const initialOrder = {
     itemsOrder: [],
     nameOrder: "",
-    numOrder:0,
+    numOrder: 0,
     stateOrder: "generado",
     totalPriceOrder: 0,
   };
@@ -22,7 +22,7 @@ export const Order = ({ listDishes }) => {
   const [infoOrder, setinfoOrder] = useState(initialOrderInfo);
   const [order, setOrder] = useState(initialOrder);
 
-  const addOrder =(newOrder) => {
+  const addOrder = (newOrder) => {
     setOrder(newOrder);
     console.log(order);
   };
@@ -34,11 +34,22 @@ export const Order = ({ listDishes }) => {
     });
   };
 
+  const clearOrder = () => {
+    setOrder(initialOrder);
+    console.log("clear");
+    clearForm();
+  };
+
+  const clearForm = (e) => {
+    console.log(e.target);
+    // e.target.reset();
+  }
+
   return (
     <>
-      <form className="formOrder" >
+      <form className="formOrder" onSubmit={clearForm}>
         <div className="headerOrder">
-          <BtnSubmitOrder order={order}/>
+          <BtnSubmitOrder order={order} clearOrder={clearOrder} />
           <div className="infoOrder">
             <input
               name="nameOrder"
