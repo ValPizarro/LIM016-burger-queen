@@ -21,7 +21,7 @@ export const Order = ({ listDishes }) => {
 
   const [infoOrder, setinfoOrder] = useState(initialOrderInfo);
   const [order, setOrder] = useState(initialOrder);
-  
+
   const addOrder =(newOrder) => {
     setOrder(newOrder);
     console.log(order);

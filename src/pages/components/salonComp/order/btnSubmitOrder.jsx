@@ -8,7 +8,6 @@ const BtnSubmitOrder=({ order })=>{
         try{
         const docRef = await addDoc(collection(db, "order"),
          order
-
         );
         console.log("Document written with ID: ", docRef.id);
         // aqui va el firestore - addDoc

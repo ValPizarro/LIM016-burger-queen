@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ItemOrder from "./ItemOrder";
 //recibe info
 const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
+  console.log(infoOrder)
   const [arrayItemsOrder, setArrayItemsOrder] = useState([]);
   const { nameOrder, numOrder, totalPriceOrder } = infoOrder;
   const [totalOrder, setTotalOrder] = useState(0);
