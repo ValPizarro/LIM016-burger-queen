@@ -37,17 +37,12 @@ export const Order = ({ listDishes }) => {
   const clearOrder = () => {
     setOrder(initialOrder);
     console.log("clear");
-    clearForm();
   };
 
-  const clearForm = (e) => {
-    console.log(e.target);
-    // e.target.reset();
-  }
 
   return (
     <>
-      <form className="formOrder" onSubmit={clearForm}>
+      <form className="formOrder" >
         <div className="headerOrder">
           <BtnSubmitOrder order={order} clearOrder={clearOrder} />
           <div className="infoOrder">

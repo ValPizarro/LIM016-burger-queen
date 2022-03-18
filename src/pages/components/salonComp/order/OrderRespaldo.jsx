@@ -4,8 +4,6 @@ import ShowItems from "./ShowItems";
 
 const TakeOrder = ({ addOrder }) => {
 
-  // 
-
   const initialOrder = {
     nameOrder: "",
     itemOrder: "",

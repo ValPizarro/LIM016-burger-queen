@@ -1,6 +1,8 @@
 import NavSalon from "../pages/components/salonComp/nav/NavSalon";
 
-function Cocina() {
+function Cocina({idOrder}) {
+
+  console.log(idOrder);
 
   return (
     <div>
