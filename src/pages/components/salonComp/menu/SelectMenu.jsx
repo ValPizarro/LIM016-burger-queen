@@ -3,6 +3,7 @@ const SelectMenu = ({ SetCurrentMenu }) => {
 
   const HandleMenu = (e) => {
     const currentMenu = e.target.value;
+
     return SetCurrentMenu(currentMenu);
   };
 

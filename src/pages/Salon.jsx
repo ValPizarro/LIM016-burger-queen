@@ -10,6 +10,7 @@ import { Menu } from "../pages/components/salonComp/menu/Menu";
 
 
 function Salon() {
+
   const [listDishes, setListDishes] = useState([]);
   const [dishID, setDishID] = useState([]);
 
@@ -20,6 +21,7 @@ function Salon() {
   const getDataByID = async (id) => {
     const dishRef = doc(db, "menu", id);
     const dish = await getDoc(dishRef);
+   // console.log(dish.data())
     return dish.data();
   };
 
@@ -27,6 +29,7 @@ function Salon() {
 
     async function fetchData() {
       const dataByID = await getDataByID(dishID);
+     // console.log(dataByID)
       setListDishes([...listDishes, dataByID])
     }
     fetchData()
@@ -42,6 +45,7 @@ function Salon() {
       <div className="bodySalon">
         <Menu ShowItem={ShowItem} />
         <Order listDishes={listDishes}/>
+
       </div>
     </div>
   );
