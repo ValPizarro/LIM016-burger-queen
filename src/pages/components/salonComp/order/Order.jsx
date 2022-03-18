@@ -1,35 +1,29 @@
 import { useState } from "react";
-
 import TotalItems from "./TotalItemsOrder";
+
+import BtnSubmitOrder from './btnSubmitOrder';
 
 export const Order = ({ listDishes }) => {
   const initialOrderInfo = {
     nameOrder: "",
-    numOrder: "",
+    numOrder: 0,
     totalPriceOrder: 0,
     stateOrder: "generado",
   };
-
+/*orden*/
   const initialOrder = {
-    nameOrder: "",
-    numOrder: "",
     itemsOrder: [],
-    totalPriceOrder: 0,
+    nameOrder: "",
+    numOrder:0,
     stateOrder: "generado",
+    totalPriceOrder: 0,
   };
 
   const [infoOrder, setinfoOrder] = useState(initialOrderInfo);
   const [order, setOrder] = useState(initialOrder);
-
-  const addOrder = async (newOrder) => {
+  
+  const addOrder =(newOrder) => {
     setOrder(newOrder);
-    console.log(order);
-  };
-
-  const handleSubmit = (order, e) => {
-    e.preventDefault();
-
-    // aqui va el firestore - addDoc
     console.log(order);
   };
 
@@ -42,11 +36,9 @@ export const Order = ({ listDishes }) => {
 
   return (
     <>
-      <form className="formOrder" onSubmit={handleSubmit}>
+      <form className="formOrder" >
         <div className="headerOrder">
-          <button className="btnSubmitOrder" type="submit">
-            Enviar pedido
-          </button>
+          <BtnSubmitOrder order={order}/>
           <div className="infoOrder">
             <input
               name="nameOrder"
@@ -70,7 +62,6 @@ export const Order = ({ listDishes }) => {
         <TotalItems
           listDishes={listDishes}
           infoOrder={infoOrder}
-          handleSubmit={handleSubmit}
           addOrder={addOrder}
         />
       </form>

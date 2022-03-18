@@ -8,11 +8,11 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
 
   useEffect(() => {
     addOrder({
+      itemsOrder:arrayItemsOrder,
       nameOrder: nameOrder,
       numOrder: numOrder,
-      itemsOrder: [arrayItemsOrder],
-      totalPriceOrder: totalPriceOrder,
       stateOrder: "generado",
+      totalPriceOrder: totalPriceOrder,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [arrayItemsOrder]);
