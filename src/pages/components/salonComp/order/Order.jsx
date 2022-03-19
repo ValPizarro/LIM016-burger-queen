@@ -2,12 +2,12 @@ import { useState } from "react";
 import TotalItems from "./TotalItemsOrder";
 
 import BtnSubmitOrder from "./btnSubmitOrder";
+import { OptionsDishProvider } from "../context/OptionDish";
 
 export const Order = ({ listDishes }) => {
   const initialOrderInfo = {
     nameOrder: "",
     numOrder: 0,
-    // totalPriceOrder: 0,
     stateOrder: "generado",
   };
   /*orden*/
@@ -39,10 +39,9 @@ export const Order = ({ listDishes }) => {
     console.log("clear");
   };
 
-
   return (
     <>
-      <form className="formOrder" >
+      <form className="formOrder">
         <div className="headerOrder">
           <BtnSubmitOrder order={order} clearOrder={clearOrder} />
           <div className="infoOrder">
@@ -64,11 +63,14 @@ export const Order = ({ listDishes }) => {
             />
           </div>
         </div>
-        <TotalItems
+        <OptionsDishProvider>
+          <TotalItems
           listDishes={listDishes}
           infoOrder={infoOrder}
           addOrder={addOrder}
         />
+        </OptionsDishProvider>
+
       </form>
     </>
   );

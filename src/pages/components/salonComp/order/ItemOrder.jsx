@@ -1,20 +1,22 @@
 import { useEffect, useState } from "react";
 
-const ItemOrder = ({ dish, addItems }) => {
+const ItemOrder = ({ dish, addItems, optionsDish }) => {
   const { id, name, img, price } = dish;
+  const { extraOrder1, extraOrder2, optionOrder } = optionsDish;
+
   let [num, setNum] = useState(1);
   const totalPrice = price * num;
   let [noteItemOrder, setNoteItemOrder] = useState("");
 
   useEffect(() => {
     addItems({
-      extraOrder1: "huevo",
-      extraOrder2: "queso",
+      extraOrder1: extraOrder1,
+      extraOrder2: extraOrder2,
       idItemOrder: id,
       nameItemOrder: name,
       noteOrder: noteItemOrder,
       numItemOrder: num,
-      optionOrder: "carne",
+      optionOrder: optionOrder,
       priceItemOrder: price,
       priceTotalItemOrder: totalPrice,
     });

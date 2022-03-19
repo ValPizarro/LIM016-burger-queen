@@ -1,6 +1,34 @@
+import { useContext } from "react";
+import { Options } from "./Options";
+import { Extra } from "./Extra";
+
+import OptionsDishContext from "../context/OptionDish";
 
 export const CardDish = ({ MenuDishes, ShowItem }) => {
 
+  const {
+    setExtraOrder1,
+    setExtraOrder2,
+    setOptionOrder,
+  
+  } = useContext(OptionsDishContext);
+
+  const getDish = (id, name) => {
+    switch (name) {
+      case "Hamburguesa clásica":
+        Options(setOptionOrder);
+        break;
+      case "Hamburguesa doble":
+        Options(setOptionOrder)
+          .then(() => Extra(setExtraOrder1, setExtraOrder2))
+    
+        // ShowItem(id);
+        break;
+      default:
+        ShowItem(id);
+        break;
+    }
+  };
 
   return (
     <div className="dishGeneral">
@@ -12,7 +40,7 @@ export const CardDish = ({ MenuDishes, ShowItem }) => {
             className="carDish"
             data-id={id}
             key={id}
-            onClick={() => ShowItem(id)}
+            onClick={() => getDish(id, name)}
           >
             <div className="photoDish">
               <img data-id={id} src={img} alt="Food" />

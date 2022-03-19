@@ -37,15 +37,15 @@ function Salon() {
   }, [dishID]);
 
 
+
   return (
     <div className="salonGeneral">
       <header className="headerSalon sectionA">
         <NavSalon />
       </header>
       <div className="bodySalon">
-        <Menu ShowItem={ShowItem} />
-        <Order listDishes={listDishes}/>
-
+        <Menu ShowItem={ShowItem}  />
+        <Order listDishes={listDishes}  />
       </div>
     </div>
   );

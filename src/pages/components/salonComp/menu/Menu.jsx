@@ -1,8 +1,12 @@
-import { CardDish } from "./CardDish";
-import SelectMenu from "./SelectMenu";
 import { useEffect, useState } from "react";
+
 import { onSnapshot, collection } from "firebase/firestore";
 import { db } from "../../../../firebase/config";
+
+import { OptionsDishProvider } from "../context/OptionDish";
+
+import { CardDish } from "./CardDish";
+import SelectMenu from "./SelectMenu";
 
 export const Menu = ({ ShowItem }) => {
   const [allDishes, setAllDishes] = useState([]);
@@ -21,13 +25,13 @@ export const Menu = ({ ShowItem }) => {
 
   useEffect(() => {
     if (curretMenu === "Bebida") {
-      SetMenuDishes(
-        allDishes.filter((dishes) => dishes.type === curretMenu)
-      );
+      SetMenuDishes(allDishes.filter((dishes) => dishes.type === curretMenu));
     } else {
       SetMenuDishes(allDishes.filter((dishes) => dishes.menu === curretMenu));
     }
   }, [curretMenu, allDishes]);
+
+
 
   return (
     <div className="menu sectionB">
@@ -37,7 +41,14 @@ export const Menu = ({ ShowItem }) => {
         </div>
         <SelectMenu SetCurrentMenu={SetCurrentMenu} />
       </div>
-      <CardDish MenuDishes={MenuDishes} ShowItem={ShowItem} />
+      <OptionsDishProvider>
+
+        <CardDish
+          MenuDishes={MenuDishes}
+          ShowItem={ShowItem}
+        />
+      </OptionsDishProvider>
+
     </div>
   );
 };
