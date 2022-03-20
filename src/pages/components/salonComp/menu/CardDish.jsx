@@ -8,17 +8,17 @@ export const CardDish = ({ menuDish, ShowItem }) => {
 
   const { id, name, img, price } = menuDish;
 
-  const {
-    setExtraOrder1,
-    setExtraOrder2,
-    setOptionOrder,
-  } = useContext(OptionsDishContext);
+const{ setExtraOrder1, setExtraOrder2, setOptionOrder } =
+    useContext(OptionsDishContext);
 
   const getDish = (id, name) => {
     switch (name) {
       case "Hamburguesa clásica":
-        Options(setOptionOrder).then(() => ShowItem(id));
-         break;
+        Options(setOptionOrder).then(() =>
+          Extra(setExtraOrder1, setExtraOrder2)
+        );
+        ShowItem(id);
+        break;
       case "Hamburguesa doble":
         Options(setOptionOrder).then(() =>
           Extra(setExtraOrder1, setExtraOrder2)
@@ -30,7 +30,7 @@ export const CardDish = ({ menuDish, ShowItem }) => {
         ShowItem(id);
         break;
     }
-  }
+  };
 
   return (
     <div

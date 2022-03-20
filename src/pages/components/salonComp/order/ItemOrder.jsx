@@ -23,7 +23,7 @@ const ItemOrder = ({ dish, addItems }) => {
       priceTotalItemOrder: totalPrice,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [num, noteItemOrder]);
+  }, [num, noteItemOrder, extraOrder1, optionOrder]);
 
   const aumentar = (e) => {
     e.preventDefault();
@@ -63,7 +63,6 @@ const ItemOrder = ({ dish, addItems }) => {
     } else {
       options = null;
     }
-
 
   return (
     <div className="itemOrderBox">

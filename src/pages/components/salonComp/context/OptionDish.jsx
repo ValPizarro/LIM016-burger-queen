@@ -2,6 +2,11 @@ import { createContext, useState } from "react"
 
 const OptionsDishContext = createContext();
 
+// const initialOption = {
+//     extraOrder1: "",
+//     extraOrder2: "",
+//     optionOrder: "",
+// };
 
 const OptionsDishProvider = ({ children }) => {
 
@@ -17,19 +22,20 @@ const OptionsDishProvider = ({ children }) => {
       optionOrder: optionOrder,
     });
 
-    const addOptionsDish = (newoptionDish) => {
-        setOptionsDish(newoptionDish);
-    };
+    // const addOptionsDish = (newoptionDish) => {
+    //     setOptionsDish(newoptionDish);
+    // };
 
     const dataOptions = {
         optionsDish,
+        setOptionsDish,
         extraOrder1,
         setExtraOrder1,
         extraOrder2,
         setExtraOrder2,
         optionOrder,
         setOptionOrder,
-        addOptionsDish,
+        // addOptionsDish,
     };
 
     return <OptionsDishContext.Provider value={dataOptions}>{children}</OptionsDishContext.Provider>

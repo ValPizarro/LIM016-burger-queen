@@ -23,7 +23,6 @@ export const Order = ({ listDishes }) => {
 
   const addOrder = (newOrder) => {
     setOrder(newOrder);
-    console.log(order);
   };
 
   const handleChange = (e) => {
