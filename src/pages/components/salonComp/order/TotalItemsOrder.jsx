@@ -21,7 +21,18 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
   }, [arrayItemsOrder, nameOrder, numOrder, totalOrder]);
 
   const addItems = async (itemsOrder) => {
-    setArrayItemsOrder([...arrayItemsOrder, itemsOrder]);
+    const IdNew = itemsOrder.idItemOrder;
+    console.log(IdNew);
+
+    arrayItemsOrder.forEach(object => {
+      if (object.idItemOrder === IdNew) {
+        const newArray = arrayItemsOrder.filter((dish) => dish.idItemOrder !== IdNew);
+        newArray.push(itemsOrder);
+        setArrayItemsOrder(newArray);
+      } else {
+        setArrayItemsOrder([...arrayItemsOrder, itemsOrder]);
+      }
+    });
   };
 
   useEffect(() => {
@@ -37,7 +48,7 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
     <>
       <div className="itemsTotalOrder">
         {listDishes.map((dish) => (
-          <OptionsDishProvider  key={dish.id}>
+          <OptionsDishProvider key={dish.id}>
             <ItemOrder
               dish={dish}
               addItems={addItems}

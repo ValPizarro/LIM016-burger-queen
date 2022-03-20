@@ -29,7 +29,6 @@ function Salon() {
 
     async function fetchData() {
       const dataByID = await getDataByID(dishID);
-     // console.log(dataByID)
       setListDishes([...listDishes, dataByID])
     }
     fetchData()

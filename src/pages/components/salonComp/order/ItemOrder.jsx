@@ -23,7 +23,7 @@ const ItemOrder = ({ dish, addItems }) => {
       priceTotalItemOrder: totalPrice,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [num, noteItemOrder, extraOrder1, optionOrder]);
+  }, [num, noteItemOrder, extraOrder1, extraOrder2, optionOrder]);
 
   const aumentar = (e) => {
     e.preventDefault();
@@ -48,9 +48,9 @@ const ItemOrder = ({ dish, addItems }) => {
     setNoteItemOrder(e.target.value);
   };
 
-  useEffect(() => {
-    console.log(optionOrder);
-  }, [optionOrder])
+  // useEffect(() => {
+  //   console.log(optionOrder);
+  // }, [optionOrder])
 
     if (name === "Hamburguesa clásica" || name === "Hamburguesa doble") {
       options = (
