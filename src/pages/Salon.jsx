@@ -29,9 +29,23 @@ function Salon() {
 
     async function fetchData() {
       const dataByID = await getDataByID(dishID);
-      setListDishes([...listDishes, dataByID])
+      console.log(dataByID.id);
+      console.log(listDishes);
+      listDishes.forEach(object => {
+        if (object.id === dataByID.id) {
+          console.log(true);
+        }
+      })
+      // if (listDishes.includes(dataByID) === false) {
+      //   setListDishes([...listDishes, dataByID]);
+      // } else {
+      //   setListDishes([...listDishes]);
+      // }
+      setListDishes([...listDishes, dataByID]);
+
     }
-    fetchData()
+    fetchData(listDishes);
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dishID]);
 

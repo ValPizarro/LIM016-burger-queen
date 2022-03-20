@@ -27,12 +27,17 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
     arrayItemsOrder.forEach(object => {
       if (object.idItemOrder === IdNew) {
         const newArray = arrayItemsOrder.filter((dish) => dish.idItemOrder !== IdNew);
-        newArray.push(itemsOrder);
-        setArrayItemsOrder(newArray);
-      } else {
-        setArrayItemsOrder([...arrayItemsOrder, itemsOrder]);
+        console.table(newArray);
+
+        const addNewItem = newArray.push(itemsOrder);
+
+        console.log(addNewItem);
+        console.table(newArray);
+        // setArrayItemsOrder(newArray);
       }
+
     });
+    setArrayItemsOrder([...arrayItemsOrder, itemsOrder]);
   };
 
   useEffect(() => {
