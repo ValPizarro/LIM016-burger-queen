@@ -4,58 +4,52 @@ import { Extra } from "./Extra";
 
 import OptionsDishContext from "../context/OptionDish";
 
-export const CardDish = ({ MenuDishes, ShowItem }) => {
+export const CardDish = ({ menuDish, ShowItem }) => {
+
+  const { id, name, img, price } = menuDish;
 
   const {
     setExtraOrder1,
     setExtraOrder2,
     setOptionOrder,
-  
   } = useContext(OptionsDishContext);
 
   const getDish = (id, name) => {
     switch (name) {
       case "Hamburguesa clásica":
-        Options(setOptionOrder);
-        break;
+        Options(setOptionOrder).then(() => ShowItem(id));
+         break;
       case "Hamburguesa doble":
-        Options(setOptionOrder)
-          .then(() => Extra(setExtraOrder1, setExtraOrder2))
-    
-        // ShowItem(id);
+        Options(setOptionOrder).then(() =>
+          Extra(setExtraOrder1, setExtraOrder2)
+        );
+        ShowItem(id);
+
         break;
       default:
         ShowItem(id);
         break;
     }
-  };
+  }
 
   return (
-    <div className="dishGeneral">
-      {MenuDishes.map((menuDish) => {
-        const { id, name, img, price } = menuDish;
-
-        return (
-          <div
-            className="carDish"
-            data-id={id}
-            key={id}
-            onClick={() => getDish(id, name)}
-          >
-            <div className="photoDish">
-              <img data-id={id} src={img} alt="Food" />
-            </div>
-            <div className="infoDish">
-              <p data-id={id} className="textInfo1">
-                {name}
-              </p>
-              <p data-id={id} className="textInfo2">
-                $ {price}.00
-              </p>
-            </div>
-          </div>
-        );
-      })}
+    <div
+      className="carDish"
+      data-id={id}
+      key={id}
+      onClick={() => getDish(id, name)}
+    >
+      <div className="photoDish">
+        <img data-id={id} src={img} alt="Food" />
+      </div>
+      <div className="infoDish">
+        <p data-id={id} className="textInfo1">
+          {name}
+        </p>
+        <p data-id={id} className="textInfo2">
+          $ {price}.00
+        </p>
+      </div>
     </div>
   );
 };

@@ -3,9 +3,7 @@ import { useEffect, useState } from "react";
 import { onSnapshot, collection } from "firebase/firestore";
 import { db } from "../../../../firebase/config";
 
-import { OptionsDishProvider } from "../context/OptionDish";
-
-import { CardDish } from "./CardDish";
+import { AllCardsDishes } from "./AllCardsDishes";
 import SelectMenu from "./SelectMenu";
 
 export const Menu = ({ ShowItem }) => {
@@ -31,8 +29,6 @@ export const Menu = ({ ShowItem }) => {
     }
   }, [curretMenu, allDishes]);
 
-
-
   return (
     <div className="menu sectionB">
       <div className="headerMenu">
@@ -41,14 +37,10 @@ export const Menu = ({ ShowItem }) => {
         </div>
         <SelectMenu SetCurrentMenu={SetCurrentMenu} />
       </div>
-      <OptionsDishProvider>
-
-        <CardDish
+        <AllCardsDishes
           MenuDishes={MenuDishes}
           ShowItem={ShowItem}
         />
-      </OptionsDishProvider>
-
     </div>
   );
 };

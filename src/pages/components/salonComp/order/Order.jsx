@@ -2,7 +2,6 @@ import { useState } from "react";
 import TotalItems from "./TotalItemsOrder";
 
 import BtnSubmitOrder from "./btnSubmitOrder";
-import { OptionsDishProvider } from "../context/OptionDish";
 
 export const Order = ({ listDishes }) => {
   const initialOrderInfo = {
@@ -63,14 +62,11 @@ export const Order = ({ listDishes }) => {
             />
           </div>
         </div>
-        <OptionsDishProvider>
           <TotalItems
           listDishes={listDishes}
           infoOrder={infoOrder}
           addOrder={addOrder}
         />
-        </OptionsDishProvider>
-
       </form>
     </>
   );

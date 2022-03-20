@@ -1,11 +1,9 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import ItemOrder from "./ItemOrder";
-import OptionsDishContext from "../context/OptionDish"
+import { OptionsDishProvider } from "../context/OptionDish";
 
 //recibe info
 const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
-
-  const { optionsDish } = useContext(OptionsDishContext);
 
   const [arrayItemsOrder, setArrayItemsOrder] = useState([]);
   const [totalOrder, setTotalOrder] = useState(0);
@@ -39,12 +37,12 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
     <>
       <div className="itemsTotalOrder">
         {listDishes.map((dish) => (
-          <ItemOrder
-            key={dish.id}
-            dish={dish}
-            addItems={addItems}
-            optionsDish={optionsDish}
-          />
+          <OptionsDishProvider  key={dish.id}>
+            <ItemOrder
+              dish={dish}
+              addItems={addItems}
+            />
+          </OptionsDishProvider>
         ))}
       </div>
       <div className="priceOrder">
