@@ -2,11 +2,11 @@ import { useContext } from "react";
 import { Options } from "./Options";
 import { Extra } from "./Extra";
 
-import OptionsDishContext from "../context/OptionDish";
+import OptionsDishContext from "../../../context/OptionDish";
 
 export const CardDish = ({ menuDish, ShowItem }) => {
 
-  const { id, name, img, price } = menuDish;
+  const { id, name, img, price, OptionOrder } = menuDish;
 
 const{ setExtraOrder1, setExtraOrder2, setOptionOrder } =
     useContext(OptionsDishContext);
@@ -14,17 +14,19 @@ const{ setExtraOrder1, setExtraOrder2, setOptionOrder } =
   const getDish = (id, name) => {
     switch (name) {
       case "Hamburguesa clásica":
+
         Options(setOptionOrder).then(() =>
           Extra(setExtraOrder1, setExtraOrder2)
         );
         ShowItem(id);
         break;
       case "Hamburguesa doble":
-        Options(setOptionOrder).then(() =>
-          Extra(setExtraOrder1, setExtraOrder2)
-        );
-        ShowItem(id);
 
+        console.log(OptionOrder);
+        // Options(setOptionOrder).then(() =>
+        //   Extra(setExtraOrder1, setExtraOrder2)
+        // );
+        // ShowItem(id);
         break;
       default:
         ShowItem(id);

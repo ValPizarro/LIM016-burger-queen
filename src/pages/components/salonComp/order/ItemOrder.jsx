@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import OptionsDishContext from "../context/OptionDish";
+import OptionsDishContext from "../../../context/OptionDish";
 
 const ItemOrder = ({ dish, addItems }) => {
   const { id, name, img, price } = dish;

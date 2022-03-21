@@ -1,14 +1,15 @@
 import NavSalon from "../pages/components/salonComp/nav/NavSalon";
-
-function Cocina({idOrder}) {
-
-  console.log(idOrder);
-
+import MenuCardsChef from "./components/cocinaComp/cardsChef/CardsChef";
+import OrderCard from "./components/cocinaComp/orderCard/OrderCard";
+function Cocina() {
   return (
-    <div>
-      <NavSalon />
-      <div>
-        <h1> Esta es la vista de la cocina</h1>
+    <div className="contentCocina">
+      <nav className="navCocina">
+        <NavSalon />
+      </nav>
+      <div className="bodyChef">
+        <MenuCardsChef />
+        <OrderCard />
       </div>
     </div>
   );

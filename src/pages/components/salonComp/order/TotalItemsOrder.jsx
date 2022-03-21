@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ItemOrder from "./ItemOrder";
-import { OptionsDishProvider } from "../context/OptionDish";
+import { OptionsDishProvider } from "../../../context/OptionDish";
 
 //recibe info
 const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
@@ -22,21 +22,20 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
 
   const addItems = async (itemsOrder) => {
     const IdNew = itemsOrder.idItemOrder;
-    console.log(IdNew);
-
+    let newArray
     arrayItemsOrder.forEach(object => {
       if (object.idItemOrder === IdNew) {
-        const newArray = arrayItemsOrder.filter((dish) => dish.idItemOrder !== IdNew);
-        console.table(newArray);
+        newArray = arrayItemsOrder.filter((dish) => dish.idItemOrder !== IdNew);
 
         const addNewItem = newArray.push(itemsOrder);
 
         console.log(addNewItem);
         console.table(newArray);
-        // setArrayItemsOrder(newArray);
       }
 
     });
+    console.log(newArray);
+
     setArrayItemsOrder([...arrayItemsOrder, itemsOrder]);
   };
 
