@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import ItemOrder from "./ItemOrder";
+import { OptionsDishProvider } from "../context/OptionDish";
+
 //recibe info
 const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
-  console.log(infoOrder)
+
   const [arrayItemsOrder, setArrayItemsOrder] = useState([]);
-  const { nameOrder, numOrder, totalPriceOrder } = infoOrder;
   const [totalOrder, setTotalOrder] = useState(0);
+  const { nameOrder, numOrder } = infoOrder;
 
   useEffect(() => {
     addOrder({
@@ -13,12 +15,28 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
       nameOrder: nameOrder,
       numOrder: numOrder,
       stateOrder: "generado",
-      totalPriceOrder: totalPriceOrder,
+      totalPriceOrder: totalOrder,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [arrayItemsOrder]);
+  }, [arrayItemsOrder, nameOrder, numOrder, totalOrder]);
 
-  const addItems = async (itemsOrder) => {
+    const addItems = async (itemsOrder) => {
+    const IdNew = itemsOrder.idItemOrder;
+    console.log(IdNew);
+
+    arrayItemsOrder.forEach(object => {
+      if (object.idItemOrder === IdNew) {
+        const newArray = arrayItemsOrder.filter((dish) => dish.idItemOrder !== IdNew);
+        console.table(newArray);
+
+        const addNewItem = newArray.push(itemsOrder);
+
+        console.log(addNewItem);
+        console.table(newArray);
+        // setArrayItemsOrder(newArray);
+      }
+
+    });
     setArrayItemsOrder([...arrayItemsOrder, itemsOrder]);
   };
 
@@ -35,7 +53,12 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
     <>
       <div className="itemsTotalOrder">
         {listDishes.map((dish) => (
-          <ItemOrder key={dish.id} dish={dish} addItems={addItems} />
+          <OptionsDishProvider >
+            <ItemOrder
+              dish={dish}
+              addItems={addItems}
+            />
+          </OptionsDishProvider>
         ))}
       </div>
       <div className="priceOrder">

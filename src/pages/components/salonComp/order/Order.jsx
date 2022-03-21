@@ -1,15 +1,14 @@
-import { useRef, useState } from "react";
+import {useState } from "react";
 import TotalItems from "./TotalItemsOrder";
-
 import BtnSubmitOrder from "./btnSubmitOrder";
 
 export const Order = ({ listDishes }) => {
   const initialOrderInfo = {
     nameOrder: "",
     numOrder: 0,
-    // totalPriceOrder: 0,
     stateOrder: "generado",
   };
+
   /*orden*/
   const initialOrder = {
     itemsOrder: [],
@@ -24,7 +23,6 @@ export const Order = ({ listDishes }) => {
 
   const addOrder = (newOrder) => {
     setOrder(newOrder);
-    console.log(order);
   };
 
   const handleChange = (e) => {
@@ -37,22 +35,15 @@ export const Order = ({ listDishes }) => {
   const clearOrder = () => {
     setOrder(initialOrder);
     console.log("clear");
-    clearForm();
   };
-  let refInputName=useRef();
-  const clearForm = (e) => {
-    e.preventDefault()
-    refInputName.current.value="";
-  }
 
   return (
     <>
-      <form className="formOrder" >
+      <form className="formOrder">
         <div className="headerOrder">
           <BtnSubmitOrder order={order} clearOrder={clearOrder} />
           <div className="infoOrder">
             <input
-              ref={refInputName}
               name="nameOrder"
               placeholder="Nombre del cliente"
               type="text"
@@ -68,10 +59,9 @@ export const Order = ({ listDishes }) => {
               onChange={handleChange}
               value={infoOrder.numOrder}
             />
-
           </div>
         </div>
-        <TotalItems
+          <TotalItems
           listDishes={listDishes}
           infoOrder={infoOrder}
           addOrder={addOrder}

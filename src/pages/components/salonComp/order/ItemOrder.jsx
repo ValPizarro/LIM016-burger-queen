@@ -1,26 +1,30 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import OptionsDishContext from "../context/OptionDish";
 
 const ItemOrder = ({ dish, addItems }) => {
 
   const { id, name, img, price } = dish;
+  const { extraOrder1, extraOrder2, optionOrder } = useContext(OptionsDishContext);
+
   let [num, setNum] = useState(1);
   const totalPrice = price * num;
   let [noteItemOrder, setNoteItemOrder] = useState("");
+  let options = null;
 
   useEffect(() => {
     addItems({
-      extraOrder1:'huevo',
-      extraOrder2:'queso',
+      extraOrder1: extraOrder1,
+      extraOrder2: extraOrder2,
       idItemOrder: id,
       nameItemOrder: name,
       noteOrder: noteItemOrder,
       numItemOrder: num,
-      optionOrder:'carne',
+      optionOrder: optionOrder,
       priceItemOrder: price,
       priceTotalItemOrder: totalPrice,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [num, noteItemOrder]);
+  }, [num, noteItemOrder, extraOrder1, extraOrder2, optionOrder]);
 
 
   const aumentar = (e) => {
@@ -46,6 +50,22 @@ const ItemOrder = ({ dish, addItems }) => {
     setNoteItemOrder(e.target.value);
   };
 
+  // useEffect(() => {
+  //   console.log(optionOrder);
+  // }, [optionOrder])
+
+    if (name === "Hamburguesa clásica" || name === "Hamburguesa doble") {
+      options = (
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        <>
+          <p>Tipo: {optionOrder} </p>
+          <p>Extra: {extraOrder1} {extraOrder2}</p>
+        </>
+      );
+    } else {
+      options = null;
+    }
+
   return (
     <div className="itemOrderBox">
       <div className="descriptionOrderItem">
@@ -56,6 +76,7 @@ const ItemOrder = ({ dish, addItems }) => {
           <div className="info">
             <p>{name}</p>
             <p>$ {price}.00</p>
+            {options}
           </div>
         </div>
         <div className="noteOrder">
