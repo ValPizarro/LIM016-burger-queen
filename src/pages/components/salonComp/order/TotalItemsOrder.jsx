@@ -4,19 +4,19 @@ import ItemOrder from "./ItemOrder";
 const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
   console.log(infoOrder)
   const [arrayItemsOrder, setArrayItemsOrder] = useState([]);
-  const { nameOrder, numOrder } = infoOrder;
+  const { nameOrder, numOrder, totalPriceOrder } = infoOrder;
   const [totalOrder, setTotalOrder] = useState(0);
 
   useEffect(() => {
     addOrder({
-      itemsOrder: arrayItemsOrder,
+      itemsOrder:arrayItemsOrder,
       nameOrder: nameOrder,
       numOrder: numOrder,
       stateOrder: "generado",
-      totalPriceOrder: totalOrder,
+      totalPriceOrder: totalPriceOrder,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [arrayItemsOrder, nameOrder, numOrder, totalOrder]);
+  }, [arrayItemsOrder]);
 
   const addItems = async (itemsOrder) => {
     setArrayItemsOrder([...arrayItemsOrder, itemsOrder]);

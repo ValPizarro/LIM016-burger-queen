@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 // import Swal from "sweetalert2";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/config";
@@ -45,7 +44,6 @@ function Salon() {
       <div className="bodySalon">
         <Menu ShowItem={ShowItem} />
         <Order listDishes={listDishes}/>
-
       </div>
     </div>
   );

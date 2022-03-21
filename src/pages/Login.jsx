@@ -10,7 +10,6 @@ function Login() {
             <button className="BtnLogin">
               Salón
             </button>
-
           </a>
           <a href="/cocina" className="BoxButton">
             <button className="BtnLogin" >Cocina</button>

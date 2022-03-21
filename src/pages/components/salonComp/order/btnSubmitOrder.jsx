@@ -6,9 +6,10 @@ const BtnSubmitOrder = ({ order, clearOrder }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      try {
         const docRef = await addDoc(collection(db, "order"), order);
         console.log("Document written with ID: ", docRef.id);
+      try {
+
       }
       finally {
         clearOrder();

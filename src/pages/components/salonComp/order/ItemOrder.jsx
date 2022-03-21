@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 const ItemOrder = ({ dish, addItems }) => {
+
   const { id, name, img, price } = dish;
   let [num, setNum] = useState(1);
   const totalPrice = price * num;
@@ -8,18 +9,19 @@ const ItemOrder = ({ dish, addItems }) => {
 
   useEffect(() => {
     addItems({
-      extraOrder1: "huevo",
-      extraOrder2: "queso",
+      extraOrder1:'huevo',
+      extraOrder2:'queso',
       idItemOrder: id,
       nameItemOrder: name,
       noteOrder: noteItemOrder,
       numItemOrder: num,
-      optionOrder: "carne",
+      optionOrder:'carne',
       priceItemOrder: price,
       priceTotalItemOrder: totalPrice,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [num, noteItemOrder]);
+
 
   const aumentar = (e) => {
     e.preventDefault();
@@ -77,6 +79,7 @@ const ItemOrder = ({ dish, addItems }) => {
           <button className="fa-regular fa-square-minus" onClick={disminuir} />
           <p>{num}</p>
           <button className="fa-regular fa-square-plus" onClick={aumentar} />
+
         </div>
       </div>
     </div>
