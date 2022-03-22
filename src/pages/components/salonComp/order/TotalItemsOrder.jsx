@@ -27,10 +27,10 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
       if (object.idItemOrder === IdNew) {
         newArray = arrayItemsOrder.filter((dish) => dish.idItemOrder !== IdNew);
 
-        const addNewItem = newArray.push(itemsOrder);
+        // const addNewItem = newArray.push(itemsOrder);
 
-        console.log(addNewItem);
-        console.table(newArray);
+        // console.log(addNewItem);
+        // console.table(newArray);
       }
 
     });

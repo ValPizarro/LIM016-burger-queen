@@ -3,8 +3,12 @@ const CardChef = ({ filterOrder }) => {
   const { nameOrder, itemsOrder, stateOrder } = filterOrder;
   let stateItem = null;
 
+  const handleOrder = () => {
+        alert("me diste click");
+  }
+
   if (stateOrder === "generado") {
-   stateItem = <button className="buttonState buttonStatePendiente">{stateOrder}</button>;
+   stateItem = <button className="buttonState buttonStatePendiente" >{stateOrder}</button>;
   } else {
     stateItem = (
       <button className="buttonState buttonStateProceso">
@@ -14,10 +18,11 @@ const CardChef = ({ filterOrder }) => {
   };
 
   return (
-    <div className="cardChef">
+    <div className="cardChef" onClick={handleOrder}>
       {stateItem}
       <div className="textCard">
-        <p>· {nameOrder} </p>
+        <p>Cliente: {nameOrder} </p>
+        <br />
         {itemsOrder.map((item) => (
           <p>{item.nameItemOrder}</p>
         ))}

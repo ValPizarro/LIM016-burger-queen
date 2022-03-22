@@ -58,13 +58,14 @@
     height:55%;
 }
 .cardChef {
-    min-height: 30.1%;
+    // min-height: 30.1%;
+    height: 170px;
     min-width: 47%;
     padding: 2.2% 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #1F1D2B;
+    background: map-get(color.$background, "conteiners");
     border-radius: 25px;
     .buttonState{
         width: 90%;
@@ -101,8 +102,7 @@
 //Detalle cartas chef
 
 .ContainerOrderCard{
-    background: #1F1D2B;
-    height: 94%;
+    background: map-get(color.$background, "conteiners");    height: 94%;
     width: 40%;
     margin-left: 1%;
     border-radius: 20px;

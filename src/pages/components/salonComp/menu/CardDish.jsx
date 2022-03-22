@@ -23,10 +23,10 @@ const{ setExtraOrder1, setExtraOrder2, setOptionOrder } =
       case "Hamburguesa doble":
 
         console.log(OptionOrder);
-        // Options(setOptionOrder).then(() =>
-        //   Extra(setExtraOrder1, setExtraOrder2)
-        // );
-        // ShowItem(id);
+        Options(setOptionOrder).then(() =>
+          Extra(setExtraOrder1, setExtraOrder2)
+        );
+        ShowItem(id);
         break;
       default:
         ShowItem(id);
