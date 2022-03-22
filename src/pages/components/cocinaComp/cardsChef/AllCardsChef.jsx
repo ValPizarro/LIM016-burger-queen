@@ -1,13 +1,11 @@
 import CardChef from "./CardChef";
 
-const AllCardsChef = ({ stateOrders }) => {
-    console.log(stateOrders);
+const AllCardsChef = ({ filterOrders }) => {
+  console.log(filterOrders);
   return (
     <div className="cardsChefGeneral">
-      {stateOrders.map((stateOrder) => (
-          <CardChef
-              stateOrder={stateOrder}
-          />
+      {filterOrders.map((filterOrder) => (
+        <CardChef filterOrder={filterOrder} key={filterOrder.id} />
       ))}
     </div>
   );

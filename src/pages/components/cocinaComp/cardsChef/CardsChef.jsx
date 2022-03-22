@@ -9,7 +9,7 @@ import AllCardsChef from "./AllCardsChef";
 const CardsChef = () => {
 
     const [allOrder, setAllOrder] = useState([]);
-    const [stateOrders, SetStateOrders] = useState([]);
+    const [filterOrders, SetFilterOrders] = useState([]);
     const [currentState, SetCurrentState] = useState("generado");
 
     useEffect(
@@ -23,7 +23,7 @@ const CardsChef = () => {
   );
 
   useEffect(() => {
-    SetStateOrders(
+    SetFilterOrders(
       allOrder.filter((orders) => orders.stateOrder === currentState)
     );
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -32,7 +32,7 @@ const CardsChef = () => {
   return (
     <div className="MenuCardsChef">
       <BtnOrderChef SetCurrentState={SetCurrentState} />
-      <AllCardsChef stateOrders={stateOrders} />
+      <AllCardsChef filterOrders={filterOrders} />
     </div>
   );
 };

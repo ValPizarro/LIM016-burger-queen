@@ -1,12 +1,26 @@
 
-const CardChef = ({ stateOrder }) => {
+const CardChef = ({ filterOrder }) => {
+  const { nameOrder, itemsOrder, stateOrder } = filterOrder;
+  let stateItem = null;
 
-  const { nameOrder } = stateOrder;
+  if (stateOrder === "generado") {
+   stateItem = <button className="buttonState buttonStatePendiente">{stateOrder}</button>;
+  } else {
+    stateItem = (
+      <button className="buttonState buttonStateProceso">
+        {stateOrder}
+      </button>
+    )
+  };
+
   return (
     <div className="cardChef">
-      <button>Pendiente</button>
+      {stateItem}
       <div className="textCard">
         <p>· {nameOrder} </p>
+        {itemsOrder.map((item) => (
+          <p>{item.nameItemOrder}</p>
+        ))}
       </div>
     </div>
   );

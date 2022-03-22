@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-// import Swal from "sweetalert2";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/config";
 
@@ -23,20 +22,6 @@ function Salon() {
     const dish = await getDoc(dishRef);
     return dish.data();
   };
-
-  // const initialItemOrder = {
-  //   extraOrder1: "",
-  //   extraOrder2: "",
-  //   idItemOrder: "",
-  //   nameItemOrder: "",
-  //   noteOrder: "",
-  //   numItemOrder: 1,
-  //   optionOrder: "",
-  //   priceItemOrder: 0,
-  //   priceTotalItemOrder: 0,
-  // };
-
-  // const [ItemOrderGlobal, setItemOrderGlobal] = useState(initialItemOrder);
 
   useEffect(() => {
 // ¿Esto deberia estar en el useEffect?
@@ -70,7 +55,7 @@ function Salon() {
       setListDishes([...listDishes, dataByID]);
 
     }
-    fetchData(listDishes);
+    fetchData();
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dishID]);

@@ -66,9 +66,7 @@
     align-items: center;
     background: #1F1D2B;
     border-radius: 25px;
-    button{
-        background: map-get(color.$buttons ,"pendiente" );
-        color:map-get(color.$text, "textPendiente" );
+    .buttonState{
         width: 90%;
         height: 25%;
         border-radius: 20px;
@@ -76,6 +74,15 @@
         zoom: 1;
         font-size: 1.2rem;
     }
+    .buttonStatePendiente{
+        background: map-get(color.$buttons ,"pendiente" );        color:map-get(color.$text, "textPendiente" );
+
+    }
+    .buttonStateProceso{
+        background: map-get(color.$buttons ,"proceso" );
+        color:map-get(color.$text, "textProceso" );
+    }
+
     .textCard {
         display: flex;
         padding: 10px 0px;
@@ -111,8 +118,8 @@
     width: 100%;
     button{
         font-size: 2rem;
-        background: map-get(color.$buttons , "enProceso" );
-        color: map-get(color.$text , "textEnProceso" );
+        background: map-get(color.$buttons , "proceso" );
+        color: map-get(color.$text , "textProceso" );
         border-radius: 20px;;
         height: 50%;
         width: 100%;

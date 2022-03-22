@@ -37,18 +37,17 @@ const{ setExtraOrder1, setExtraOrder2, setOptionOrder } =
   return (
     <div
       className="carDish"
-      data-id={id}
       key={id}
       onClick={() => getDish(id, name)}
     >
       <div className="photoDish">
-        <img data-id={id} src={img} alt="Food" />
+        <img src={img} alt="Food" />
       </div>
       <div className="infoDish">
-        <p data-id={id} className="textInfo1">
+        <p  className="textInfo1">
           {name}
         </p>
-        <p data-id={id} className="textInfo2">
+        <p className="textInfo2">
           $ {price}.00
         </p>
       </div>
