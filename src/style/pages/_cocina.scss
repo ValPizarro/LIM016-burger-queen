@@ -1,4 +1,5 @@
 @use '../vars/colors' as color;
+
 .contentCocina{
     display: flex;
     flex-direction: row;
@@ -33,7 +34,7 @@
     align-items: center;
     column-gap: 35px;
 }
-.gridCardsChef{
+.cardsChefGeneral{
     column-gap: 35px;
     row-gap: 35px;
     padding: 0px 14px;
@@ -53,7 +54,7 @@
     font-family: 'Barlow', sans-serif;
     font-size: 1.4rem;
     color: white;
-    background-color: map-get(color.$buttons , "color");
+    background-color: map-get(color.$buttons, "color");
     height:55%;
 }
 .cardChef {
@@ -169,4 +170,13 @@
         align-items: center;
 
     }
+}
+
+.cardsChefGeneral::-webkit-scrollbar{
+    width: 7px;
+    background: map-get(color.$background, "conteiners");
+}
+.cardsChefGeneral::-webkit-scrollbar-thumb{
+    background: map-get(color.$buttons, "color");
+    border-radius: 8px;
 }
