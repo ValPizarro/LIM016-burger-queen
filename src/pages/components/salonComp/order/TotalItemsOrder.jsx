@@ -22,19 +22,18 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
 
   const addItems = async (itemsOrder) => {
     const IdNew = itemsOrder.idItemOrder;
-    let newArray
     arrayItemsOrder.forEach(object => {
+
       if (object.idItemOrder === IdNew) {
-        newArray = arrayItemsOrder.filter((dish) => dish.idItemOrder !== IdNew);
+        let newArray = arrayItemsOrder.filter((dish) => dish.idItemOrder !== IdNew);
 
-        // const addNewItem = newArray.push(itemsOrder);
+        const addNewItem = newArray.push(itemsOrder);
 
-        // console.log(addNewItem);
-        // console.table(newArray);
+        console.log(addNewItem);
+        console.table(newArray);
       }
 
     });
-    console.log(newArray);
 
     setArrayItemsOrder([...arrayItemsOrder, itemsOrder]);
   };

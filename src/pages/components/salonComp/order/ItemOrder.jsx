@@ -3,12 +3,33 @@ import OptionsDishContext from "../../../context/OptionDish";
 
 const ItemOrder = ({ dish, addItems }) => {
   const { id, name, img, price } = dish;
+
   const { extraOrder1, extraOrder2, optionOrder } = useContext(OptionsDishContext);
 
-  let [num, setNum] = useState(1);
-  const totalPrice = price * num;
   let [noteItemOrder, setNoteItemOrder] = useState("");
-  let options = null;
+  let options = null; // volverlo componente
+
+  let [num, setNum] = useState(1);
+
+  const totalPrice = price * num;
+
+  const [item, setItem] = useState({
+    extraOrder1: extraOrder1,
+    extraOrder2: extraOrder2,
+    idItemOrder: id,
+    nameItemOrder: name,
+    noteOrder: "Este es el Item",
+    numItemOrder: 1,
+    optionOrder: optionOrder,
+    priceItemOrder: price,
+    priceTotalItemOrder: price,
+  });
+
+  // const handleItem = (item, campo, valor) => {
+
+  //   setItem(...item, campo)
+  //   console.log(item)
+  // }
 
   useEffect(() => {
     addItems({
@@ -17,17 +38,22 @@ const ItemOrder = ({ dish, addItems }) => {
       idItemOrder: id,
       nameItemOrder: name,
       noteOrder: noteItemOrder,
-      numItemOrder: num,
+      numItemOrder: 1,
       optionOrder: optionOrder,
       priceItemOrder: price,
-      priceTotalItemOrder: totalPrice,
+      priceTotalItemOrder: 0,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [num, noteItemOrder, extraOrder1, extraOrder2, optionOrder]);
+  }, [noteItemOrder, extraOrder1, extraOrder2, optionOrder]);
 
   const aumentar = (e) => {
     e.preventDefault();
-    setNum(++num);
+
+    console.log(++item['numItemOrder']);
+    console.log(item.numItemOrder.name);
+
+    // handleItem(item, ++item['numItemOrder']);
+
   };
 
   const disminuir = (e) => {
