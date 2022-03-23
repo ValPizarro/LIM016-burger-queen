@@ -25,35 +25,53 @@ const ItemOrder = ({ dish, addItems }) => {
     priceTotalItemOrder: price,
   });
 
-  // const handleItem = (item, campo, valor) => {
+  const handleItem = (item, valor) => {
+    // const { numItemOrder } = item;
+    const x = { numItemOrder: valor };
 
-  //   setItem(...item, campo)
-  //   console.log(item)
-  // }
+
+    setItem( ...item, x  );
+  }
+
+  // setCart((prevCart) => {
+  //   return prevCart.map((x) =>
+  //     x.idProductCart === idProductCart
+  //       ? {
+  //           ...x,
+  //           qty: state.count,
+  //           totalCost: unitCost * state.count,
+  //         }
+  //       : x
+  //   );
+  // });
+
 
   useEffect(() => {
-    addItems({
-      extraOrder1: extraOrder1,
-      extraOrder2: extraOrder2,
-      idItemOrder: id,
-      nameItemOrder: name,
-      noteOrder: noteItemOrder,
-      numItemOrder: 1,
-      optionOrder: optionOrder,
-      priceItemOrder: price,
-      priceTotalItemOrder: 0,
-    });
+    // addItems({
+    //   extraOrder1: extraOrder1,
+    //   extraOrder2: extraOrder2,
+    //   idItemOrder: id,
+    //   nameItemOrder: name,
+    //   noteOrder: noteItemOrder,
+    //   numItemOrder: 1,
+    //   optionOrder: optionOrder,
+    //   priceItemOrder: price,
+    //   priceTotalItemOrder: totalPrice,
+    // });
+
+    addItems(item);
+    console.log("prueba");
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [noteItemOrder, extraOrder1, extraOrder2, optionOrder]);
+  }, [item, item.numItemOrder]);
 
   const aumentar = (e) => {
     e.preventDefault();
+    setNum(++num);
 
-    console.log(++item['numItemOrder']);
-    console.log(item.numItemOrder.name);
+
+      handleItem(item,  ++item["numItemOrder"]);
 
     // handleItem(item, ++item['numItemOrder']);
-
   };
 
   const disminuir = (e) => {
@@ -62,6 +80,8 @@ const ItemOrder = ({ dish, addItems }) => {
       setNum(1);
     } else {
       setNum(--num);
+      handleItem(item, --item["numItemOrder"]);
+
     }
   };
 

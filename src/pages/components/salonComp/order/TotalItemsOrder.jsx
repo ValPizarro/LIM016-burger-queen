@@ -9,6 +9,7 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
   const [totalOrder, setTotalOrder] = useState(0);
   const { nameOrder, numOrder } = infoOrder;
 
+
   useEffect(() => {
     addOrder({
       itemsOrder: arrayItemsOrder,
@@ -28,6 +29,7 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
         let newArray = arrayItemsOrder.filter((dish) => dish.idItemOrder !== IdNew);
 
         const addNewItem = newArray.push(itemsOrder);
+
 
         console.log(addNewItem);
         console.table(newArray);
