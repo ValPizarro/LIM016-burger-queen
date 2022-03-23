@@ -6,12 +6,8 @@ const ItemOrder = ({ dish, addItems }) => {
 
   const { extraOrder1, extraOrder2, optionOrder } = useContext(OptionsDishContext);
 
-  let [noteItemOrder, setNoteItemOrder] = useState("");
+  // let [noteItemOrder, setNoteItemOrder] = useState("");
   let options = null; // volverlo componente
-
-  let [num, setNum] = useState(1);
-
-  const totalPrice = price * num;
 
   const [item, setItem] = useState({
     extraOrder1: extraOrder1,
@@ -26,62 +22,48 @@ const ItemOrder = ({ dish, addItems }) => {
   });
 
   const handleItem = (item, valor) => {
-    // const { numItemOrder } = item;
-    const x = { numItemOrder: valor };
 
+    if (typeof valor === "number") {
 
-    setItem( ...item, x  );
+      const currentTotalPrice = valor * price;
+
+      setItem({
+        ...item,
+        numItemOrder: valor,
+        priceTotalItemOrder: currentTotalPrice,
+      });
+
+    } else {
+      setItem({
+        ...item,
+        noteOrder: valor,
+      });
+    }
   }
 
-  // setCart((prevCart) => {
-  //   return prevCart.map((x) =>
-  //     x.idProductCart === idProductCart
-  //       ? {
-  //           ...x,
-  //           qty: state.count,
-  //           totalCost: unitCost * state.count,
-  //         }
-  //       : x
-  //   );
-  // });
-
-
   useEffect(() => {
-    // addItems({
-    //   extraOrder1: extraOrder1,
-    //   extraOrder2: extraOrder2,
-    //   idItemOrder: id,
-    //   nameItemOrder: name,
-    //   noteOrder: noteItemOrder,
-    //   numItemOrder: 1,
-    //   optionOrder: optionOrder,
-    //   priceItemOrder: price,
-    //   priceTotalItemOrder: totalPrice,
-    // });
-
     addItems(item);
-    console.log("prueba");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [item, item.numItemOrder]);
 
   const aumentar = (e) => {
     e.preventDefault();
-    setNum(++num);
 
+    const currentAccount = ++item["numItemOrder"];
 
-      handleItem(item,  ++item["numItemOrder"]);
-
-    // handleItem(item, ++item['numItemOrder']);
+    handleItem(item, currentAccount);
   };
 
   const disminuir = (e) => {
     e.preventDefault();
-    if (num === 1) {
-      setNum(1);
-    } else {
-      setNum(--num);
-      handleItem(item, --item["numItemOrder"]);
+    if (item["numItemOrder"] === 1) {
 
+      handleItem(item["numItemOrder"]);
+    } else {
+
+      const currentAccount = --item["numItemOrder"];
+
+      handleItem(item, currentAccount);
     }
   };
 
@@ -90,8 +72,11 @@ const ItemOrder = ({ dish, addItems }) => {
     e.target.parentNode.parentNode.parentNode.remove();
   };
 
-  const handleChange = (e) => {
-    setNoteItemOrder(e.target.value);
+  const handleNote = (e) => {
+
+    const currentNote = e.target.value;
+
+    handleItem(item, currentNote);
   };
 
   // useEffect(() => {
@@ -126,7 +111,7 @@ const ItemOrder = ({ dish, addItems }) => {
         <div className="noteOrder">
           <textarea
             placeholder="Indicaciones para el chef"
-            onChange={handleChange}
+            onChange={handleNote}
           />
         </div>
       </div>
@@ -138,11 +123,11 @@ const ItemOrder = ({ dish, addItems }) => {
           />
         </div>
         <div className="secondRowButtons">
-          <p>$ {totalPrice}.00 </p>
+          <p>$ {item["priceTotalItemOrder"]}.00 </p>
         </div>
         <div className="firstRowButtons">
           <button className="fa-regular fa-square-minus" onClick={disminuir} />
-          <p>{num}</p>
+          <p>{item["numItemOrder"]}</p>
           <button className="fa-regular fa-square-plus" onClick={aumentar} />
         </div>
       </div>

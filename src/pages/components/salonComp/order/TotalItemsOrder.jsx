@@ -4,11 +4,9 @@ import { OptionsDishProvider } from "../../../context/OptionDish";
 
 //recibe info
 const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
-
   const [arrayItemsOrder, setArrayItemsOrder] = useState([]);
   const [totalOrder, setTotalOrder] = useState(0);
   const { nameOrder, numOrder } = infoOrder;
-
 
   useEffect(() => {
     addOrder({
@@ -21,43 +19,53 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [arrayItemsOrder, nameOrder, numOrder, totalOrder]);
 
-  const addItems = async (itemsOrder) => {
-    const IdNew = itemsOrder.idItemOrder;
-    arrayItemsOrder.forEach(object => {
+  const addItems = async (itemOrder) => {
+    console.log(itemOrder);
 
-      if (object.idItemOrder === IdNew) {
-        let newArray = arrayItemsOrder.filter((dish) => dish.idItemOrder !== IdNew);
+    // const IdNew = itemOrder.idItemOrder;
 
-        const addNewItem = newArray.push(itemsOrder);
+    // arrayItemsOrder.forEach((object) => {
+    //   if (object.idItemOrder === IdNew) {
 
+    //   }
+    // });
+    arrayItemsOrder.map((dish) => {
+      return if (arrayItemsOrder === []) {
+        console.log(dish)
 
-        console.log(addNewItem);
-        console.table(newArray);
       }
-
     });
-
-    setArrayItemsOrder([...arrayItemsOrder, itemsOrder]);
+    
+    // setArrayItemsOrder([...arrayItemsOrder, itemOrder]);
   };
 
-  useEffect(() => {
-    setTotalOrder(
-      arrayItemsOrder.reduce(
-        (total, value) => total + value.priceTotalItemOrder,
-        0
-      )
-    );
-  }, [arrayItemsOrder]);
+  // setCart((prevCart) => {
+  //   return prevCart.map((x) =>
+  //     x.idProductCart === idProductCart
+  //       ? {
+  //           ...x,
+  //           qty: state.count,
+  //           totalCost: unitCost * state.count,
+  //         }
+  //       : x
+  //   );
+  // });
+
+  // useEffect(() => {
+  //   setTotalOrder(
+  //     arrayItemsOrder.reduce(
+  //       (total, value) => total + value.priceTotalItemOrder,
+  //       0
+  //     )
+  //   );
+  // }, [arrayItemsOrder]);
 
   return (
     <>
       <div className="itemsTotalOrder">
         {listDishes.map((dish) => (
           <OptionsDishProvider key={dish.id}>
-            <ItemOrder
-              dish={dish}
-              addItems={addItems}
-            />
+            <ItemOrder dish={dish} addItems={addItems} />
           </OptionsDishProvider>
         ))}
       </div>

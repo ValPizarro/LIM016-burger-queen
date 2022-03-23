@@ -13,7 +13,7 @@ function Salon() {
   const [listDishes, setListDishes] = useState([]);
   const [dishID, setDishID] = useState("");
 
-  const ShowItem = (id) => {
+  const ShowItem = async (id) => {
     setDishID(id);
   }
 
@@ -27,8 +27,8 @@ function Salon() {
 // ¿Esto deberia estar en el useEffect?
     async function fetchData() {
       const dataByID = await getDataByID(dishID);
-      console.log(dataByID.id);
-      console.log(listDishes);
+      // console.log(dataByID.id);
+      // console.log(listDishes);
 
       // listDishes.forEach(object => {
       //   if (object.id === dataByID.id) {
@@ -53,12 +53,11 @@ function Salon() {
       // })
 
       setListDishes([...listDishes, dataByID]);
-
     }
     fetchData();
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dishID]);
+}, [dishID]);
 
   return (
     <div className="salonGeneral">
