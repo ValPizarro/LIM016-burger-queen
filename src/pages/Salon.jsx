@@ -28,29 +28,10 @@ function Salon() {
     async function fetchData() {
       const dataByID = await getDataByID(dishID);
 
-      // listDishes.forEach(object => {
-      //   if (object.id === dataByID.id) {
-
-      //     const ItemOrder = {
-      //       extraOrder1: "",
-      //       extraOrder2: "",
-      //       idItemOrder: dataByID.id,
-      //       nameItemOrder: dataByID.name,
-      //       noteOrder: "",
-      //       numItemOrder: 1,
-      //       optionOrder: "",
-      //       priceItemOrder: dataByID.price,
-      //       priceTotalItemOrder: 0,
-      //     };
-
-      //     // console.log(ItemOrder);
-      //     console.log(true);
-      //   } else {
-
-      //   }
-      // })
-      setListDishes([...listDishes, dataByID]);
-
+      const foundItem = listDishes.find((dish) => dish.id === dataByID.id);
+      if (foundItem === undefined) {
+        setListDishes([...listDishes, dataByID]);
+      }
     }
     fetchData();
   // eslint-disable-next-line react-hooks/exhaustive-deps

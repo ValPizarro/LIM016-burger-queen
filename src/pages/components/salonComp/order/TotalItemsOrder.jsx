@@ -21,22 +21,27 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
 
   const addItems = (itemOrder) => {
 
-    const IdNew = itemOrder.idItemOrder;
+    const { idItemOrder, numItemOrder, priceTotalItemOrder, noteOrder } =
+      itemOrder;
 
-    const foundItem = arrayItemsOrder.find(item => item.idItemOrder === IdNew);
+    const foundItem = arrayItemsOrder.find(
+      (item) => item.idItemOrder === idItemOrder
+    );
 
     // console.log(foundItem);
 
     if (foundItem !== undefined) {
-  
 
-      console.log(arrayItemsOrder)
-
+      setArrayItemsOrder(() => {
+        return arrayItemsOrder.map((item) =>
+          item.idItemOrder === idItemOrder
+            ? console.log("es igual")
+            : item
+        );
+      });
     } else {
       setArrayItemsOrder([...arrayItemsOrder,itemOrder]);
     }
-
-
   };
 
   // setCart((prevCart) => {
