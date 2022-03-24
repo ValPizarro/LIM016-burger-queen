@@ -48,7 +48,7 @@ const ItemOrder = ({ dish, addItems }) => {
 
   const aumentar = (e) => {
     e.preventDefault();
-
+      // investigar ++
     const currentAccount = ++item["numItemOrder"];
 
     handleItem(item, currentAccount);
