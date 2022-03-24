@@ -21,8 +21,7 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
 
   const addItems = (itemOrder) => {
 
-    const { idItemOrder, numItemOrder, priceTotalItemOrder, noteOrder } =
-      itemOrder;
+    const { idItemOrder,noteOrder, numItemOrder, priceTotalItemOrder } = itemOrder;
 
     const foundItem = arrayItemsOrder.find(
       (item) => item.idItemOrder === idItemOrder
@@ -32,38 +31,31 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
 
     if (foundItem !== undefined) {
 
-      setArrayItemsOrder(() => {
-        return arrayItemsOrder.map((item) =>
+      const newArray = arrayItemsOrder.map(
+        (item) =>
           item.idItemOrder === idItemOrder
-            ? console.log("es igual")
+            ? {
+              ...item,
+                noteOrder:noteOrder,
+                numItemOrder: numItemOrder,
+                priceTotalItemOrder: priceTotalItemOrder,
+            }
             : item
-        );
-      });
+
+      ); setArrayItemsOrder(newArray);
     } else {
       setArrayItemsOrder([...arrayItemsOrder,itemOrder]);
     }
   };
 
-  // setCart((prevCart) => {
-  //   return prevCart.map((x) =>
-  //     x.idProductCart === idProductCart
-  //       ? {
-  //           ...x,
-  //           qty: state.count,
-  //           totalCost: unitCost * state.count,
-  //         }
-  //       : x
-  //   );
-  // });
-
-  // useEffect(() => {
-  //   setTotalOrder(
-  //     arrayItemsOrder.reduce(
-  //       (total, value) => total + value.priceTotalItemOrder,
-  //       0
-  //     )
-  //   );
-  // }, [arrayItemsOrder]);
+  useEffect(() => {
+    setTotalOrder(
+      arrayItemsOrder.reduce(
+        (total, value) => total + value.priceTotalItemOrder,
+        0
+      )
+    );
+  }, [arrayItemsOrder]);
 
   return (
     <>
