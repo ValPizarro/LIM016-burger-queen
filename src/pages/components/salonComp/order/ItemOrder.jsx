@@ -44,7 +44,7 @@ const ItemOrder = ({ dish, addItems }) => {
   useEffect(() => {
     addItems(item);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [item, item.numItemOrder]);
+  }, [item, item.numItemOrder,item.noteOrder]);
 
   const aumentar = (e) => {
     e.preventDefault();

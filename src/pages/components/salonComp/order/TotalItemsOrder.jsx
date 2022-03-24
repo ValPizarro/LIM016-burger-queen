@@ -19,24 +19,24 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [arrayItemsOrder, nameOrder, numOrder, totalOrder]);
 
-  const addItems = async (itemOrder) => {
-    console.log(itemOrder);
+  const addItems = (itemOrder) => {
 
-    // const IdNew = itemOrder.idItemOrder;
+    const IdNew = itemOrder.idItemOrder;
 
-    // arrayItemsOrder.forEach((object) => {
-    //   if (object.idItemOrder === IdNew) {
+    const foundItem = arrayItemsOrder.find(item => item.idItemOrder === IdNew);
 
-    //   }
-    // });
-    arrayItemsOrder.map((dish) => {
-      return if (arrayItemsOrder === []) {
-        console.log(dish)
+    // console.log(foundItem);
 
-      }
-    });
-    
-    // setArrayItemsOrder([...arrayItemsOrder, itemOrder]);
+    if (foundItem !== undefined) {
+  
+
+      console.log(arrayItemsOrder)
+
+    } else {
+      setArrayItemsOrder([...arrayItemsOrder,itemOrder]);
+    }
+
+
   };
 
   // setCart((prevCart) => {
