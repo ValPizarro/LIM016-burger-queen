@@ -1,12 +1,25 @@
 import { useState, useEffect } from "react";
 import ItemOrder from "./ItemOrder";
-import { OptionsDishProvider } from "../../../context/OptionDish";
+import { useOptionsContext } from "../../../context/OptionDish";
 
 //recibe info
 const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
   const [arrayItemsOrder, setArrayItemsOrder] = useState([]);
   const [totalOrder, setTotalOrder] = useState(0);
   const { nameOrder, numOrder } = infoOrder;
+
+  console.log(arrayItemsOrder);
+
+  const {
+    extraOrder1,
+    setExtraOrder1,
+    extraOrder2,
+    setExtraOrder2,
+    optionOrder,
+    setOptionOrder,
+  } = useOptionsContext();
+
+  console.log(optionOrder);
 
   useEffect(() => {
     addOrder({
@@ -20,8 +33,8 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
   }, [arrayItemsOrder, nameOrder, numOrder, totalOrder]);
 
   const addItems = (itemOrder) => {
-
-    const { idItemOrder,noteOrder, numItemOrder, priceTotalItemOrder } = itemOrder;
+    const { idItemOrder, noteOrder, numItemOrder, priceTotalItemOrder } =
+      itemOrder;
 
     const foundItem = arrayItemsOrder.find(
       (item) => item.idItemOrder === idItemOrder
@@ -30,21 +43,19 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
     // console.log(foundItem);
 
     if (foundItem !== undefined) {
-
-      const newArray = arrayItemsOrder.map(
-        (item) =>
-          item.idItemOrder === idItemOrder
-            ? {
+      const newArray = arrayItemsOrder.map((item) =>
+        item.idItemOrder === idItemOrder
+          ? {
               ...item,
-                noteOrder:noteOrder,
-                numItemOrder: numItemOrder,
-                priceTotalItemOrder: priceTotalItemOrder,
+              noteOrder: noteOrder,
+              numItemOrder: numItemOrder,
+              priceTotalItemOrder: priceTotalItemOrder,
             }
-            : item
-
-      ); setArrayItemsOrder(newArray);
+          : item
+      );
+      setArrayItemsOrder(newArray);
     } else {
-      setArrayItemsOrder([...arrayItemsOrder,itemOrder]);
+      setArrayItemsOrder([...arrayItemsOrder, itemOrder]);
     }
   };
 
@@ -61,9 +72,7 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
     <>
       <div className="itemsTotalOrder">
         {listDishes.map((dish) => (
-          <OptionsDishProvider key={dish.id}>
-            <ItemOrder dish={dish} addItems={addItems} />
-          </OptionsDishProvider>
+          <ItemOrder dish={dish} addItems={addItems} key={dish.id} />
         ))}
       </div>
       <div className="priceOrder">

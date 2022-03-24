@@ -1,12 +1,38 @@
-import { useEffect, useState, useContext } from "react";
-import OptionsDishContext from "../../../context/OptionDish";
+import { useEffect, useState } from "react";
+import { useOptionsContext } from "../../../context/OptionDish";
+
 
 const ItemOrder = ({ dish, addItems }) => {
   const { id, name, img, price } = dish;
 
-  const { extraOrder1, extraOrder2, optionOrder } = useContext(OptionsDishContext);
+    const {
+      setExtraOrder1,
+      setExtraOrder2,
+      setOptionOrder,
+      optionOrder,
+      extraOrder1,
+      extraOrder2,
+    } = useOptionsContext();
 
-  // let [noteItemOrder, setNoteItemOrder] = useState("");
+    console.log(optionOrder);
+    console.log(extraOrder1);
+    console.log(extraOrder2);
+
+
+      // const [extras, setExtras] = useState({
+      //   extra1: "",
+      //   extra2: "",
+      //   optionOrder: "",
+      // });
+
+      // useEffect(() => {
+      //   setExtras({
+      //     extra1: setExtraOrder1,
+      //     extra2: setExtraOrder2,
+      //     optionOrder: setOptionOrder,
+      //   });
+      // }, [setExtraOrder1, setExtraOrder2, setOptionOrder]);
+
   let options = null; // volverlo componente
 
   const [item, setItem] = useState({
@@ -20,6 +46,8 @@ const ItemOrder = ({ dish, addItems }) => {
     priceItemOrder: price,
     priceTotalItemOrder: price,
   });
+
+  console.log(item);
 
   const handleItem = (item, valor) => {
 
@@ -43,8 +71,20 @@ const ItemOrder = ({ dish, addItems }) => {
 
   useEffect(() => {
     addItems(item);
+
+    // setItem((previtem) => {
+    //   return ({
+    //     ...previtem,
+    //     extraOrder1: extraOrder1,
+    //     extraOrder2: extraOrder2,
+    //     optionOrder: optionOrder,
+    //   })
+    //   })
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [item, item.numItemOrder,item.noteOrder]);
+  // }, [item, item.numItemOrder,item.noteOrder, item.optionOrder, item.extraOrder1, item.extraOrder2]);
+
 
   const aumentar = (e) => {
     e.preventDefault();
@@ -87,8 +127,10 @@ const ItemOrder = ({ dish, addItems }) => {
       options = (
         // eslint-disable-next-line react-hooks/exhaustive-deps
         <>
-          <p>Tipo: {optionOrder} </p>
-          <p>Extra: {extraOrder1} {extraOrder2}</p>
+          <p>Tipo: {"-"} </p>
+          <p>
+            Extra: {"-"} {"-"}
+          </p>
         </>
       );
     } else {
