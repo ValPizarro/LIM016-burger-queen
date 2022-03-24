@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 
-export const Extra = (setExtraOrder1, setExtraOrder2) => {
+export const Extra = ({ setExtraOrder1, setExtraOrder2 }) => {
   Swal.fire({
     title: "Extras",
     html:

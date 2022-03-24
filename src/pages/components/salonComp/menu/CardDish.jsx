@@ -1,30 +1,44 @@
-import { useContext } from "react";
 import { Options } from "./Options";
 import { Extra } from "./Extra";
 
-import OptionsDishContext from "../../../context/OptionDish";
+import { useOptionsContext } from "../../../context/OptionDish";
 
 export const CardDish = ({ menuDish, ShowItem }) => {
 
-  const { id, name, img, price, OptionOrder } = menuDish;
+  const { id, name, img, price } = menuDish;
+  
+  const {
+    setExtraOrder1,
+    setExtraOrder2,
+    setOptionOrder,
+    optionOrder,
+    extraOrder1,
+    extraOrder2,
+  } = useOptionsContext();
 
-const{ setExtraOrder1, setExtraOrder2, setOptionOrder } =
-    useContext(OptionsDishContext);
+  console.log(optionOrder);
+  console.log(extraOrder1);
+  console.log(extraOrder2);
+
 
   const getDish = (id, name) => {
     switch (name) {
       case "Hamburguesa clásica":
 
-        Options(setOptionOrder).then(() =>
-          Extra(setExtraOrder1, setExtraOrder2)
+        Options({ setOptionOrder }).then(() => {
+          
+          Extra({ setExtraOrder1, setExtraOrder2 })
+        }
         );
         ShowItem(id);
         break;
       case "Hamburguesa doble":
 
-        console.log(OptionOrder);
-        Options(setOptionOrder).then(() =>
-          Extra(setExtraOrder1, setExtraOrder2)
+        Options({ setOptionOrder }).then(() => {
+          Extra({ setExtraOrder1, setExtraOrder2 });
+
+        }
+
         );
         ShowItem(id);
         break;
