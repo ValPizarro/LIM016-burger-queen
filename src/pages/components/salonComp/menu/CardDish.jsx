@@ -6,7 +6,7 @@ import { useOptionsContext } from "../../../context/OptionDish";
 export const CardDish = ({ menuDish, ShowItem }) => {
 
   const { id, name, img, price } = menuDish;
-  
+
   const {
     setExtraOrder1,
     setExtraOrder2,
@@ -24,27 +24,22 @@ export const CardDish = ({ menuDish, ShowItem }) => {
   const getDish = (id, name) => {
     switch (name) {
       case "Hamburguesa clásica":
-
         Options({ setOptionOrder }).then(() => {
-          
           Extra({ setExtraOrder1, setExtraOrder2 })
-        }
-        );
+        });
         ShowItem(id);
-        break;
-      case "Hamburguesa doble":
+      break;
 
+      case "Hamburguesa doble":
         Options({ setOptionOrder }).then(() => {
           Extra({ setExtraOrder1, setExtraOrder2 });
-
-        }
-
-        );
+        });
         ShowItem(id);
-        break;
+      break;
+
       default:
-        ShowItem(id);
-        break;
+      ShowItem(id);
+      break;
     }
   };
 
