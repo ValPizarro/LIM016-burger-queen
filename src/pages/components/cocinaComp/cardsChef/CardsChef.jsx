@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-
 import { onSnapshot, collection } from "firebase/firestore";
 import { db } from "../../../../firebase/config";
-
 import BtnOrderChef from "./BtnOrderChef";
 import AllCardsChef from "./AllCardsChef";
 
@@ -35,5 +33,6 @@ const CardsChef = () => {
       <AllCardsChef filterOrders={filterOrders} />
     </div>
   );
+
 };
 export default CardsChef;

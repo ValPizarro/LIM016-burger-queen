@@ -18,11 +18,12 @@ export const OptionsDishProvider = ({ children }) => {
 
     const [optionOrder, setOptionOrder] = useState("-");
 
-    // const [optionsDish, setOptionsDish] = useState({
-    //   extraOrder1: extraOrder1,
-    //   extraOrder2: extraOrder1,
-    //   optionOrder: optionOrder,
-    // });
+    const [optionsDish, setOptionsDish] = useState({
+        idOptions: "-",
+        extraOrder1: "-",
+        extraOrder2: "-",
+        optionOrder: "-",
+    });
 
     // const addOptionsDish = (newoptionDish) => {
     //     setOptionsDish(newoptionDish);
@@ -40,17 +41,22 @@ export const OptionsDishProvider = ({ children }) => {
     //     // addOptionsDish,
     // };
 
-    return <OptionsDishContext.Provider value={
-
-       {extraOrder1,
-        setExtraOrder1,
-        extraOrder2,
-        setExtraOrder2,
-        optionOrder,
-        setOptionOrder
-    }
-    }>{children}</OptionsDishContext.Provider>
+    return (
+      <OptionsDishContext.Provider
+        value={{
+          extraOrder1,
+          setExtraOrder1,
+          extraOrder2,
+          setExtraOrder2,
+          optionOrder,
+          setOptionOrder,
+          optionsDish,
+          setOptionsDish,
+        }}
+      >
+        {children}
+      </OptionsDishContext.Provider>
+    );
 }
-
 
 // export default OptionsDishContext;

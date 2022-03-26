@@ -29,5 +29,6 @@ const CardChef = ({ filterOrder }) => {
       </div>
     </div>
   );
+
 };
 export default CardChef;

@@ -6,18 +6,17 @@ const ItemOrder = ({ dish, addItems }) => {
   const { id, name, img, price } = dish;
 
     const {
-      setExtraOrder1,
-      setExtraOrder2,
-      setOptionOrder,
       optionOrder,
       extraOrder1,
       extraOrder2,
     } = useOptionsContext();
 
+  useEffect(() => {
+
     console.log(optionOrder);
     console.log(extraOrder1);
     console.log(extraOrder2);
-
+  }, [optionOrder, extraOrder1, extraOrder2]);
 
       // const [extras, setExtras] = useState({
       //   extra1: "",
@@ -25,13 +24,6 @@ const ItemOrder = ({ dish, addItems }) => {
       //   optionOrder: "",
       // });
 
-      // useEffect(() => {
-      //   setExtras({
-      //     extra1: setExtraOrder1,
-      //     extra2: setExtraOrder2,
-      //     optionOrder: setOptionOrder,
-      //   });
-      // }, [setExtraOrder1, setExtraOrder2, setOptionOrder]);
 
   let options = null; // volverlo componente
 
@@ -71,15 +63,6 @@ const ItemOrder = ({ dish, addItems }) => {
 
   useEffect(() => {
     addItems(item);
-
-    // setItem((previtem) => {
-    //   return ({
-    //     ...previtem,
-    //     extraOrder1: extraOrder1,
-    //     extraOrder2: extraOrder2,
-    //     optionOrder: optionOrder,
-    //   })
-    //   })
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [item, item.numItemOrder,item.noteOrder]);
