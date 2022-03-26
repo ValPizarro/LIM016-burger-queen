@@ -11,18 +11,12 @@ const ItemOrder = ({ dish, addItems }) => {
       extraOrder2,
     } = useOptionsContext();
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    console.log(optionOrder);
-    console.log(extraOrder1);
-    console.log(extraOrder2);
-  }, [optionOrder, extraOrder1, extraOrder2]);
-
-      // const [extras, setExtras] = useState({
-      //   extra1: "",
-      //   extra2: "",
-      //   optionOrder: "",
-      // });
+  //   console.log(optionOrder);
+  //   console.log(extraOrder1);
+  //   console.log(extraOrder2);
+  // }, [optionOrder, extraOrder1, extraOrder2]);
 
 
   let options = null; // volverlo componente
@@ -37,9 +31,8 @@ const ItemOrder = ({ dish, addItems }) => {
     optionOrder: optionOrder,
     priceItemOrder: price,
     priceTotalItemOrder: price,
+    stateItem : false,
   });
-
-  console.log(item);
 
   const handleItem = (item, valor) => {
 
@@ -102,9 +95,7 @@ const ItemOrder = ({ dish, addItems }) => {
     handleItem(item, currentNote);
   };
 
-  // useEffect(() => {
-  //   console.log(optionOrder);
-  // }, [optionOrder])
+
 
     if (name === "Hamburguesa clásica" || name === "Hamburguesa doble") {
       options = (

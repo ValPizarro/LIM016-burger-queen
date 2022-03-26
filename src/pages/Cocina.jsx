@@ -4,17 +4,15 @@ import { getDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 import NavSalon from "../pages/components/salonComp/nav/NavSalon";
-import MenuCardsChef from "./components/cocinaComp/cardsChef/CardsChef";
+import GeneralCardsChef from "./components/cocinaComp/GeneralCardsChef/GeneralCardsChef";
 import OrderCard from "./components/cocinaComp/orderCard/OrderCard";
 
 function Cocina() {
 
   const [orderID, setOrderID] = useState("");
-  
   const [orderCompleto, setOrderCompleto] = useState({});
 
-
-  const orderByID = (id) => {
+  const orderByID = async (id) => {
     setOrderID(id);
   };
 
@@ -40,7 +38,7 @@ function Cocina() {
         <NavSalon />
       </nav>
       <div className="bodyChef">
-        <MenuCardsChef orderByID={orderByID} />
+        <GeneralCardsChef orderByID={orderByID} />
         <OrderCard orderCompleto={orderCompleto} />
       </div>
     </div>

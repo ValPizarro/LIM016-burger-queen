@@ -21,9 +21,9 @@ export const CardDish = ({ menuDish, ShowItem }) => {
 
 
     useEffect(() => {
-      console.log(optionOrder);
-      console.log(extraOrder1);
-      console.log(extraOrder2);
+      // console.log(optionOrder);
+      // console.log(extraOrder1);
+      // console.log(extraOrder2);
 
       function addOptions() {
         setOptionsDish({
