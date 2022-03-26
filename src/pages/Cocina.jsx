@@ -7,6 +7,8 @@ import NavSalon from "../pages/components/salonComp/nav/NavSalon";
 import GeneralCardsChef from "./components/cocinaComp/GeneralCardsChef/GeneralCardsChef";
 import OrderCard from "./components/cocinaComp/orderCard/OrderCard";
 
+import { Vacio } from "./components/cocinaComp/orderCard/Vacio";
+
 function Cocina() {
 
   const [orderID, setOrderID] = useState("");
@@ -31,6 +33,15 @@ function Cocina() {
     fetchOrder();
   }, [orderID]);
 
+  const EscogerVista = () => {
+    const verificacion = Object.keys(orderCompleto).length === 0;
+
+    if (orderID !== "" && verificacion === false) {
+
+      return <OrderCard orderCompleto={orderCompleto} />;
+    }
+    return <Vacio/>
+  }
 
   return (
     <div className="contentCocina">
@@ -39,7 +50,9 @@ function Cocina() {
       </nav>
       <div className="bodyChef">
         <GeneralCardsChef orderByID={orderByID} />
-        <OrderCard orderCompleto={orderCompleto} />
+        {/* <OrderCard orderCompleto={orderCompleto} /> */}
+
+        <EscogerVista/>
       </div>
     </div>
   );

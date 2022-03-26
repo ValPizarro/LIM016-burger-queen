@@ -1,7 +1,8 @@
 
 const CardChef = ({ filterOrder, orderByID }) => {
 
- const IdOrder = filterOrder.id;
+  const IdOrder = filterOrder.id;
+  
 
   const { nameOrder, itemsOrder, stateOrder} = filterOrder;
   let stateItem = null;

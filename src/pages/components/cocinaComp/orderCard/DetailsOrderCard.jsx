@@ -1,7 +1,7 @@
-export const DetalleOrderCard = ({ detalleOrder }) => {
-console.log(detalleOrder);
+export const DetailsOrderCard = ({ details }) => {
+  console.log(details.nameItemOrder);
   return (
-    <div className="DetalleOrderCard">
+    <div className="DetailsOrderCard">
       <input type="checkbox" />
       <p className="num">01</p>
       <div>

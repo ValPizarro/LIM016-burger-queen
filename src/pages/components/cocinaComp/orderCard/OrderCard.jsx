@@ -1,40 +1,31 @@
-import { useEffect } from "react";
-import { DetalleOrderCard } from "./DetalleOrderCard";
+import { Mapping } from "./maping";
 
 const OrderCard = ({ orderCompleto }) => {
   console.log(orderCompleto);
+
+
   const { numOrder, stateOrder, itemsOrder } = orderCompleto;
+  
+  // console.log(itemsOrder);
+  
 
-  useEffect(() => {
-      const element = (
-         <>
-        {
-          itemsOrder.map((detalleOrder) => (
-            <DetalleOrderCard detalleOrder={detalleOrder} />
-          ))
-        }
-      </>
-      )
-  }, [itemsOrder]);
-
-  return (
-    <div className="ContainerOrderCard">
-      <header className="headerDescriptionOrder">
-        <button>{stateOrder}</button>
-        <p>{numOrder}</p>
-      </header>
-      <hr />
-      <div className="flexOrderDescription">
-        <div className="gridTitleOrder">
-          <p className="unidad">Unidad</p>
-          <p className="description">Description</p>
+    return (
+      <div className="ContainerOrderCard">
+        <header className="headerDescriptionOrder">
+          <button>{stateOrder}</button>
+          <p>{numOrder}</p>
+        </header>
+        <hr />
+        <div className="flexOrderDescription">
+          <div className="gridTitleOrder">
+            <p className="unidad">Unidad</p>
+            <p className="description">Description</p>
+          </div>
+          <Mapping itemsOrder={itemsOrder} />
         </div>
-        {/* {itemsOrder.map((detalleOrder) => (
-          <DetalleOrderCard detalleOrder={detalleOrder} />
-        ))} */}
-        <element />
       </div>
-    </div>
-  );
+    )
+
 };
+
 export default OrderCard;
