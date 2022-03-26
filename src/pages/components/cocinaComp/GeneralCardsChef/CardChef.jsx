@@ -1,21 +1,24 @@
 
-const CardChef = ({ filterOrder }) => {
-  const { nameOrder, itemsOrder, stateOrder } = filterOrder;
+const CardChef = ({ filterOrder, orderByID }) => {
+
+ const IdOrder = filterOrder.id;
+
+  const { nameOrder, itemsOrder, stateOrder} = filterOrder;
   let stateItem = null;
 
   const handleOrder = () => {
-        alert("me diste click");
-  }
+    orderByID(IdOrder);
+  };
 
   if (stateOrder === "generado") {
-   stateItem = <button className="buttonState buttonStatePendiente" >{stateOrder}</button>;
+    stateItem = (
+      <button className="buttonState buttonStatePendiente">{stateOrder}</button>
+    );
   } else {
     stateItem = (
-      <button className="buttonState buttonStateProceso">
-        {stateOrder}
-      </button>
-    )
-  };
+      <button className="buttonState buttonStateProceso">{stateOrder}</button>
+    );
+  }
 
   return (
     <div className="cardChef" onClick={handleOrder}>

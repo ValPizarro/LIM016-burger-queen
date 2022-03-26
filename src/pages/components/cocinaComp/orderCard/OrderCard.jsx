@@ -1,10 +1,15 @@
-const OrderCard = () => {
+import { DetalleOrderCard } from "./DetalleOrderCard";
+
+const OrderCard = ({ orderCompleto }) => {
+  console.log(orderCompleto);
+  const { numOrder, stateOrder, itemsOrder } = orderCompleto;
+  console.log(itemsOrder)
 
   return (
     <div className="ContainerOrderCard">
       <header className="headerDescriptionOrder">
-        <button>En proceso</button>
-        <p>Orden #23469</p>
+        <button>{stateOrder}</button>
+        <p>{numOrder}</p>
       </header>
       <hr />
       <div className="flexOrderDescription">
@@ -12,17 +17,11 @@ const OrderCard = () => {
           <p className="unidad">Unidad</p>
           <p className="description">Description</p>
         </div>
-
-        <div className="gridOrder">
-          <input type="checkbox" />
-          <p className="num">01</p>
-          <div>
-            <h2>Haburguesa doble</h2>
-            <p>Detalle:</p>
-            <p>Carne</p>
-            <p>Huevo</p>
-          </div>
-        </div>
+        <DetalleOrderCard/>
+        {/* {itemsOrder.map((detalleOrder) => (
+          <DetalleOrderCard detalleOrder={detalleOrder} />
+        ))} */}
+        <element />
       </div>
     </div>
   );
