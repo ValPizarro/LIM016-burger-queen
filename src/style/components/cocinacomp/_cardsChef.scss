@@ -1,0 +1,91 @@
+@use '../../vars/colors' as color;
+
+.gridBtnChef{
+    padding: 0px 15px;
+    height: 12%;
+    display: grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    column-gap: 35px;
+}
+.cardsChefGeneral{
+    column-gap: 35px;
+    row-gap: 35px;
+    padding: 0px 14px;
+    height: 84.5%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow-y: scroll;
+ /*    display: grid; */
+/*     grid-template-columns:repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr); */
+}
+.SelectChef{
+    height: 55%;
+    border-radius: 14px;
+    border: solid 0px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.4rem;
+    color: white;
+    background-color: map-get(color.$buttons, "color");
+    height:55%;
+}
+.cardChef {
+    // min-height: 30.1%;
+    height: 30%;
+    min-width: 47%;
+    padding: 2.2% 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: map-get(color.$background, "conteiners");
+    border-radius: 25px;
+    font-family: 'Barlow', sans-serif;
+
+    .buttonState{
+        width: 90%;
+        height: 25%;
+        border-radius: 20px;
+        opacity: 0.8;
+        zoom: 1;
+        font-size: 1.2rem;
+    }
+    .buttonStatePendiente{
+        background: map-get(color.$buttons ,"pendiente" );        color:map-get(color.$text, "textPendiente" );
+
+    }
+    .buttonStateProceso{
+        background: map-get(color.$buttons ,"proceso" );
+        color:map-get(color.$text, "textProceso" );
+    }
+
+    .timeCardChef {
+        display: flex;
+        padding: 10px 0px;
+        width: 90%;
+        height: 75%;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        color: white;
+    }
+    .itemsCardChef{
+        height: 100%;
+        width: 100%;
+        text-align: start;
+        overflow-y: scroll;
+    }
+}
+
+.itemsCardChef::-webkit-scrollbar{
+    height: 90%;
+    width: 7px;
+    background: map-get(color.$background, "conteiners");
+}
+.itemsCardChef::-webkit-scrollbar-thumb{
+    background: map-get(color.$buttons, "color");
+    border-radius: 8px;
+}

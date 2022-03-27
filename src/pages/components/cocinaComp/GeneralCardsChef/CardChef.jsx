@@ -1,10 +1,10 @@
+import { StateCard } from "./StateCard";
 
 const CardChef = ({ filterOrder, orderByID }) => {
 
   const IdOrder = filterOrder.id;
-  
 
-  const { nameOrder, itemsOrder, stateOrder} = filterOrder;
+  const { itemsOrder, stateOrder} = filterOrder;
   let stateItem = null;
 
   const handleOrder = () => {
@@ -24,12 +24,15 @@ const CardChef = ({ filterOrder, orderByID }) => {
   return (
     <div className="cardChef" onClick={handleOrder}>
       {stateItem}
-      <div className="textCard">
-        <p>Cliente: {nameOrder} </p>
+      <div className="timeCardChef">
+        <p> Tiempo: 0:10:00 </p>
         <br />
-        {itemsOrder.map((item) => (
+        <div className="itemsCardChef">
+                  {itemsOrder.map((item) => (
           <p>{item.nameItemOrder}</p>
         ))}
+        </div>
+        <StateCard/>
       </div>
     </div>
   );

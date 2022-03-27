@@ -33,15 +33,7 @@ function Cocina() {
     fetchOrder();
   }, [orderID]);
 
-  const EscogerVista = () => {
-    const verificacion = Object.keys(orderCompleto).length === 0;
-
-    if (orderID !== "" && verificacion === false) {
-
-      return <OrderCard orderCompleto={orderCompleto} />;
-    }
-    return <Vacio/>
-  }
+  const verificacion = Object.keys(orderCompleto).length === 0;
 
   return (
     <div className="contentCocina">
@@ -50,9 +42,13 @@ function Cocina() {
       </nav>
       <div className="bodyChef">
         <GeneralCardsChef orderByID={orderByID} />
-        {/* <OrderCard orderCompleto={orderCompleto} /> */}
 
-        <EscogerVista/>
+        {verificacion === false ? (
+          <OrderCard orderCompleto={orderCompleto} />
+        ) : (
+          <Vacio />
+        )}
+
       </div>
     </div>
   );
