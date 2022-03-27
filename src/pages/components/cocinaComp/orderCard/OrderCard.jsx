@@ -14,6 +14,7 @@ const OrderCard = ({ orderCompleto }) => {
         <header className="headerDescriptionOrder">
           <button>{stateOrder}</button>
           <p>{numOrder}</p>
+          <p> Tiempo: 0:10:00 </p>
         </header>
         <hr />
         <div className="flexOrderDescription">
@@ -24,7 +25,7 @@ const OrderCard = ({ orderCompleto }) => {
           <Mapping itemsOrder={itemsOrder} />
         </div>
       </div>
-    )
+    );
 
 };
 
