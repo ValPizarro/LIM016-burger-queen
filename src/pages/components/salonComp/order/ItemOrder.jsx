@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useOptionsContext } from "../../../context/OptionDish";
 
-
 const ItemOrder = ({ dish, addItems }) => {
   const { id, name, img, price } = dish;
 
