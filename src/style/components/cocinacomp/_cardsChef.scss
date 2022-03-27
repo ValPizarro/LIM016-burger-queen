@@ -45,23 +45,6 @@
     border-radius: 25px;
     font-family: 'Barlow', sans-serif;
 
-    .buttonState{
-        width: 90%;
-        height: 25%;
-        border-radius: 20px;
-        opacity: 0.8;
-        zoom: 1;
-        font-size: 1.2rem;
-    }
-    .buttonStatePendiente{
-        background: map-get(color.$buttons ,"pendiente" );        color:map-get(color.$text, "textPendiente" );
-
-    }
-    .buttonStateProceso{
-        background: map-get(color.$buttons ,"proceso" );
-        color:map-get(color.$text, "textProceso" );
-    }
-
     .timeCardChef {
         display: flex;
         width: 90%;
@@ -85,6 +68,7 @@
         padding: 15px;
     }
 }
+
 
 .itemsCardChef::-webkit-scrollbar{
     height: 90%;

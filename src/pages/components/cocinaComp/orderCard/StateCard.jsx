@@ -1,9 +1,9 @@
 export const StateCard = () => {
     return (
-        <div class="switch-holder">
-            <div class="switch-toggle">
+        <div className="switch-holder">
+            <div className="switch-toggle">
                 <input type="checkbox" id="bluetooth"/>
-                <label for="bluetooth"></label>
+                <label></label>
             </div>
         </div>
     );

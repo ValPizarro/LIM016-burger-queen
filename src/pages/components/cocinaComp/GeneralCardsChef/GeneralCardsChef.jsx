@@ -7,6 +7,7 @@ import BtnOrderChef from "./BtnOrderChef";
 import AllCardsChef from "./AllCardsChef";
 
 const GeneralCardsChef = ({ orderByID }) => {
+
   const [allOrder, setAllOrder] = useState([]);
   const [filterOrders, SetFilterOrders] = useState([]);
   const [currentState, SetCurrentState] = useState("generado");

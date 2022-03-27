@@ -1,18 +1,28 @@
 import { Mapping } from "./maping";
+import { doc, updateDoc } from "firebase/firestore";
+import {db} from "../../../../firebase/config";
+/* import { StateCard } from "./StateCard"; */
 
-const OrderCard = ({ orderCompleto }) => {
-  console.log(orderCompleto);
-
-
+  const OrderCard = ({ orderCompleto, orderID }) => {
+  console.log(orderCompleto)
   const { numOrder, stateOrder, itemsOrder } = orderCompleto;
-  
-  // console.log(itemsOrder);
-  
+  // console.log(itemsOrder)
+
+  const handleState = async() => {
+    const orderRef = doc(db, "order", orderID);
+    await updateDoc(orderRef, {
+      stateOrder:"proceso",
+    });
+  }
 
     return (
       <div className="ContainerOrderCard">
         <header className="headerDescriptionOrder">
-          <button>{stateOrder}</button>
+          {stateOrder === "generado" ? (
+          <button onClick={handleState} className="buttonState buttonStatePendiente">{stateOrder}</button>
+        ) : (
+          <button onClick={handleState} className="buttonState buttonStateProceso">{stateOrder}</button>
+        )}
           <p>{numOrder}</p>
           <p> Tiempo: 0:10:00 </p>
         </header>
@@ -22,7 +32,7 @@ const OrderCard = ({ orderCompleto }) => {
             <p className="unidad">Unidad</p>
             <p className="description">Description</p>
           </div>
-          <Mapping itemsOrder={itemsOrder} />
+          <Mapping itemsOrder={itemsOrder} orderID={orderID}/>
         </div>
       </div>
     );

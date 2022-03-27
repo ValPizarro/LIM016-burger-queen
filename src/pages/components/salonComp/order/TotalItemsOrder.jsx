@@ -7,14 +7,11 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
   const [arrayItemsOrder, setArrayItemsOrder] = useState([]);
   const [totalOrder, setTotalOrder] = useState(0);
   const { nameOrder, numOrder } = infoOrder;
-  
   const { optionsDish } = useOptionsContext();
-
 
   useEffect(() => {
     console.log(optionsDish);
   }, [optionsDish]);
-
 
   useEffect(() => {
     addOrder({
