@@ -13,7 +13,7 @@ function Cocina() {
 
   const [orderID, setOrderID] = useState("");
   const [orderCompleto, setOrderCompleto] = useState({});
-
+  console.log(orderCompleto);
   const orderByID = async (id) => {
     setOrderID(id);
   };
@@ -44,7 +44,7 @@ function Cocina() {
         <GeneralCardsChef orderByID={orderByID} />
 
         {verificacion === false ? (
-          <OrderCard orderCompleto={orderCompleto} orderID={orderID}/>
+          <OrderCard orderCompleto={orderCompleto} />
         ) : (
           <Vacio />
         )}

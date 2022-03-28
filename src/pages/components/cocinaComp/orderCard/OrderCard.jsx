@@ -32,7 +32,7 @@ import {db} from "../../../../firebase/config";
             <p className="unidad">Unidad</p>
             <p className="description">Description</p>
           </div>
-          <Mapping itemsOrder={itemsOrder} orderID={orderID}/>
+          <Mapping itemsOrder={itemsOrder}/>
         </div>
       </div>
     );

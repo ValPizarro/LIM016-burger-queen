@@ -1,27 +1,16 @@
 const CardChef = ({ filterOrder, orderByID }) => {
 
   const IdOrder = filterOrder.id;
-
-  const {itemsOrder/* ,stateOrder */} = filterOrder;
-  let stateItem = null;
+  console.log(filterOrder)
+  const {itemsOrder} = filterOrder;
+  console.log(itemsOrder);
 
   const handleOrder = () => {
     orderByID(IdOrder);
   };
 
- /*  if (stateOrder === "generado") {
-    stateItem = (
-      <button className="buttonState buttonStatePendiente">{stateOrder}</button>
-    );
-  } else {
-    stateItem = (
-      <button className="buttonState buttonStateProceso">{stateOrder}</button>
-    );
-  } */
-
   return (
     <div className="cardChef" onClick={handleOrder}>
-      {stateItem}
       <div className="timeCardChef">
         <p> Tiempo: 0:10:00 </p>
       </div>
@@ -30,7 +19,6 @@ const CardChef = ({ filterOrder, orderByID }) => {
           <p key={item.idItemOrder}>{item.nameItemOrder}</p>
         ))}
       </div>
-
     </div>
   );
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const DetailsOrderCard = ({ details, orderID }) => {
+export const DetailsOrderCard = ({ details}) => {
   console.log(details)
   const [stateITem, setStateItem] = useState(false)
 
@@ -14,6 +14,7 @@ export const DetailsOrderCard = ({ details, orderID }) => {
     // stateItem,
   } = details;
   const handleChange = (e) => {
+    console.log(e.target.checked)
     setStateItem(e.target.checked);
 
   };
