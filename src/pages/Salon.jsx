@@ -43,8 +43,8 @@ function Salon() {
         <NavSalon />
       </header>
       <div className="bodySalon">
-        <Menu ShowItem={ShowItem}  />
-        <Order listDishes={listDishes}  />
+        <Menu ShowItem={ShowItem} />
+        <Order listDishes={listDishes} setListDishes={setListDishes} />
       </div>
     </div>
   );

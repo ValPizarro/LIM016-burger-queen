@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 export const DetailsOrderCard = ({ details, checkHandler,checkboxes }) => {
-  console.log(details)
 
   const [stateItem, setStateItem] = useState(false)
 

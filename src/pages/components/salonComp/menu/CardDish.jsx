@@ -41,8 +41,8 @@ export const CardDish = ({ menuDish, ShowItem }) => {
 
     switch (name) {
       case "Hamburguesa clásica":
-        Options({ setOptionOrder }).then(() => {
-          Extra({ setExtraOrder1, setExtraOrder2 })
+        Options(setOptionOrder).then(() => {
+          Extra(setExtraOrder1, setExtraOrder2)
         });
         ShowItem(id);
       break;

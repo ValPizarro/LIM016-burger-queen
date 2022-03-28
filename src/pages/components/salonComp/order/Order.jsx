@@ -1,10 +1,11 @@
 import { useState } from "react";
 import TotalItems from "./TotalItemsOrder";
 
-import BtnSubmitOrder from "./btnSubmitOrder";
+import BtnSubmitOrder from "./BtnSubmitOrder";
 import { OptionsDishProvider } from "../../../context/OptionDish";
 
-export const Order = ({ listDishes }) => {
+export const Order = ({ listDishes, setListDishes }) => {
+
   const initialOrderInfo = {
     nameOrder: "",
     numOrder: 0,
@@ -21,6 +22,8 @@ export const Order = ({ listDishes }) => {
 
   const [infoOrder, setinfoOrder] = useState(initialOrderInfo);
   const [order, setOrder] = useState(initialOrder);
+  const [totalOrder, setTotalOrder] = useState(0);
+
 
   const addOrder = (newOrder) => {
     setOrder(newOrder);
@@ -34,7 +37,10 @@ export const Order = ({ listDishes }) => {
   };
 
   const clearOrder = () => {
+    setListDishes([]);
     setOrder(initialOrder);
+    setinfoOrder(initialOrderInfo);
+    setTotalOrder(0);
     console.log("clear");
   };
 
@@ -64,12 +70,13 @@ export const Order = ({ listDishes }) => {
         </div>
         <OptionsDishProvider>
           <TotalItems
-          listDishes={listDishes}
-          infoOrder={infoOrder}
-          addOrder={addOrder}
+            listDishes={listDishes}
+            infoOrder={infoOrder}
+            addOrder={addOrder}
+            totalOrder={totalOrder}
+            setTotalOrder={setTotalOrder}
           />
         </OptionsDishProvider>
-
       </form>
     </>
   );

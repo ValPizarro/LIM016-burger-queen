@@ -3,15 +3,14 @@ import ItemOrder from "./ItemOrder";
 import { useOptionsContext } from "../../../context/OptionDish";
 
 //recibe info
-const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
+const TotalItems = ({ listDishes, infoOrder, addOrder,totalOrder,setTotalOrder }) => {
   const [arrayItemsOrder, setArrayItemsOrder] = useState([]);
-  const [totalOrder, setTotalOrder] = useState(0);
   const { nameOrder, numOrder } = infoOrder;
-  const { optionsDish } = useOptionsContext();
+  const { optionOrder } = useOptionsContext();
 
   useEffect(() => {
-    console.log(optionsDish);
-  }, [optionsDish]);
+    console.log(optionOrder);
+  }, [optionOrder]);
 
   useEffect(() => {
     addOrder({
@@ -58,6 +57,7 @@ const TotalItems = ({ listDishes, infoOrder, addOrder }) => {
         0
       )
     );
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [arrayItemsOrder]);
 
   return (
