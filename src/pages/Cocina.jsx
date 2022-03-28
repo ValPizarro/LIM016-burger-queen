@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/config";
 
-import NavSalon from "../pages/components/salonComp/nav/NavSalon";
+import NavCocina from "../pages/components/navBar/NavCocina";
 import GeneralCardsChef from "./components/cocinaComp/GeneralCardsChef/GeneralCardsChef";
 import OrderCard from "./components/cocinaComp/orderCard/OrderCard";
 
@@ -59,7 +59,7 @@ function Cocina() {
   return (
     <div className="contentCocina">
       <nav className="navCocina">
-        <NavSalon />
+        <NavCocina />
       </nav>
       <div className="bodyChef">
         <GeneralCardsChef orderByID={orderByID} />

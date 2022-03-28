@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/config";
 
-import NavSalon from "../pages/components/salonComp/nav/NavSalon";
+import NavSalon from "../pages/components/navBar/NavSalon";
 import { Order } from "./components/salonComp/order/Order";
 import { Menu } from "../pages/components/salonComp/menu/Menu";
 

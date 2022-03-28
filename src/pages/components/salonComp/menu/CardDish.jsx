@@ -61,21 +61,13 @@ export const CardDish = ({ menuDish, ShowItem }) => {
   };
 
   return (
-    <div
-      className="carDish"
-      key={id}
-      onClick={() => getDish(id, name)}
-    >
+    <div className="carDish" key={id} onClick={() => getDish(id, name)}>
       <div className="photoDish">
         <img src={img} alt="Food" />
       </div>
       <div className="infoDish">
-        <p  className="textInfo1">
-          {name}
-        </p>
-        <p className="textInfo2">
-          $ {price}.00
-        </p>
+        <p className="textInfo1">{name}</p>
+        <p className="textInfo2">S/. {price}.00</p>
       </div>
     </div>
   );

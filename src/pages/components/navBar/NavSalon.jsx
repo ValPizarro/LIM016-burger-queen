@@ -1,30 +1,31 @@
 import { NavLink } from "react-router-dom";
 
-const LogoQuickly=require("../../../../img/brand/quickly_logo.png");
+const LogoQuickly=require("../../../img/brand/quickly_logo.png");
 
 function NavSalon(){
     return (
       <>
-          <nav className="navSalon" >
-            <div className="logoNav">
+        <nav className="navSalon">
+          <div className="logoNav">
+            <NavLink to="/">
               <img src={LogoQuickly} alt="Quickly" />
-            </div>
+            </NavLink>
+          </div>
           <div className="optionsNav">
             <NavLink to="/">
-              <i className="fa-solid fa-house" />
+              <i class="fa-solid fa-pen-to-square"></i>
             </NavLink>
-            <NavLink to="/alert">
+            <NavLink to="/salon/alert">
               <i className="fa-solid fa-bell" />
             </NavLink>
             <NavLink to="/config">
               <i className="fa-solid fa-clock-rotate-left" />
             </NavLink>
-            <NavLink to="/out">
+            {/* <NavLink to="/out">
               <i className="fa-solid fa-right-from-bracket" />
-            </NavLink>
+            </NavLink> */}
           </div>
-
-          </nav>
+        </nav>
       </>
     );
 }

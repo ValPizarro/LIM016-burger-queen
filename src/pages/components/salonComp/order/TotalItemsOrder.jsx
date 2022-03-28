@@ -69,7 +69,7 @@ const TotalItems = ({ listDishes, infoOrder, addOrder,totalOrder,setTotalOrder }
       </div>
       <div className="priceOrder">
         <p className="item1">Total: </p>
-        <p className="item2">$ {totalOrder}.00</p>
+        <p className="item2">S/. {totalOrder}.00</p>
       </div>
     </>
   );
