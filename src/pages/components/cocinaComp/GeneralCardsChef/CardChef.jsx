@@ -1,9 +1,8 @@
 const CardChef = ({ filterOrder, orderByID }) => {
 
   const IdOrder = filterOrder.id;
-  console.log(filterOrder)
-  const {itemsOrder} = filterOrder;
-  console.log(itemsOrder);
+
+  const { itemsOrder } = filterOrder;
 
   const handleOrder = () => {
     orderByID(IdOrder);
@@ -15,12 +14,13 @@ const CardChef = ({ filterOrder, orderByID }) => {
         <p> Tiempo: 0:10:00 </p>
       </div>
       <div className="itemsCardChef" >
-        {itemsOrder.map((item) => (
-          <p key={item.idItemOrder}>{item.nameItemOrder}</p>
-        ))}
+        {itemsOrder.map((item) =>
+            (<p key={item.idItemOrder}>{item.nameItemOrder}</p>)
+
+        )
+        }
       </div>
     </div>
   );
-
 };
 export default CardChef;

@@ -5,11 +5,11 @@ const AllCardsChef = ({ filterOrders, orderByID }) => {
   return (
     <div className="cardsChefGeneral">
       {filterOrders.map((filterOrder) => (
-        <CardChef
+      filterOrder.itemsOrder?.length >= 0 ?<CardChef
           filterOrder={filterOrder}
           orderByID={orderByID}
           key={filterOrder.id}
-        />
+        />: null
       ))}
     </div>
   );

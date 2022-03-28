@@ -44,13 +44,13 @@ function Cocina() {
         <GeneralCardsChef orderByID={orderByID} />
 
         {verificacion === false ? (
-          <OrderCard orderCompleto={orderCompleto} />
+          <OrderCard orderCompleto={orderCompleto}/>
         ) : (
           <Vacio />
         )}
       </div>
     </div>
   );
-}
+};
 
 export default Cocina;

@@ -1,29 +1,32 @@
 import { useState } from "react";
 
-export const DetailsOrderCard = ({ details}) => {
+export const DetailsOrderCard = ({ details, checkHandler,checkboxes }) => {
   console.log(details)
-  const [stateITem, setStateItem] = useState(false)
+
+  const [stateItem, setStateItem] = useState(false)
 
   const {
     extraOrder1,
     extraOrder2,
+    idItemOrder,
     nameItemOrder,
     noteOrder,
     numItemOrder,
     optionOrder,
     // stateItem,
   } = details;
-  const handleChange = (e) => {
-    console.log(e.target.checked)
-    setStateItem(e.target.checked);
 
+  const handleChange = (e) => {
+    const estado = e.target.checked;
+    setStateItem(estado);
+    checkHandler({ ...checkboxes, [idItemOrder]:estado });
   };
 
   return (
     <div className="DetailsOrderCard">
       <input
         type="checkbox"
-        checked={stateITem}
+        checked={stateItem}
         onChange={handleChange}
       />
       <p className="num" >{numItemOrder}</p>

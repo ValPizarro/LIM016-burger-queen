@@ -85,6 +85,24 @@
     }
 }
 
+.buttonState{
+    width: 90%;
+    height: 25%;
+    border-radius: 20px;
+    opacity: 0.8;
+    zoom: 1;
+    font-size: 1.2rem;
+}
+.buttonStatePendiente{
+    background: map-get(color.$buttons ,"pendiente");
+    color:map-get(color.$text, "textPendiente" );
+}
+.buttonStateProceso{
+    background: map-get(color.$buttons ,"proceso" );
+    color:map-get(color.$text, "textProceso" );
+}
+
+
 .cardsChefGeneral::-webkit-scrollbar{
     width: 7px;
     background: map-get(color.$background, "conteiners");
