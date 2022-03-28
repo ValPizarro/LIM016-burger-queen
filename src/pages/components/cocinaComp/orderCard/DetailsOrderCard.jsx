@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const DetailsOrderCard = ({ details }) => {
+export const DetailsOrderCard = ({ details, checkHandler,checkboxes }) => {
   console.log(details)
 
   const [stateItem, setStateItem] = useState(false)
@@ -8,7 +8,7 @@ export const DetailsOrderCard = ({ details }) => {
   const {
     extraOrder1,
     extraOrder2,
-    // idItemOrder,
+    idItemOrder,
     nameItemOrder,
     noteOrder,
     numItemOrder,
@@ -19,6 +19,7 @@ export const DetailsOrderCard = ({ details }) => {
   const handleChange = (e) => {
     const estado = e.target.checked;
     setStateItem(estado);
+    checkHandler({ ...checkboxes, [idItemOrder]:estado });
   };
 
   return (
