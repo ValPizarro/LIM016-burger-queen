@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/config";
 
-import NavCocina from "../pages/components/navBar/NavCocina";
-import GeneralCardsChef from "./components/cocinaComp/GeneralCardsChef/GeneralCardsChef";
+import NavCocina from "./components/cocinaComp/navCocina/NavCocina";
+import GeneralCardsChef from "./components/cocinaComp/generalCardsChef/GeneralCardsChef";
 import OrderCard from "./components/cocinaComp/orderCard/OrderCard";
 
 import { Vacio } from "./components/cocinaComp/orderCard/Vacio";

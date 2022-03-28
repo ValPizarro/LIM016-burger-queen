@@ -1,10 +1,18 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import ItemOrder from "./ItemOrder";
 import { useOptionsContext } from "../../../context/OptionDish";
 
 //recibe info
-const TotalItems = ({ listDishes, infoOrder, addOrder,totalOrder,setTotalOrder }) => {
-  const [arrayItemsOrder, setArrayItemsOrder] = useState([]);
+const TotalItems = ({
+  listDishes,
+  infoOrder,
+  addOrder,
+  totalOrder,
+  setTotalOrder,
+  arrayItemsOrder,
+  setArrayItemsOrder,
+  deleteItem,
+}) => {
   const { nameOrder, numOrder } = infoOrder;
   const { optionOrder } = useOptionsContext();
 
@@ -57,14 +65,19 @@ const TotalItems = ({ listDishes, infoOrder, addOrder,totalOrder,setTotalOrder }
         0
       )
     );
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [arrayItemsOrder]);
 
   return (
     <>
       <div className="itemsTotalOrder">
         {listDishes.map((dish) => (
-          <ItemOrder dish={dish} addItems={addItems} key={dish.id} />
+          <ItemOrder
+            dish={dish}
+            addItems={addItems}
+            deleteItem={deleteItem}
+            key={dish.id}
+          />
         ))}
       </div>
       <div className="priceOrder">

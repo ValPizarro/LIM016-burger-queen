@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const LogoQuickly = require("../../../img/brand/quickly_logo.png");
+const LogoQuickly = require("../../../../img/brand/quickly_logo.png");
 
 function NavSalon() {
   return (
@@ -12,18 +12,16 @@ function NavSalon() {
           </NavLink>
         </div>
         <div className="optionsNav">
-          <NavLink to="/">
-            <i class="fa-solid fa-utensils"></i>
+          <NavLink to="/cocina">
+            <i className="fa-solid fa-utensils"/>
           </NavLink>
           <NavLink to="/cocina/alert">
             <i className="fa-solid fa-bell" />
           </NavLink>
-          <NavLink to="/config">
+          <NavLink to="/cocina/history">
             <i className="fa-solid fa-clock-rotate-left" />
           </NavLink>
-          {/* <NavLink to="/out">
-            <i className="fa-solid fa-right-from-bracket" />
-          </NavLink> */}
+
         </div>
       </nav>
     </>
