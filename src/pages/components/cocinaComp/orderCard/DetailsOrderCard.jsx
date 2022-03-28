@@ -1,5 +1,9 @@
-export const DetailsOrderCard = ({ details }) => {
-  console.log(details.nameItemOrder);
+import { useState } from "react";
+
+export const DetailsOrderCard = ({ details, orderID }) => {
+  console.log(details)
+  const [stateITem, setStateItem] = useState(false)
+
   const {
     extraOrder1,
     extraOrder2,
@@ -9,13 +13,21 @@ export const DetailsOrderCard = ({ details }) => {
     optionOrder,
     // stateItem,
   } = details;
+  const handleChange = (e) => {
+    setStateItem(e.target.checked);
+
+  };
+
   return (
     <div className="DetailsOrderCard">
-      <input type="checkbox" />
-      <p className="num">{numItemOrder}</p>
-
+      <input
+        type="checkbox"
+        checked={stateITem}
+        onChange={handleChange}
+      />
+      <p className="num" >{numItemOrder}</p>
       <div>
-        <h2>{nameItemOrder}</h2>
+        <h2 onClick={handleChange}>{nameItemOrder}</h2>
         <p>Detalle:{optionOrder}</p>
         <p>
           {extraOrder1}

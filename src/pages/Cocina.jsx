@@ -44,11 +44,10 @@ function Cocina() {
         <GeneralCardsChef orderByID={orderByID} />
 
         {verificacion === false ? (
-          <OrderCard orderCompleto={orderCompleto} />
+          <OrderCard orderCompleto={orderCompleto} orderID={orderID}/>
         ) : (
           <Vacio />
         )}
-
       </div>
     </div>
   );
