@@ -1,11 +1,10 @@
-// import { doc, updateDoc } from "firebase/firestore";
-// import { db } from "../../../../firebase/config";
 import { useState } from "react";
 
-export const DetailsOrderCard = ({ details, orderID, index }) => {
+export const DetailsOrderCard = ({ details }) => {
+  console.log(details)
 
-  console.log(orderID);
-  console.log(index);
+  const [stateItem, setStateItem] = useState(false)
+
   const {
     extraOrder1,
     extraOrder2,
@@ -17,24 +16,21 @@ export const DetailsOrderCard = ({ details, orderID, index }) => {
     // stateItem,
   } = details;
 
-  const [stateItem, setStateItem] = useState(false)
-
-  const handleChange = async (e) => {
+  const handleChange = (e) => {
     const estado = e.target.checked;
-    console.log(estado);
-
     setStateItem(estado);
   };
 
-  // console.log(stateItem);
-
   return (
     <div className="DetailsOrderCard">
-      <input type="checkbox" checked={stateItem} onChange={handleChange} />
-      <p className="num">{numItemOrder}</p>
-
+      <input
+        type="checkbox"
+        checked={stateItem}
+        onChange={handleChange}
+      />
+      <p className="num" >{numItemOrder}</p>
       <div>
-        <h2>{nameItemOrder}</h2>
+        <h2 onClick={handleChange}>{nameItemOrder}</h2>
         <p>Detalle:{optionOrder}</p>
         <p>
           {extraOrder1}

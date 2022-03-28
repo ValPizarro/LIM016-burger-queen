@@ -1,18 +1,10 @@
 import { DetailsOrderCard } from "./DetailsOrderCard";
 
-export const Mapping = ({ itemsOrder, orderID }) => {
-
-  let index = -1;
-
+export const Mapping = ({ itemsOrder }) => {
   return (
     <>
       {itemsOrder.map((details) => (
-        <DetailsOrderCard
-          details={details}
-          orderID={orderID}
-          key={details.idItemOrder}
-          index={++index}
-        />
+        <DetailsOrderCard details={details} key={details.idItemOrder} />
       ))}
     </>
   );

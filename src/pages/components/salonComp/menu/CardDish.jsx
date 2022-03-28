@@ -19,7 +19,6 @@ export const CardDish = ({ menuDish, ShowItem }) => {
     setOptionsDish,
   } = useOptionsContext();
 
-
     useEffect(() => {
       // console.log(optionOrder);
       // console.log(extraOrder1);
@@ -42,23 +41,22 @@ export const CardDish = ({ menuDish, ShowItem }) => {
 
     switch (name) {
       case "Hamburguesa clásica":
-
         Options({ setOptionOrder }).then(() => {
-
           Extra({ setExtraOrder1, setExtraOrder2 })
         });
         ShowItem(id);
-        break;
-      case "Hamburguesa doble":
+      break;
 
+      case "Hamburguesa doble":
         Options({ setOptionOrder }).then(() => {
           Extra({ setExtraOrder1, setExtraOrder2 });
         });
         ShowItem(id);
-        break;
+      break;
+
       default:
-        ShowItem(id);
-        break;
+      ShowItem(id);
+      break;
     }
   };
 

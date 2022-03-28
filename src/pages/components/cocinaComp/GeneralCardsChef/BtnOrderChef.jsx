@@ -13,7 +13,7 @@ const BtnOrderChef = ({ SetCurrentState }) => {
         value={"generado"}
         onClick={HandleState}
       >
-        Pendiente
+        Generado
       </button>
       <button
         className="En proceso SelectChef"
