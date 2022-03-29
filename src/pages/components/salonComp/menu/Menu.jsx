@@ -25,6 +25,7 @@ export const Menu = ({ ShowItem }) => {
     if (curretMenu === "Bebida") {
       SetMenuDishes(allDishes.filter((dishes) => dishes.type === curretMenu));
     } else {
+
       SetMenuDishes(allDishes.filter((dishes) => dishes.menu === curretMenu));
     }
   }, [curretMenu, allDishes]);

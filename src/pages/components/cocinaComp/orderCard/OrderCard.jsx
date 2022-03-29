@@ -48,7 +48,7 @@ const OrderCard = ({ orderCompleto, orderID, estilo, setEstilo }) => {
           {stateOrder}
         </button>
 
-        <p>{numOrder}</p>
+        <p>Numero de orden: {numOrder}</p>
         <p> Tiempo: 0:10:00 </p>
       </div>
       <hr />
@@ -57,6 +57,7 @@ const OrderCard = ({ orderCompleto, orderID, estilo, setEstilo }) => {
           <p className="unidad">Unidad</p>
           <p className="description">Description</p>
         </div>
+        <div className="GeneralDeilsOrderCard">
         {itemsOrder.map((details) => (
           <DetailsOrderCard
             details={details}
@@ -65,10 +66,15 @@ const OrderCard = ({ orderCompleto, orderID, estilo, setEstilo }) => {
             checkboxes={checkboxes}
           />
         ))}
+        </div>
+        <div className="contentEntregarPedido">
+          <button disabled={!completed} onClick={handleStateEnd} className="entregarPedido">
+            Entregar pedido
+          </button>
+        </div>
+
       </div>
-      <button disabled={!completed} onClick={handleStateEnd}>
-        Entregar pedido
-      </button>
+
     </div>
   );
 };

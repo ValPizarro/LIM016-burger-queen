@@ -11,7 +11,7 @@ const GeneralCardsChef = ({ orderByID }) => {
   const [allOrder, setAllOrder] = useState([]);
   const [filterOrders, SetFilterOrders] = useState([]);
   const [currentState, SetCurrentState] = useState("generado");
-
+  console.log(filterOrders)
   useEffect(
     () =>
       onSnapshot(collection(db, "order"), (snapshot) =>

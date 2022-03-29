@@ -1,9 +1,9 @@
 const CardChef = ({ filterOrder, orderByID }) => {
 
   const IdOrder = filterOrder.id;
-
+  console.log(IdOrder);
   const { itemsOrder, stateOrder } = filterOrder;
-
+  console.log(itemsOrder)
   const handleOrder = () => {
     orderByID(IdOrder);
   };
