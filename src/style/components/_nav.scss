@@ -35,10 +35,10 @@
     .optionsNav{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         height: 80%;
-        row-gap: 15%;
+        margin-bottom: 30%;
         i{
             font-size: 3.5rem;
             color: map-get(color.$background, "general");

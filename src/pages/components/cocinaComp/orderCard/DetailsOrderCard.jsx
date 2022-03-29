@@ -30,7 +30,7 @@ export const DetailsOrderCard = ({ details, checkHandler,checkboxes }) => {
       />
       <p className="num" >{numItemOrder}</p>
       <div>
-        <h2 onClick={handleChange}>{nameItemOrder}</h2>
+        <h3 onClick={handleChange}>{nameItemOrder}</h3>
         <p>Detalle:{optionOrder}</p>
         <p>
           {extraOrder1}

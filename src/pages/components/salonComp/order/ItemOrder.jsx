@@ -114,7 +114,7 @@ const ItemOrder = ({ dish, addItems, deleteItem }) => {
         <div className="deleteOrder">
           <button
             className="fa-regular fa-trash-can trash"
-            onClick={deleteItem(id)}
+            onClick={deleteItem}
           />
         </div>
         <div className="secondRowButtons">

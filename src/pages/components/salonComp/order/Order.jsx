@@ -46,10 +46,10 @@ export const Order = ({ listDishes, setListDishes }) => {
     console.log("clear");
   };
 
-  const deleteItem = (e,id) => {
+  const deleteItem = (e) => {
     e.preventDefault();
-    // e.target.parentNode.parentNode.parentNode.remove();
-    console.log(id);
+    e.target.parentNode.parentNode.parentNode.remove();
+    // console.log(id);
   };
 
 
