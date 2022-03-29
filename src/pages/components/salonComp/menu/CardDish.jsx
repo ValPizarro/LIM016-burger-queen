@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
-import { Options } from "./Options";
-import { Extra } from "./Extra";
+import { Options } from "../order/Options";
+import { Extra } from "../order/Extra";
 
 import { useOptionsContext } from "../../../context/OptionDish";
 
@@ -37,31 +37,31 @@ export const CardDish = ({ menuDish, ShowItem }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [extraOrder2]);
 
-  const getDish = (id, name) => {
+  // const getDish = (id, name) => {
 
-    switch (name) {
-      case "Hamburguesa clásica":
-        Options(setOptionOrder).then(() => {
-          Extra(setExtraOrder1, setExtraOrder2)
-        });
-        ShowItem(id);
-      break;
+  //   switch (name) {
+  //     case "Hamburguesa clásica":
+  //       Options(setOptionOrder).then(() => {
+  //         Extra(setExtraOrder1, setExtraOrder2)
+  //       });
+  //       ShowItem(id);
+  //     break;
 
-      case "Hamburguesa doble":
-        Options({ setOptionOrder }).then(() => {
-          Extra({ setExtraOrder1, setExtraOrder2 });
-        });
-        ShowItem(id);
-      break;
+  //     case "Hamburguesa doble":
+  //       Options({ setOptionOrder }).then(() => {
+  //         Extra({ setExtraOrder1, setExtraOrder2 });
+  //       });
+  //       ShowItem(id);
+  //     break;
 
-      default:
-      ShowItem(id);
-      break;
-    }
-  };
+  //     default:
+  //     ShowItem(id);
+  //     break;
+  //   }
+  // };
 
   return (
-    <div className="carDish" key={id} onClick={() => getDish(id, name)}>
+    <div className="carDish" key={id} onClick={() => ShowItem(id)}>
       <div className="photoDish">
         <img src={img} alt="Food" />
       </div>

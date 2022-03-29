@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
-import { useOptionsContext } from "../../../context/OptionDish";
+// import { useOptionsContext } from "../../../context/OptionDish";
+import { OptionsDish } from "./OptionsDish";
 
 const ItemOrder = ({ dish, addItems, deleteItem }) => {
   const { id, name, img, price } = dish;
 
-  const { optionOrder, extraOrder1, extraOrder2 } = useOptionsContext();
+  // const { optionOrder, extraOrder1, extraOrder2 } = useOptionsContext();
+  const [extraOrder1, setExtraOrder1] = useState("-");
+  const [extraOrder2, setExtraOrder2] = useState("-");
+  const [optionOrder, setOptionOrder] = useState("-");
 
   // useEffect(() => {
 
@@ -13,7 +17,7 @@ const ItemOrder = ({ dish, addItems, deleteItem }) => {
   //   console.log(extraOrder2);
   // }, [optionOrder, extraOrder1, extraOrder2]);
 
-  let options = null; // volverlo componente
+  // let options = null; // volverlo componente
 
   const [item, setItem] = useState({
     extraOrder1: extraOrder1,
@@ -76,19 +80,14 @@ const ItemOrder = ({ dish, addItems, deleteItem }) => {
     handleItem(item, currentNote);
   };
 
-  if (name === "Hamburguesa clásica" || name === "Hamburguesa doble") {
-    options = (
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      <>
-        <p>Tipo: {"-"} </p>
-        <p>
-          Extra: {"-"} {"-"}
-        </p>
-      </>
-    );
-  } else {
-    options = null;
-  }
+  // if (name === "Hamburguesa clásica" || name === "Hamburguesa doble") {
+  //   options = (
+  //     // eslint-disable-next-line react-hooks/exhaustive-deps
+ 
+  //   );
+  // } else {
+  //   options = null;
+  // }
 
   return (
     <div className="itemOrderBox">
@@ -100,7 +99,17 @@ const ItemOrder = ({ dish, addItems, deleteItem }) => {
           <div className="info">
             <p>{name}</p>
             <p>S/. {price}.00</p>
-            {options}
+            {/* {options} */}
+            {name === "Hamburguesa clásica" || name === "Hamburguesa doble" ? (
+              <OptionsDish
+                extraOrder1={extraOrder1}
+                setExtraOrder1={setExtraOrder1}
+                extraOrder2={extraOrder2}
+                setExtraOrder2={setExtraOrder2}
+                optionOrder={optionOrder}
+                setOptionOrder={setOptionOrder}
+              />
+            ) : null}
           </div>
         </div>
         <div className="noteOrder">

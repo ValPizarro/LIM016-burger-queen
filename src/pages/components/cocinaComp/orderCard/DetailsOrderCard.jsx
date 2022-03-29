@@ -7,7 +7,7 @@ export const DetailsOrderCard = ({ details, checkHandler,checkboxes }) => {
   const {
     extraOrder1,
     extraOrder2,
-    idItemOrder,
+    // idItemOrder,
     nameItemOrder,
     noteOrder,
     numItemOrder,
@@ -18,7 +18,7 @@ export const DetailsOrderCard = ({ details, checkHandler,checkboxes }) => {
   const handleChange = (e) => {
     const estado = e.target.checked;
     setStateItem(estado);
-    checkHandler({ ...checkboxes, [idItemOrder]:estado });
+    checkHandler({ ...checkboxes, state :estado });
   };
 
   return (
