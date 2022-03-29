@@ -23,6 +23,7 @@ export const Order = ({ listDishes, setListDishes }) => {
   const [infoOrder, setinfoOrder] = useState(initialOrderInfo);
   const [order, setOrder] = useState(initialOrder);
   const [totalOrder, setTotalOrder] = useState(0);
+  const [arrayItemsOrder, setArrayItemsOrder] = useState([]);
 
 
   const addOrder = (newOrder) => {
@@ -41,8 +42,16 @@ export const Order = ({ listDishes, setListDishes }) => {
     setOrder(initialOrder);
     setinfoOrder(initialOrderInfo);
     setTotalOrder(0);
+    setArrayItemsOrder([]);
     console.log("clear");
   };
+
+  const deleteItem = (e) => {
+    e.preventDefault();
+    e.target.parentNode.parentNode.parentNode.remove();
+    // console.log(id);
+  };
+
 
   return (
     <>
@@ -75,6 +84,9 @@ export const Order = ({ listDishes, setListDishes }) => {
             addOrder={addOrder}
             totalOrder={totalOrder}
             setTotalOrder={setTotalOrder}
+            arrayItemsOrder={arrayItemsOrder}
+            setArrayItemsOrder={setArrayItemsOrder}
+            deleteItem={deleteItem}
           />
         </OptionsDishProvider>
       </form>

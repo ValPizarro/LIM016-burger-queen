@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/config";
 
-import NavCocina from "../pages/components/navBar/NavCocina";
+import NavCocina from "./components/cocinaComp/navCocina/NavCocina";
 import GeneralCardsChef from "./components/cocinaComp/GeneralCardsChef/GeneralCardsChef";
 import OrderCard from "./components/cocinaComp/orderCard/OrderCard";
 
@@ -13,7 +13,7 @@ function Cocina() {
 
   const [orderID, setOrderID] = useState("");
   const [orderCompleto, setOrderCompleto] = useState({});
-  console.log(orderCompleto);
+
   const orderByID = async (id) => {
     setOrderID(id);
   };

@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { useOptionsContext } from "../../../context/OptionDish";
+// import { useOptionsContext } from "../../../context/OptionDish";
+import { OptionsDish } from "./OptionsDish";
 
-const ItemOrder = ({ dish, addItems }) => {
+const ItemOrder = ({ dish, addItems, deleteItem }) => {
   const { id, name, img, price } = dish;
 
-    const {
-      optionOrder,
-      extraOrder1,
-      extraOrder2,
-    } = useOptionsContext();
+  // const { optionOrder, extraOrder1, extraOrder2 } = useOptionsContext();
+  const [extraOrder1, setExtraOrder1] = useState("-");
+  const [extraOrder2, setExtraOrder2] = useState("-");
+  const [optionOrder, setOptionOrder] = useState("-");
 
   // useEffect(() => {
 
@@ -17,8 +17,7 @@ const ItemOrder = ({ dish, addItems }) => {
   //   console.log(extraOrder2);
   // }, [optionOrder, extraOrder1, extraOrder2]);
 
-
-  let options = null; // volverlo componente
+  // let options = null; // volverlo componente
 
   const [item, setItem] = useState({
     extraOrder1: extraOrder1,
@@ -30,13 +29,11 @@ const ItemOrder = ({ dish, addItems }) => {
     optionOrder: optionOrder,
     priceItemOrder: price,
     priceTotalItemOrder: price,
-    stateItem : false,
+    stateItem: false,
   });
 
   const handleItem = (item, valor) => {
-
     if (typeof valor === "number") {
-
       const currentTotalPrice = valor * price;
 
       setItem({
@@ -44,26 +41,23 @@ const ItemOrder = ({ dish, addItems }) => {
         numItemOrder: valor,
         priceTotalItemOrder: currentTotalPrice,
       });
-
     } else {
       setItem({
         ...item,
         noteOrder: valor,
       });
     }
-  }
+  };
 
   useEffect(() => {
     addItems(item);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [item, item.numItemOrder,item.noteOrder]);
-  // }, [item, item.numItemOrder,item.noteOrder, item.optionOrder, item.extraOrder1, item.extraOrder2]);
-
+  }, [item, item.numItemOrder, item.noteOrder]);
 
   const aumentar = (e) => {
     e.preventDefault();
-      // investigar ++
+    // investigar ++
     const currentAccount = ++item["numItemOrder"];
 
     handleItem(item, currentAccount);
@@ -72,43 +66,28 @@ const ItemOrder = ({ dish, addItems }) => {
   const disminuir = (e) => {
     e.preventDefault();
     if (item["numItemOrder"] === 1) {
-
       handleItem(item["numItemOrder"]);
     } else {
-
       const currentAccount = --item["numItemOrder"];
 
       handleItem(item, currentAccount);
     }
   };
 
-  const deleteItem = (e) => {
-    e.preventDefault();
-    e.target.parentNode.parentNode.parentNode.remove();
-  };
-
   const handleNote = (e) => {
-
     const currentNote = e.target.value;
 
     handleItem(item, currentNote);
   };
 
-
-
-    if (name === "Hamburguesa clásica" || name === "Hamburguesa doble") {
-      options = (
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        <>
-          <p>Tipo: {"-"} </p>
-          <p>
-            Extra: {"-"} {"-"}
-          </p>
-        </>
-      );
-    } else {
-      options = null;
-    }
+  // if (name === "Hamburguesa clásica" || name === "Hamburguesa doble") {
+  //   options = (
+  //     // eslint-disable-next-line react-hooks/exhaustive-deps
+ 
+  //   );
+  // } else {
+  //   options = null;
+  // }
 
   return (
     <div className="itemOrderBox">
@@ -120,7 +99,17 @@ const ItemOrder = ({ dish, addItems }) => {
           <div className="info">
             <p>{name}</p>
             <p>S/. {price}.00</p>
-            {options}
+            {/* {options} */}
+            {name === "Hamburguesa clásica" || name === "Hamburguesa doble" ? (
+              <OptionsDish
+                extraOrder1={extraOrder1}
+                setExtraOrder1={setExtraOrder1}
+                extraOrder2={extraOrder2}
+                setExtraOrder2={setExtraOrder2}
+                optionOrder={optionOrder}
+                setOptionOrder={setOptionOrder}
+              />
+            ) : null}
           </div>
         </div>
         <div className="noteOrder">

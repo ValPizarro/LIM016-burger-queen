@@ -38,12 +38,12 @@
     .optionsNav{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         height: 70%;
         row-gap: 15%;
         i{
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             color: map-get(color.$background, "general");
         }
         i:hover{
@@ -54,8 +54,12 @@
         height: 33.3%;
         display: flex;
         align-items: start;
-      }
+        text-decoration: none;
 }
+
+
+}
+
 // .navSalon {
 //     display: flex;
 //     height: 98%;

@@ -3,10 +3,9 @@ import { useEffect, useState } from "react";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/config";
 
-import NavSalon from "../pages/components/navBar/NavSalon";
+import NavSalon from "./components/salonComp/navSalon/NavSalon";
 import { Order } from "./components/salonComp/order/Order";
 import { Menu } from "../pages/components/salonComp/menu/Menu";
-
 
 function Salon() {
 
@@ -22,7 +21,7 @@ function Salon() {
     const dish = await getDoc(dishRef);
     return dish.data();
   };
-
+//para las ordenes que no se repita las ordenes
   useEffect(() => {
 // ¿Esto deberia estar en el useEffect?
     async function fetchData() {
@@ -39,9 +38,9 @@ function Salon() {
 
   return (
     <div className="salonGeneral">
-      <header className="headerSalon sectionA">
+      <nav className="headerSalon sectionA">
         <NavSalon />
-      </header>
+      </nav>
       <div className="bodySalon">
         <Menu ShowItem={ShowItem} />
         <Order listDishes={listDishes} setListDishes={setListDishes} />
