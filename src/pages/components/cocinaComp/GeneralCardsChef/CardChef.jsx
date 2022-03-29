@@ -16,9 +16,7 @@ const CardChef = ({ filterOrder, orderByID }) => {
       <div className="itemsCardChef" >
         {itemsOrder.map((item) =>
             (<p key={item.idItemOrder}>{item.nameItemOrder}</p>)
-
-        )
-        }
+        )}
       </div>
     </div>
   );

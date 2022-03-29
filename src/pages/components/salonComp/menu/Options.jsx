@@ -25,7 +25,6 @@ export const Options = async ({ setOptionOrder }) => {
     title: "Hamburguesa de:",
     input: "radio",
     inputOptions: inputOptions,
-    onConfirm: ()=>{console.log("hola")},
     inputValidator: (value) => {
       if (!value) {
         return "Debes seleccionar una opción";

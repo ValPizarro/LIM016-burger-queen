@@ -119,7 +119,7 @@ const ItemOrder = ({ dish, addItems }) => {
           </div>
           <div className="info">
             <p>{name}</p>
-            <p>$ {price}.00</p>
+            <p>S/. {price}.00</p>
             {options}
           </div>
         </div>
@@ -138,7 +138,7 @@ const ItemOrder = ({ dish, addItems }) => {
           />
         </div>
         <div className="secondRowButtons">
-          <p>$ {item["priceTotalItemOrder"]}.00 </p>
+          <p>S/. {item["priceTotalItemOrder"]}.00 </p>
         </div>
         <div className="firstRowButtons">
           <button className="fa-regular fa-square-minus" onClick={disminuir} />

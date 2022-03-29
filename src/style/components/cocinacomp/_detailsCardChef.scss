@@ -101,7 +101,10 @@
     background: map-get(color.$buttons ,"proceso" );
     color:map-get(color.$text, "textProceso" );
 }
-
+.buttonStateCompletado{
+    background: map-get(color.$buttons ,"completado" );
+    color:map-get(color.$text, "textCompletado" );
+}
 
 .cardsChefGeneral::-webkit-scrollbar{
     width: 7px;
