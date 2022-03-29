@@ -11,6 +11,7 @@ const CardChef = ({ filterOrder, orderByID }) => {
   return (
     <div className="cardChef" onClick={handleOrder}>
       <div className="timeCardChef">
+        <i className="fa-solid fa-clock-eight"></i>
         <p> Tiempo: 0:10:00 </p>
       </div>
       <div className="itemsCardChef" >

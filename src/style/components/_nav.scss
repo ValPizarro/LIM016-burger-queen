@@ -20,13 +20,16 @@
     border: solid 1px #1F1D2B;
     border-radius: 20px;
     background: #1F1D2B;
+
     .logoNav{
+        margin-top: 60%;
         display: flex;
         justify-content: center;
-        align-items: center;
         width: 90%;
-        height: 20%;
+        height: 30%;
         padding: 5% 3%;
+        align-items: flex-start;
+
         img{
             height: 5rem;
             width: 100%;
@@ -37,7 +40,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 80%;
+        height: 70%;
         row-gap: 15%;
         i{
             font-size: 3.5rem;
@@ -47,7 +50,11 @@
             color: map-get(color.$buttons, "color");
         }
     }
-
+    a {
+        height: 33.3%;
+        display: flex;
+        align-items: start;
+      }
 }
 // .navSalon {
 //     display: flex;

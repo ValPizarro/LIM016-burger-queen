@@ -23,11 +23,12 @@ export const DetailsOrderCard = ({ details, checkHandler,checkboxes }) => {
 
   return (
     <div className="DetailsOrderCard">
-      <input
-        type="checkbox"
-        checked={stateItem}
-        onChange={handleChange}
-      />
+        <input
+          type="checkbox"
+          checked={stateItem}
+          onChange={handleChange}
+        />
+
       <p className="num" >{numItemOrder}</p>
       <div>
         <h2 onClick={handleChange}>{nameItemOrder}</h2>
