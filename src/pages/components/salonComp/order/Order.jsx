@@ -13,9 +13,11 @@ export const Order = ({ listDishes, setListDishes }) => {
   };
   /*orden*/
   const initialOrder = {
+    endTime: 0,
     itemsOrder: [],
     nameOrder: "",
     numOrder: 0,
+    startTime: 0,
     stateOrder: "generado",
     totalPriceOrder: 0,
   };
@@ -43,13 +45,12 @@ export const Order = ({ listDishes, setListDishes }) => {
     setinfoOrder(initialOrderInfo);
     setTotalOrder(0);
     setArrayItemsOrder([]);
-    console.log("clear");
   };
 
-  const deleteItem = (e) => {
+  const deleteItem = (id,e) => {
     e.preventDefault();
     e.target.parentNode.parentNode.parentNode.remove();
-    // console.log(id);
+    console.log(id);
   };
 
 

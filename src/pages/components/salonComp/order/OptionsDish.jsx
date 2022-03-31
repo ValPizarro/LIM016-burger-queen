@@ -28,7 +28,7 @@ export const OptionsDish = ({ changeSelect, changeChecked1, stateExtra1, changeC
             checked={stateExtra1}
             onChange={changeChecked1}
           />
-          <label for="check1">Huevo</label>
+          <label htmlFor="check1">Huevo</label>
         </div>
         <div className="extraOptions">
           <input
@@ -36,8 +36,7 @@ export const OptionsDish = ({ changeSelect, changeChecked1, stateExtra1, changeC
             checked={stateExtra2}
             onChange={changeChecked2}
           />
-          <label for="check1">Queso</label>
-
+          <label htmlFor="check1">Queso</label>
         </div>
       </div>
     </div>

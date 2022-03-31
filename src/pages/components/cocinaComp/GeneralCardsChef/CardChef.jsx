@@ -1,8 +1,10 @@
+import { FunctionTime } from "../../../utils/FunctionTime";
+
 const CardChef = ({ filterOrder, orderByID }) => {
 
   const IdOrder = filterOrder.id;
   console.log(IdOrder);
-  const { itemsOrder, stateOrder } = filterOrder;
+  const { itemsOrder, stateOrder, startTime } = filterOrder;
   console.log(itemsOrder)
   const handleOrder = () => {
     orderByID(IdOrder);
@@ -14,7 +16,7 @@ const CardChef = ({ filterOrder, orderByID }) => {
         <p className="descriptionCampo"> Estado: </p>
         <p>{stateOrder}</p>
         <p className="descriptionCampo"> Tiempo:</p>
-        <p> 0:10:00 </p>
+        <p> {FunctionTime(startTime)} </p>
       </div>
       <div className="itemsCardChef">
         {itemsOrder.map((item) => (
