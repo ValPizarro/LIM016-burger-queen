@@ -1,12 +1,5 @@
-// import { Options } from "./Options";
-// import { Extra } from "./Extra";
-
 
 export const OptionsDish = ({ changeSelect, changeChecked1, stateExtra1, changeChecked2, stateExtra2 }) => {
-  // Options(setOptionOrder);
-  //     .then(() => {
-  //     Extra(setExtraOrder1, setExtraOrder2);
-  // });
 
   return (
     <div className="optionsOrder">
