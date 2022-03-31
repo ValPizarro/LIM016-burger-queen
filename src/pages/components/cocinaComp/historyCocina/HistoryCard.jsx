@@ -1,8 +1,7 @@
 export const HistoryCard = ({ orderHistory }) => {
   // const IdOrder = orderGenerada.id;
 
-  const { itemsOrder } = orderHistory;
-  //     //   const { itemsOrder, stateOrder } = orderGenerada;
+  const { itemsOrder, stateOrder } = orderHistory;
 
   // //   const handleOrder = () => {
   // //     orderByID(IdOrder);
@@ -10,8 +9,8 @@ export const HistoryCard = ({ orderHistory }) => {
   return (
     <div className="cardChef">
       <div className="headerCardChef">
-        {/* <p className="descriptionCampo"> Estado: </p> */}
-        {/* <p>{stateOrder}</p> */}
+        <p className="descriptionCampo"> Estado: </p>
+        <p>{stateOrder}</p>
         <p className="descriptionCampo"> Tiempo:</p>
         <p> 0:10:00 </p>
       </div>
