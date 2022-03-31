@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import ItemOrder from "./ItemOrder";
-import { useOptionsContext } from "../../../context/OptionDish";
+// import { useOptionsContext } from "../../../context/OptionDish";
 
 //recibe info
 const TotalItems = ({
@@ -14,11 +14,11 @@ const TotalItems = ({
   deleteItem,
 }) => {
   const { nameOrder, numOrder } = infoOrder;
-  const { optionOrder } = useOptionsContext();
+  // const { optionOrder } = useOptionsContext();
 
-  useEffect(() => {
-    console.log(optionOrder);
-  }, [optionOrder]);
+  // useEffect(() => {
+  //   console.log(optionOrder);
+  // }, [optionOrder]);
 
   useEffect(() => {
     addOrder({
@@ -32,8 +32,17 @@ const TotalItems = ({
   }, [arrayItemsOrder, nameOrder, numOrder, totalOrder]);
 
   const addItems = (itemOrder) => {
-    const { idItemOrder, noteOrder, numItemOrder, priceTotalItemOrder } =
-      itemOrder;
+    // const { idItemOrder, noteOrder, numItemOrder, optionOrder, priceTotalItemOrder, } =
+      // itemOrder;
+        const {
+          idItemOrder,
+          extraOrder1,
+          extraOrder2,
+          noteOrder,
+          numItemOrder,
+          optionOrder,
+          priceTotalItemOrder,
+        } = itemOrder;
 
     const foundItem = arrayItemsOrder.find(
       (item) => item.idItemOrder === idItemOrder
@@ -49,6 +58,9 @@ const TotalItems = ({
               noteOrder: noteOrder,
               numItemOrder: numItemOrder,
               priceTotalItemOrder: priceTotalItemOrder,
+              optionOrder: optionOrder,
+              extraOrder1: extraOrder1,
+              extraOrder2: extraOrder2,
             }
           : item
       );
@@ -72,6 +84,7 @@ const TotalItems = ({
     <>
       <div className="itemsTotalOrder">
         {listDishes.map((dish) => (
+
           <ItemOrder
             dish={dish}
             addItems={addItems}

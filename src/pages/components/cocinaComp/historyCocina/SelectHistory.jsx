@@ -1,5 +1,4 @@
-const BtnOrderChef = ({ SetCurrentState }) => {
-
+export const SelectHistory = ({ SetCurrentState }) => {
   const HandleState = (e) => {
     const currentState = e.target.value;
 
@@ -7,22 +6,31 @@ const BtnOrderChef = ({ SetCurrentState }) => {
   };
 
   return (
-    <div className="gridBtnChef">
+    <div className="selectHistory">
       <button
-        className="pendiente SelectChef"
+        value={"all"}
+        onClick={HandleState}
+      >
+        Todos
+      </button>
+      <button
         value={"generado"}
         onClick={HandleState}
       >
         Generado
       </button>
       <button
-        className="En proceso SelectChef"
         value={"proceso"}
         onClick={HandleState}
       >
         En proceso
       </button>
+      <button
+        value={"completado"}
+        onClick={HandleState}
+      >
+        Completados
+      </button>
     </div>
   );
 };
-export default BtnOrderChef;
