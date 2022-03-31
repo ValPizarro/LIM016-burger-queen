@@ -8,21 +8,26 @@ import { SelectHistory } from "./SelectHistory";
 
 export const GeneralHistory = () => {
   const [allOrder, setAllOrder] = useState([]);
-  const [filterHistory, SetFilterHistory] = useState([]);
+  const [filterHistory, setFilterHistory] = useState([]);
   const [currentState, SetCurrentState] = useState("generado");
-  
+
   useEffect(
     () =>
       onSnapshot(collection(db, "order"), (snapshot) =>
         setAllOrder(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
       ),
     []
-    );
+  );
 
   useEffect(() => {
-    SetFilterHistory(
+    if (currentState === "all") {
+      setFilterHistory(allOrder);
+    } else {
+      setFilterHistory(
       allOrder.filter((orders) => orders.stateOrder === currentState)
     );
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentState, allOrder]);
 
