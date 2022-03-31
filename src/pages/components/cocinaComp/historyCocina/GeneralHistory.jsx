@@ -9,7 +9,7 @@ import { SelectHistory } from "./SelectHistory";
 export const GeneralHistory = () => {
   const [allOrder, setAllOrder] = useState([]);
   const [filterHistory, setFilterHistory] = useState([]);
-  const [currentState, SetCurrentState] = useState("generado");
+  const [currentState, SetCurrentState] = useState("all");
 
   useEffect(
     () =>
@@ -23,9 +23,7 @@ export const GeneralHistory = () => {
     if (currentState === "all") {
       setFilterHistory(allOrder);
     } else {
-      setFilterHistory(
-      allOrder.filter((orders) => orders.stateOrder === currentState)
-    );
+      setFilterHistory(allOrder.filter((orders) => orders.stateOrder === currentState));
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import ItemOrder from "./ItemOrder";
-// import { useOptionsContext } from "../../../context/OptionDish";
 
-//recibe info
 const TotalItems = ({
   listDishes,
   infoOrder,
@@ -14,11 +12,6 @@ const TotalItems = ({
   deleteItem,
 }) => {
   const { nameOrder, numOrder } = infoOrder;
-  // const { optionOrder } = useOptionsContext();
-
-  // useEffect(() => {
-  //   console.log(optionOrder);
-  // }, [optionOrder]);
 
   useEffect(() => {
     addOrder({
@@ -32,8 +25,6 @@ const TotalItems = ({
   }, [arrayItemsOrder, nameOrder, numOrder, totalOrder]);
 
   const addItems = (itemOrder) => {
-    // const { idItemOrder, noteOrder, numItemOrder, optionOrder, priceTotalItemOrder, } =
-      // itemOrder;
         const {
           idItemOrder,
           extraOrder1,
