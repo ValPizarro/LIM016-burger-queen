@@ -21,7 +21,7 @@ function Salon() {
     const dish = await getDoc(dishRef);
     return dish.data();
   };
-
+//para las ordenes que no se repita las ordenes
   useEffect(() => {
 // ¿Esto deberia estar en el useEffect?
     async function fetchData() {
