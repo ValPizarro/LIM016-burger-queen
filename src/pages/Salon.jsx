@@ -34,7 +34,14 @@ function Salon() {
     }
     fetchData();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [dishID]);
+  }, [dishID]);
+
+  const deleteDish = (id) => {
+
+    const newListDishes = listDishes.filter((item) => item.id !== id);
+    console.log(newListDishes);
+    setListDishes(newListDishes);
+  };
 
   return (
     <div className="salonGeneral">
@@ -43,7 +50,11 @@ function Salon() {
       </nav>
       <div className="bodySalon">
         <Menu ShowItem={ShowItem} />
-        <Order listDishes={listDishes} setListDishes={setListDishes} />
+        <Order
+          listDishes={listDishes}
+          setListDishes={setListDishes}
+          deleteDish={deleteDish}
+        />
       </div>
     </div>
   );

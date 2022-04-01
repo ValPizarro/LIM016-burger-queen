@@ -7,17 +7,6 @@ const ItemOrder = ({ dish, addItems, deleteItem }) => {
   const [stateExtra1, setStateExtra1] = useState(false);
   const [stateExtra2, setStateExtra2] = useState(false);
 
-  // const { optionOrder, extraOrder1, extraOrder2 } = useOptionsContext();
-
-  // useEffect(() => {
-
-  //   console.log(optionOrder);
-  //   console.log(extraOrder1);
-  //   console.log(extraOrder2);
-  // }, [optionOrder, extraOrder1, extraOrder2]);
-
-  // let options = null; // volverlo componente
-
   const [item, setItem] = useState({
     extraOrder1: "-",
     extraOrder2: "-",
@@ -28,7 +17,6 @@ const ItemOrder = ({ dish, addItems, deleteItem }) => {
     optionOrder: "",
     priceItemOrder: price,
     priceTotalItemOrder: price,
-    stateItem: false,
   });
 
   const handleItem = (propiedad, valor) => {
@@ -163,7 +151,7 @@ const ItemOrder = ({ dish, addItems, deleteItem }) => {
         <div className="deleteOrder">
           <button
             className="fa-regular fa-trash-can trash"
-            onClick={deleteItem}
+            onClick={(e)=>deleteItem(id, e)}
           />
         </div>
         <div className="secondRowButtons">

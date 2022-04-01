@@ -4,8 +4,7 @@ import TotalItems from "./TotalItemsOrder";
 import BtnSubmitOrder from "./BtnSubmitOrder";
 
 
-export const Order = ({ listDishes, setListDishes }) => {
-
+export const Order = ({ listDishes, setListDishes, deleteDish }) => {
   const initialOrderInfo = {
     nameOrder: "",
     numOrder: 0,
@@ -13,9 +12,11 @@ export const Order = ({ listDishes, setListDishes }) => {
   };
   /*orden*/
   const initialOrder = {
+    endTime: 0,
     itemsOrder: [],
     nameOrder: "",
     numOrder: 0,
+    startTime: 0,
     stateOrder: "generado",
     totalPriceOrder: 0,
   };
@@ -24,7 +25,6 @@ export const Order = ({ listDishes, setListDishes }) => {
   const [order, setOrder] = useState(initialOrder);
   const [totalOrder, setTotalOrder] = useState(0);
   const [arrayItemsOrder, setArrayItemsOrder] = useState([]);
-
 
   const addOrder = (newOrder) => {
     setOrder(newOrder);
@@ -43,15 +43,19 @@ export const Order = ({ listDishes, setListDishes }) => {
     setinfoOrder(initialOrderInfo);
     setTotalOrder(0);
     setArrayItemsOrder([]);
-    console.log("clear");
   };
 
-  const deleteItem = (e) => {
+  const deleteItem = (id, e) => {
     e.preventDefault();
     e.target.parentNode.parentNode.parentNode.remove();
-    // console.log(id);
-  };
 
+    const newArrayItemsOrder = arrayItemsOrder.filter(
+      (item) => item.idItemOrder !== id
+    );
+
+    setArrayItemsOrder(newArrayItemsOrder);
+    deleteDish(id)
+  };
 
   return (
     <>
@@ -78,17 +82,16 @@ export const Order = ({ listDishes, setListDishes }) => {
           <hr/>
           </div>
         </div>
-
-          <TotalItems
-            listDishes={listDishes}
-            infoOrder={infoOrder}
-            addOrder={addOrder}
-            totalOrder={totalOrder}
-            setTotalOrder={setTotalOrder}
-            arrayItemsOrder={arrayItemsOrder}
-            setArrayItemsOrder={setArrayItemsOrder}
-            deleteItem={deleteItem}
-          />
+        <TotalItems
+          listDishes={listDishes}
+          infoOrder={infoOrder}
+          addOrder={addOrder}
+          totalOrder={totalOrder}
+          setTotalOrder={setTotalOrder}
+          arrayItemsOrder={arrayItemsOrder}
+          setArrayItemsOrder={setArrayItemsOrder}
+          deleteItem={deleteItem}
+        />
       </form>
     </>
   );

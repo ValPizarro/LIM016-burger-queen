@@ -15,9 +15,11 @@ const TotalItems = ({
 
   useEffect(() => {
     addOrder({
+      endTime:"",
       itemsOrder: arrayItemsOrder,
       nameOrder: nameOrder,
       numOrder: numOrder,
+      startTime:Date.now(),
       stateOrder: "generado",
       totalPriceOrder: totalOrder,
     });

@@ -29,8 +29,7 @@ const BtnSubmitOrder = ({ order, clearOrder }) => {
    } else {
      try {
        try {
-         const docRef = await addDoc(collection(db, "order"), order);
-         console.log("Document written with ID: ", docRef.id);
+         await addDoc(collection(db, "order"), order);
           return Swal.fire({
             title: "Éxito!",
             text: "El pedido fue enviado",
@@ -38,7 +37,6 @@ const BtnSubmitOrder = ({ order, clearOrder }) => {
           });
        } finally {
          clearOrder();
-         console.log("se envio");
        }
      } catch (error) {
        console.log(error);
@@ -50,6 +48,8 @@ const BtnSubmitOrder = ({ order, clearOrder }) => {
      }
    }
   };
+
+
 
   return (
     <button className="btnSubmitOrder" type="submit" onClick={handleSubmit}>
