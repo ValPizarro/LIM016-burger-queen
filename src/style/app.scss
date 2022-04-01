@@ -2,6 +2,8 @@
 @forward '../style/components/buttons';
 @forward '../style/components/cards';
 @forward '../style/components/menu';
+@forward './components/cocinacomp/AlertSalon';
+@forward './components/cocinacomp/HistorySalon';
 
 @forward '../style/pages/login';
 @forward '../style/pages/salon';

@@ -1,0 +1,47 @@
+@use '../../vars/colors' as color;
+.bodyHistory{
+    height: 100vh;
+    width: 100%;
+}
+.btnsHistory{
+    height:15% ;
+    width:100% ;
+    display: grid;
+    grid-template-columns:25% 25% 25% 25%;
+     div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    button{
+    height: 50%;
+    width: 90%;
+    background: map-get(color.$buttons, "color" );
+    border-radius: 20px;
+    color: white;
+    font-size: 1.3rem;
+    }
+}
+
+.sectionShowHistory{
+    height: 85%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.backgroundCardHistory{
+    height: 25%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .cardHistory{
+        background: yellow;
+        height: 90%;
+        width: 90%;
+        border-radius: 20px;
+    }
+}
+
+

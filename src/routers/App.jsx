@@ -6,7 +6,7 @@ import Salon from '../pages/Salon';
 import NotFound from '../pages/Notfound';
 import { AlertSalon } from '../pages/components/salonComp/alertSalon/AlertSalon';
 import { AlertCocina } from "../pages/components/cocinaComp/alertCocina/AlertCocina";
-import { HistorySalon } from '../pages/components/salonComp/historySalon/historySalon';
+import { HistorySalon } from '../pages/components/salonComp/historySalon/HistorySalon';
 import { HistoryCocina } from '../pages/components/cocinaComp/historyCocina/historyCocina';
 
 const App = () => {
