@@ -3,12 +3,16 @@ const CardHistory=({list})=>{
     return(
             <div className="backgroundCardHistory">
                 <div className="cardHistory">
-                    <p>{list.nameOrder}</p>
-                    <p>{list.numOrder}</p>
-                    {listItemOrder.map((item ) => {
-                       return <p>{item.nameItemOrder}</p>
-                    })}
-                    <p>{list.totalPriceOrder}</p>
+                    <div className="nameOrderHistory">
+                        <p><span>nº de mesa: </span>{list.numOrder}</p>
+                        <p>{list.nameOrder}</p>
+                    </div>
+                    <div className="detailsHistoryOrder">
+                        {listItemOrder.map((item ) => {
+                        return <p>○ {item.nameItemOrder}</p>
+                        })}
+                    </div>
+                    <p className="TotalHistory"><span>Total:</span> S/ {list.totalPriceOrder}</p>
                 </div>
             </div>
 

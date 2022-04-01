@@ -12,13 +12,12 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    height: 98%;
+    height: 100vh;
     width: 90%;
 }
 .menu{
-    height: 90%;
-    width: 50%;
-    margin: 10px 10px;
+    height: 100%;
+    width: 55%;
     display: flex;
     flex-direction: column;
 }
@@ -27,8 +26,10 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 50%;
-    height: 95%;
+    width: 44.5%;
+    height: 100%;
     font-family: "Barlow", sans-serif;
-
+    hr{
+        width: 90%;
+    }
 }

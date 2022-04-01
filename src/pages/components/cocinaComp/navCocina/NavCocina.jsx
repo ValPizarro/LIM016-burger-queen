@@ -6,24 +6,21 @@ function NavSalon() {
   return (
     <>
       <nav className="navSalon">
-        <div className="logoNav">
-          <NavLink to="/">
-            <img src={LogoQuickly} alt="Quickly" />
-          </NavLink>
-        </div>
-        <div className="optionsNav">
-          <NavLink to="/cocina">
-            <i className="fa-solid fa-utensils"/>
-          </NavLink>
-          <NavLink to="/cocina/alert">
-            <i className="fa-solid fa-bell" />
-          </NavLink>
-          <NavLink to="/cocina/history">
-            <i className="fa-solid fa-clock-rotate-left" />
-          </NavLink>
 
-        </div>
-      </nav>
+        <NavLink to="/">
+          <img src={LogoQuickly} alt="Quickly" />
+        </NavLink>
+        <NavLink to="/salon">
+          <i className="fa-solid fa-pen-to-square"/>
+        </NavLink>
+        <NavLink to="/salon/alert">
+          <i className="fa-solid fa-bell" />
+        </NavLink>
+        <NavLink to="/salon/history">
+          <i className="fa-solid fa-clock-rotate-left" />
+        </NavLink>
+
+    </nav>
     </>
   );
 }

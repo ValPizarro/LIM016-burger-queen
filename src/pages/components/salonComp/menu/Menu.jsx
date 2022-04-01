@@ -33,9 +33,9 @@ export const Menu = ({ ShowItem }) => {
   return (
     <div className="menu sectionB">
       <div className="headerMenu">
-        <div className="titleMenu">
+{/*         <div className="titleMenu">
           <h2>Salón</h2>
-        </div>
+        </div> */}
         <SelectMenu SetCurrentMenu={SetCurrentMenu} />
       </div>
         <AllCardsDishes

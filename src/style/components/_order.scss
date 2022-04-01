@@ -1,31 +1,30 @@
 @use '../vars/colors' as color;
 
 .headerOrder{
+    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     margin: 10px;
     width: 95%;
-    height: 20%;
-    color: map-get(color.$text , "color");
-    border-bottom: solid 2px;
+    height: 14.8%;
+      color: map-get(color.$text , "color");
+    justify-content: center;
+
+
 
     .infoOrder{
         display: flex;
         flex-direction: column;
         align-self: flex-start;
-        height: 60%;
-
+        height: 56%;
+        width: 100%;
         input{
-            margin: 2% 0%;
-            align-self: flex-start;
-            height: 25px;
+            font-size: 1.1rem;
+            height: 50%;
             color: map-get(color.$text , "color");
             font-family: "Barlow", sans-serif;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 130%;
             border: none;
             outline: none;
         }
@@ -39,16 +38,22 @@
             font-size: 14px;
             line-height: 130%;
         }
+        hr {
+            width: 98%;
+          }
     }
+}
+.bodySalon{
+    width: 90%;
+    height: 100vh;
 }
 
 .btnSubmitOrder {
-    margin: 10px;
-    height: 40%;
+    height: 44%;
     width: 100%;
     font-size: 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: map-get(color.$buttons , "color");
     color: map-get(color.$background , "general");
 }
@@ -65,7 +70,7 @@
     align-items: center;
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 510px;
+    height: 72%;
     width: 96%;
 }
 .itemsTotalOrder::-webkit-scrollbar{
@@ -78,20 +83,21 @@
     border-radius: 8px;
 }
 .itemOrderBox{
+    padding: 2%;
     margin: 0.5rem;
     display: flex;
     width: 98%;
-    height: 7rem;
+    height: 20%;
     color: map-get(color.$background , "title");
     border: map-get(color.$background , "border") solid 1px;
     border-radius: 8px;
 }
+
     .descriptionOrderItem{
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         width: 70%;
-        padding: 2% 0;
         .infoDish{
             display: flex;
             justify-content: space-around;
@@ -118,6 +124,7 @@
                     color: map-get(color.$text , "title");
                 }
             }
+
         .noteOrder{
             display: flex;
             justify-content: flex-end;
@@ -206,12 +213,9 @@
 .priceOrder{
     display: flex;
     width: 90%;
-    margin: 15px;
-    padding-top: 15px;
-    color: map-get(color.$background , "title");
     justify-content: center;
-    border-top: solid 2px;
-
+    height: 5%;
+    align-items: center;
     .item1{
         margin:  0 10px 0 20px;
         width: 60%;
@@ -219,29 +223,26 @@
     }
 }
 
-//  @media (min-width: 768px) and (max-width: 1180px) and (orientation: landscape) {
+.optionsOrder{
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    .optionOrder{
+        display: flex;
+        margin-bottom: 2%;
+        .description{
+            color: map-get(color.$text, "description");
+        }
+    }
+    .extraOrder{
+        display: flex;
+        .description{
+            color: map-get(color.$text, "description");
+        }
+        .extraOptions{
+            display: flex;
+            margin: 2%;
+        }
 
-    
-
-//     .salonGeneral{
-//         background-color: aqua;
-//         display: grid;
-//         grid-template-columns: repeat(4, 1fr);
-//         grid-auto-rows: 20px;
-//         grid-template-areas:
-//         "a b b b "
-//         "a b b b "
-//         "a c c c "
-//         "a c c c ";
-
-//         .sectionA{
-//             grid-area: a;
-//         }
-//         .sectionB{
-//             grid-area: b;
-//         }
-//         .SectionC{
-//             grid-area: c;
-//         }
-//     }
-// }
+    }
+}

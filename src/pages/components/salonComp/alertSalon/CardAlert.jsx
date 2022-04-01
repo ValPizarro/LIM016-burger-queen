@@ -1,8 +1,25 @@
+import DetailsAlertSalon from "./DetailsAlertSalon";
+
  const CardAlertSalon=({list})=>{
-    console.log(list)
+    const listAlert=list.itemsOrder;
     return(
-            <div className="cardAlertSalon">
-                <p>{list.nameOrder}</p>
+            <div className="backgroundCardAlertSalon">
+                <div className="cardAlertSalon">
+                    <div className="nameOrderSalon">
+                        <p><span>nº de mesa: </span>{list.numOrder}</p>
+                        <p>{list.nameOrder}</p>
+                    </div>
+                    <div className="detailsAlertSalon">
+                        {listAlert.map((details)=>(
+                            listAlert?.length>=0?<DetailsAlertSalon
+                            details={details}
+                            key={details.idItemOrder}
+                            />:null
+                        ))}
+                    </div>
+                <p className="TotalAlertSalon"><span>Total:</span> S/ {list.totalPriceOrder}</p>
+                </div>
+
             </div>
 
     )

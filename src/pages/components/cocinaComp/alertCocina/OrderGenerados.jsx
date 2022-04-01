@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import { onSnapshot, collection } from "firebase/firestore";
 import { db } from "../../../../firebase/config";
 
-import AllCardsChef from "./AllCardsChef";
+// import BtnOrderChef from "./BtnOrderChef";
+import { AllOrderGenerados } from "././AllOrderGenerados";
 
-export const GeneralCardsChef = ({ orderByID }) => {
-
+export const OrderGenerados = ({ orderByID }) => {
   const [allOrder, setAllOrder] = useState([]);
-  const [filterOrders, SetFilterOrders] = useState([]);
+  const [ordersGeneradas, SetOrdersGeneradas] = useState([]);
   // const [currentState, SetCurrentState] = useState("generado");
 
   useEffect(
@@ -20,8 +20,8 @@ export const GeneralCardsChef = ({ orderByID }) => {
   );
 
   useEffect(() => {
-    SetFilterOrders(
-      allOrder.filter((orders) => orders.stateOrder === "proceso")
+    SetOrdersGeneradas(
+      allOrder.filter((orders) => orders.stateOrder === "generado")
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [allOrder]);
@@ -29,10 +29,10 @@ export const GeneralCardsChef = ({ orderByID }) => {
   return (
     <div className="MenuCardsChef">
       <div className="gridBtnChef">
-        <h2>Pedidos en proceso</h2>
+        <h2>Pedidos pendientes</h2>
       </div>
 
-      <AllCardsChef filterOrders={filterOrders} orderByID={orderByID} />
+      <AllOrderGenerados ordersGeneradas={ordersGeneradas} />
     </div>
   );
 };

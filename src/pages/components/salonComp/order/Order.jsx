@@ -1,8 +1,8 @@
 import { useState } from "react";
-import TotalItems from "./TotalItemsOrder";
 
+import TotalItems from "./TotalItemsOrder";
 import BtnSubmitOrder from "./BtnSubmitOrder";
-import { OptionsDishProvider } from "../../../context/OptionDish";
+
 
 export const Order = ({ listDishes, setListDishes }) => {
 
@@ -75,9 +75,10 @@ export const Order = ({ listDishes, setListDishes }) => {
               onChange={handleChange}
               value={infoOrder.numOrder}
             />
+          <hr/>
           </div>
         </div>
-        <OptionsDishProvider>
+
           <TotalItems
             listDishes={listDishes}
             infoOrder={infoOrder}
@@ -88,7 +89,6 @@ export const Order = ({ listDishes, setListDishes }) => {
             setArrayItemsOrder={setArrayItemsOrder}
             deleteItem={deleteItem}
           />
-        </OptionsDishProvider>
       </form>
     </>
   );

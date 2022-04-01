@@ -31,17 +31,43 @@
 
 }
 .backgroundCardHistory{
-    height: 25%;
+    height: 33.3%;
     width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
     .cardHistory{
-        background: yellow;
+        background-color: map-get(color.$background, "conteiners" );
         height: 90%;
         width: 90%;
         border-radius: 20px;
+        padding: 5%;
+        color: white;
     }
+    .nameOrderHistory{
+        height: 20%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        justify-items: center;
+        align-items: center;
+        span{
+            color: map-get(color.$buttons,  "color" )
+        }
+    }
+    .detailsHistoryOrder{
+        height:70% ;
+        width: 100%;
+        overflow-y: scroll;
+    }
+    .TotalHistory{
+        height: 10%;
+        width: 100%;
+        span{
+            color: map-get(color.$buttons,  "color" )
+        }
+    }
+
 }
 
 

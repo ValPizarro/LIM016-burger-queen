@@ -6,12 +6,10 @@ function NavSalon(){
     return (
       <>
         <nav className="navSalon">
-          <div className="logoNav">
+
             <NavLink to="/">
               <img src={LogoQuickly} alt="Quickly" />
             </NavLink>
-          </div>
-          <div className="optionsNav">
             <NavLink to="/salon">
               <i className="fa-solid fa-pen-to-square"/>
             </NavLink>
@@ -22,7 +20,6 @@ function NavSalon(){
               <i className="fa-solid fa-clock-rotate-left" />
             </NavLink>
   
-          </div>
         </nav>
       </>
     );
