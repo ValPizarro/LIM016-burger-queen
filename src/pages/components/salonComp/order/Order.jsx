@@ -4,7 +4,7 @@ import TotalItems from "./TotalItemsOrder";
 import BtnSubmitOrder from "./BtnSubmitOrder";
 
 
-export const Order = ({ listDishes, setListDishes }) => {
+export const Order = ({ listDishes, setListDishes, deleteDish }) => {
   const initialOrderInfo = {
     nameOrder: "",
     numOrder: 0,
@@ -54,6 +54,7 @@ export const Order = ({ listDishes, setListDishes }) => {
     );
 
     setArrayItemsOrder(newArrayItemsOrder);
+    deleteDish(id)
   };
 
   return (
