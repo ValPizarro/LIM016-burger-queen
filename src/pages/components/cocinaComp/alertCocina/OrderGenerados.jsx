@@ -27,9 +27,9 @@ export const OrderGenerados = ({ orderByID }) => {
   }, [allOrder]);
 
   return (
-    <div className="MenuCardsChef">
-      <div className="gridBtnChef">
-        <h2>Pedidos pendientes</h2>
+    <div className="bodyAlertCocina">
+      <div className="descriptionStateAlertCocina">
+        Pedidos pendientes
       </div>
 
       <AllOrderGenerados ordersGeneradas={ordersGeneradas} />

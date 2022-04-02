@@ -31,12 +31,7 @@ export const GeneralHistory = () => {
 
   return (
     <>
-      <div className="headerHistory">
-        <div className="titleHistory">
-          <h2>Historial</h2>
-        </div>
-        <SelectHistory SetCurrentState={SetCurrentState} />
-      </div>
+      <SelectHistory SetCurrentState={SetCurrentState} />
       <AllHistoryOrder filterHistory={filterHistory} />
     </>
   );

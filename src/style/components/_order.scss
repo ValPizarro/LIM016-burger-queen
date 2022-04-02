@@ -1,7 +1,6 @@
-@use '../vars/colors' as color;
+ @use '../vars/colors' as color;
 
 .headerOrder{
-    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -245,4 +244,4 @@
         }
 
     }
-}
+} 

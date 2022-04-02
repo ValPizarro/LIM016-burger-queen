@@ -2,7 +2,7 @@ import { CardOrderGenerada } from "./CardOrderGenerada";
 
 export const AllOrderGenerados = ({ ordersGeneradas }) => {
   return (
-    <div className="cardsChefGeneral">
+    <div className="allOrderGenerados">
       {ordersGeneradas.map((orderGenerada) =>
           orderGenerada.itemsOrder?.length >= 0 ? (
           <CardOrderGenerada

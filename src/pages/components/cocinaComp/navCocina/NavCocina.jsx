@@ -10,13 +10,13 @@ function NavSalon() {
         <NavLink to="/">
           <img src={LogoQuickly} alt="Quickly" />
         </NavLink>
-        <NavLink to="/salon">
+        <NavLink to="/cocina">
           <i className="fa-solid fa-pen-to-square"/>
         </NavLink>
-        <NavLink to="/salon/alert">
+        <NavLink to="/cocina/alert">
           <i className="fa-solid fa-bell" />
         </NavLink>
-        <NavLink to="/salon/history">
+        <NavLink to="/cocina/history">
           <i className="fa-solid fa-clock-rotate-left" />
         </NavLink>
 

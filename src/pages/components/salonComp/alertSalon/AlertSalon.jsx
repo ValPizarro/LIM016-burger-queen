@@ -26,7 +26,7 @@ export const AlertSalon = () => {
         <NavSalon />
       </div>
       <div className="bodyAlertSalon">
-        <div className="descriptionStateAlert">
+        <div className="descriptionStateAlertSalon">
           Pedidos Listos
         </div>
         <SectionShowAlert idfilter={filterOrder.id} filterOrder={filterOrder}/>

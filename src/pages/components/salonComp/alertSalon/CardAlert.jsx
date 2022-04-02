@@ -5,7 +5,7 @@ import DetailsAlertSalon from "./DetailsAlertSalon";
     return(
             <div className="backgroundCardAlertSalon">
                 <div className="cardAlertSalon">
-                    <div className="nameOrderSalon">
+                    <div className="headerOrderSalon">
                         <p><span>nº de mesa: </span>{list.numOrder}</p>
                         <p>{list.nameOrder}</p>
                     </div>

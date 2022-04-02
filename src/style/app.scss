@@ -4,6 +4,8 @@
 @forward '../style/components/menu';
 @forward './components/cocinacomp/AlertSalon';
 @forward './components/cocinacomp/HistorySalon';
+@forward './components/saloncomp/alertChef';
+@forward './components/saloncomp/HistoryCocina';
 
 @forward '../style/pages/login';
 @forward '../style/pages/salon';

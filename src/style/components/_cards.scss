@@ -1,4 +1,4 @@
-@use '../vars/colors' as color;
+ @use '../vars/colors' as color;
 
 .dishGeneral{
 
@@ -63,4 +63,4 @@
     .dishGeneral::-webkit-scrollbar-thumb{
         background: map-get(color.$buttons, "color");
         border-radius: 8px;
-    }
+    } 

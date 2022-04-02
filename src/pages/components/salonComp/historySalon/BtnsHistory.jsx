@@ -6,7 +6,7 @@ const BtnsHistory=({setCurrentStateHistory})=>{
 
 return(
 
-    <div className="btnsHistory">
+    <div className="btnsHistorySalon">
         <div className="btnTotalOrders">
             <button className="btnTotalOrders"
             onClickCapture={HandleStateHistory}

@@ -6,31 +6,39 @@ export const SelectHistory = ({ SetCurrentState }) => {
   };
 
   return (
-    <div className="selectHistory">
-      <button
-        value={"all"}
-        onClick={HandleState}
-      >
-        Todos
-      </button>
-      <button
-        value={"generado"}
-        onClick={HandleState}
-      >
-        Generado
-      </button>
-      <button
-        value={"proceso"}
-        onClick={HandleState}
-      >
-        En proceso
-      </button>
-      <button
-        value={"completado"}
-        onClick={HandleState}
-      >
-        Completados
-      </button>
+    <div className="btnsHistoryCocina">
+      <div>
+        <button
+          value={"all"}
+          onClick={HandleState}
+        >
+          Todos
+        </button>
+      </div>
+      <div>
+          <button
+            value={"generado"}
+            onClick={HandleState}
+          >
+            Generado
+          </button>
+      </div>
+      <div>
+        <button
+          value={"proceso"}
+          onClick={HandleState}
+        >
+          En proceso
+        </button>
+      </div>
+      <div>
+        <button
+          value={"completado"}
+          onClick={HandleState}
+        >
+          Completados
+        </button>
+      </div>
     </div>
   );
 };
