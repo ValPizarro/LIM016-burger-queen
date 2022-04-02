@@ -79,6 +79,7 @@ export const Order = ({ listDishes, setListDishes, deleteDish }) => {
               onChange={handleChange}
               value={infoOrder.numOrder}
             />
+          <hr/>
           </div>
         </div>
         <TotalItems

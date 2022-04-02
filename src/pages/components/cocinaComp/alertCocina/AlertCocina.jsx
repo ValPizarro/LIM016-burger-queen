@@ -59,7 +59,6 @@ export const AlertCocina = () => {
       <nav className="navCocina">
         <NavCocina />
       </nav>
-      <div className="bodyChef">
         {/* <OrderGenerados orderByID={orderByID} /> */}
         <OrderGenerados  />
 
@@ -73,7 +72,6 @@ export const AlertCocina = () => {
         ) : (
           <Vacio />
         )} */}
-      </div>
     </div>
   );
 };

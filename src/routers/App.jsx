@@ -5,16 +5,15 @@ import Login from '../pages/Login';
 import Salon from '../pages/Salon';
 import NotFound from '../pages/Notfound';
 import { AlertSalon } from '../pages/components/salonComp/alertSalon/AlertSalon';
+import { HistorySalon } from '../pages/components/salonComp/historySalon/HistorySalon';
 import { AlertCocina } from "../pages/components/cocinaComp/alertCocina/AlertCocina";
-import { HistorySalon } from '../pages/components/salonComp/historySalon/historySalon';
-import { HistoryCocina } from '../pages/components/cocinaComp/historyCocina/HistoryCocina';
+import { HistoryCocina } from '../pages/components/cocinaComp/historyCocina/HistoryCocina'
 
 const App = () => {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Login />} />
-
         <Route path="/salon" element={<Salon />} />
         <Route path="/salon/alert" element={<AlertSalon />} />
         <Route path="/salon/history" element={<HistorySalon />} />

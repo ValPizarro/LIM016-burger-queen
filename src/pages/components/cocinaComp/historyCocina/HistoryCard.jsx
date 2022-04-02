@@ -5,17 +5,18 @@ export const HistoryCard = ({ orderHistory }) => {
   const { itemsOrder, stateOrder, startTime } = orderHistory;
 
   return (
-    <div className="cardChef">
-      <div className="headerCardChef">
-        <p className="descriptionCampo"> Estado: </p>
-        <p>{stateOrder}</p>
-        <p className="descriptionCampo"> Tiempo:</p>
-        <p> {FunctionTime(startTime)} </p>
-      </div>
-      <div className="itemsCardChef">
-        {itemsOrder.map((item) => (
-          <p key={item.idItemOrder}>{item.nameItemOrder}</p>
-        ))}
+    <div className="backgroundCardHistoryCocina">
+      <div className="cardHistoryCocina">
+
+        <div className="detailsHistoryOrderCocina">
+          {itemsOrder.map((item) => (
+            <p key={item.idItemOrder}>{item.nameItemOrder}</p>
+          ))}
+        </div>
+        <div className="headerCardChef">
+          <span className="descriptionCampo"> Tiempo:</span>
+          <p> {FunctionTime(startTime)} </p>
+        </div>
       </div>
     </div>
   );

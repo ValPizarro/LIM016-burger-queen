@@ -85,11 +85,14 @@ const TotalItems = ({
             key={dish.id}
           />
         ))}
+         
       </div>
+      <hr/>  
       <div className="priceOrder">
         <p className="item1">Total: </p>
         <p className="item2">S/. {totalOrder}.00</p>
       </div>
+ 
     </>
   );
 };
