@@ -10,11 +10,12 @@ import { OrderAlert } from "./orderAlert/OrderAlert";
 import { Vacio2 } from "./orderAlert/Vacio2";
 
 export const AlertCocina = () => {
-  const [orderID, setOrderID] = useState("");
+
+  const [orderAlertID, setOrderAlertID] = useState("");
   const [newOrder, setNewOrder] = useState({});
 
   const orderByID = async (id) => {
-    setOrderID(id);
+    setOrderAlertID(id);
   };
 
   const getOrderByID = async (id) => {
@@ -25,12 +26,12 @@ export const AlertCocina = () => {
 
   useEffect(() => {
     async function fetchOrder() {
-      const orderByID = await getOrderByID(orderID);
+      const orderByID = await getOrderByID(orderAlertID);
 
       setNewOrder(orderByID);
     }
     fetchOrder();
-  }, [orderID]);
+  }, [orderAlertID]);
 
   // const [estilo, setEstilo] = useState("buttonStatePendiente");
 
@@ -59,21 +60,20 @@ export const AlertCocina = () => {
       <nav className="navCocina">
         <NavCocina />
       </nav>
-      <div className="bodyChef">
+      <div className="bodyAlertCocina">
+        <OrderGenerados orderByID={orderByID} />
 
-      <OrderGenerados orderByID={orderByID} />
-
-      {verificacion === false ? (
-        <OrderAlert
-          newOrder={newOrder}
-          // orderID={orderID}
-          // estilo={estilo}
-          // setEstilo={setEstilo}
-        />
-      ) : (
-        <Vacio2 />
+        {verificacion === false ? (
+          <OrderAlert
+            newOrder={newOrder}
+            orderID={orderAlertID}
+            // estilo={estilo}
+            // setEstilo={setEstilo}
+          />
+        ) : (
+          <Vacio2 />
         )}
-        </div>
+      </div>
     </div>
   );
 };

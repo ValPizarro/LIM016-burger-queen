@@ -12,7 +12,6 @@ export const DetailsOrderCard = ({ details, checkHandler,checkboxes }) => {
     noteOrder,
     numItemOrder,
     optionOrder,
-    // stateItem,
   } = details;
 
   const handleChange = (e) => {

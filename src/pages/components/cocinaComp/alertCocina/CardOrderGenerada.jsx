@@ -4,7 +4,7 @@ export const CardOrderGenerada = ({ orderGenerada, orderByID }) => {
   const IdOrder = orderGenerada.id;
 
   const { itemsOrder, startTime } = orderGenerada;
-  //     //   const { itemsOrder, stateOrder } = orderGenerada;
+  //     const { itemsOrder, stateOrder } = orderGenerada;
 
   const handleOrder = () => {
     orderByID(IdOrder);

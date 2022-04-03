@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import { onSnapshot, collection } from "firebase/firestore";
 import { db } from "../../../../firebase/config";
 
@@ -26,14 +25,10 @@ export const OrderGenerados = ({ orderByID }) => {
   }, [allOrder]);
 
   return (
-    <div className="bodyAlertCocina">
-      <div className="descriptionStateAlertCocina">Pedidos pendientes</div>
-
       <AllOrderGenerados
         orderByID={orderByID}
         ordersGeneradas={ordersGeneradas}
       />
-    </div>
   );
 };
 

@@ -1,25 +1,33 @@
-export const OrderAlert = ({ newOrder }) => {
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../../../../../firebase/config";
+import { DetailsAlert } from "./DetailsAlert";
+import { FunctionTime } from "../../../../utils/FunctionTime";
 
-    console.log(newOrder);
-  //   const handleStateEnd = async () => {
-  //     const orderRef = doc(db, "order", orderID);
-  //     await updateDoc(orderRef, {
-  //       stateOrder: "completado",
-  //     }).then(() => {
-  //       // setEstilo("buttonStateCompletado");
-  //       alert("Pedido entregado");
-  //     });
-  //   };
+
+export const OrderAlert = ({ newOrder, orderAlertID }) => {
+  const { stateOrder, startTime, itemsOrder } = newOrder;
+
+  // console.log(orderAlertID);
+
+  const handleState = async () => {
+
+      console.log(orderAlertID);
+
+    const orderRef = doc(db, "order", orderAlertID);
+    await updateDoc(orderRef, {
+      stateOrder: "procesado",
+    })
+      .then(() => {
+        // setEstilo("buttonStateCompletado");
+        alert("Pedido procesado");
+      });
+  };
+
   return (
-    <div className="ContainerOrderCard">
+    <div className="detailsAlert">
       <div className="headerDescriptionOrder">
-        <div className="orderState orderStateGenerado">
-          {/* <p>{stateOrder}</p> */}
-          <p>Generado </p>
-        </div>
-
-        {/* <p>Numero de orden: {numOrder}</p> */}
-        <p> Tiempo: 0:10:00 </p>
+        <div>{stateOrder}</div>
+        <p> Tiempo:{FunctionTime(startTime)}</p>
       </div>
       <hr />
       <div className="flexOrderDescription">
@@ -27,17 +35,17 @@ export const OrderAlert = ({ newOrder }) => {
           <p className="unidad">Unidad</p>
           <p className="description">Description</p>
         </div>
-        <div className="GeneralDeilsOrderCard"></div>
+        <div className="GeneralDeilsOrderCard">
+          {itemsOrder.map((details) => (
+            <DetailsAlert details={details} key={details.idItemOrder} />
+          ))}
+        </div>
         <div className="contentEntregarPedido">
-          <button
-          //   disabled={!completed}
-          //   onClick={handleStateEnd}
-          //   className="entregarPedido"
-          >
+          <button className="entregarPedido" onClick={handleState}>
             Entregar pedido
           </button>
         </div>
       </div>
     </div>
-  );
+  )
 };

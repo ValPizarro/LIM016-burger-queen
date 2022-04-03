@@ -3,10 +3,13 @@ import {db} from "../../../../firebase/config";
 import { useEffect, useState } from "react";
 
 import { DetailsOrderCard } from "./DetailsOrderCard";
+import { FunctionTime } from "../../../utils/FunctionTime";
 
 
-const OrderCard = ({ orderCompleto, orderID, estilo, setEstilo }) => {
-  const { numOrder, stateOrder, itemsOrder } = orderCompleto;
+
+const OrderCard = ({ orderCompleto, orderID }) => {
+
+  const { numOrder, stateOrder,startTime, itemsOrder } = orderCompleto;
 
   const [checkboxes, setCheckboxes] = useState({});
 
@@ -50,7 +53,7 @@ const OrderCard = ({ orderCompleto, orderID, estilo, setEstilo }) => {
         </div>
 
         <p>Numero de orden: {numOrder}</p>
-        <p> Tiempo: 0:10:00 </p>
+        <p> Tiempo: {FunctionTime(startTime)} </p>
       </div>
       <hr />
       <div className="flexOrderDescription">

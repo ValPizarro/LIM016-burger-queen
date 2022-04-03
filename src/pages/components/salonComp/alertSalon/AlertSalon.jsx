@@ -2,7 +2,7 @@ import NavSalon from "../navSalon/NavSalon";
 import { collection,onSnapshot } from "firebase/firestore";
 import { db } from "../../../../firebase/config";
 import { useState,useEffect } from "react";
-
+import DetailsSalon from "./DetailsSalon";
 import SectionShowAlert from "./SectionShow.jsx";
 export const AlertSalon = () => {
 
@@ -26,10 +26,8 @@ export const AlertSalon = () => {
         <NavSalon />
       </div>
       <div className="bodyAlertSalon">
-        <div className="descriptionStateAlertSalon">
-          Pedidos Listos
-        </div>
         <SectionShowAlert idfilter={filterOrder.id} filterOrder={filterOrder}/>
+        <DetailsSalon/>
       </div>
     </div>
   );
