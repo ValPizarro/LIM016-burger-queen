@@ -15,19 +15,23 @@ function Cocina() {
   const [orderCompleto, setOrderCompleto] = useState({});
 
   const orderByID = async (id) => {
+
     setOrderID(id);
+
   };
 
   const getOrderByID = async (id) => {
+
     const orderRef = doc(db, "order", id);
     const order = await getDoc(orderRef);
+
     return order.data();
+
   };
 
   useEffect(() => {
     async function fetchOrder() {
       const orderByID = await getOrderByID(orderID);
-
       setOrderCompleto(orderByID);
     }
     fetchOrder();

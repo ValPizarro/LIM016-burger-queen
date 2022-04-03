@@ -1,7 +1,7 @@
 import CardChef from "./CardChef";
 
 const AllCardsChef = ({ filterOrders, orderByID }) => {
-
+console.log(filterOrders.itemsOrder)
   return (
     <div className="cardsChefGeneral">
       {filterOrders.map((filterOrder) => (
