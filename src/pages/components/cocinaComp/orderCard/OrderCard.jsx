@@ -25,28 +25,29 @@ const OrderCard = ({ orderCompleto, orderID, estilo, setEstilo }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [checkboxes]);
 
-  const handleState = async () => {
-    const orderRef = doc(db, "order", orderID);
-    await updateDoc(orderRef, {
-      stateOrder: "proceso",
-    });
-  };
+  // const handleState = async () => {
+  //   const orderRef = doc(db, "order", orderID);
+  //   await updateDoc(orderRef, {
+  //     stateOrder: "proceso",
+  //   });
+  // };
 
   const handleStateEnd = async () => {
     const orderRef = doc(db, "order", orderID);
     await updateDoc(orderRef, {
       stateOrder: "completado",
     }).then(() => {
-      setEstilo("buttonStateCompletado");
+      // setEstilo("buttonStateCompletado");
+      alert("Pedido entregado")
     });
   };
 
   return (
     <div className="ContainerOrderCard">
       <div className="headerDescriptionOrder">
-        <button onClick={handleState} className={`buttonState ${estilo}`}>
-          {stateOrder}
-        </button>
+        <div className="orderState orderStateProceso">
+          <p>En {stateOrder}</p>
+        </div>
 
         <p>Numero de orden: {numOrder}</p>
         <p> Tiempo: 0:10:00 </p>
@@ -58,25 +59,49 @@ const OrderCard = ({ orderCompleto, orderID, estilo, setEstilo }) => {
           <p className="description">Description</p>
         </div>
         <div className="GeneralDeilsOrderCard">
-        {itemsOrder.map((details) => (
-          <DetailsOrderCard
-            details={details}
-            key={details.idItemOrder}
-            checkHandler={setCheckboxes}
-            checkboxes={checkboxes}
-          />
-        ))}
+          {itemsOrder.map((details) => (
+            <DetailsOrderCard
+              details={details}
+              key={details.idItemOrder}
+              checkHandler={setCheckboxes}
+              checkboxes={checkboxes}
+            />
+          ))}
         </div>
         <div className="contentEntregarPedido">
-          <button disabled={!completed} onClick={handleStateEnd} className="entregarPedido">
+          <button
+            disabled={!completed}
+            onClick={handleStateEnd}
+            className="entregarPedido"
+          >
             Entregar pedido
           </button>
         </div>
-
       </div>
-
     </div>
   );
 };
 
 export default OrderCard;
+
+
+  // const [estilo, setEstilo] = useState("buttonStatePendiente");
+
+  // useEffect(() => {
+  //   const estado = orderCompleto.stateOrder;
+
+  //   console.log(estado);
+  //   const stateChange = () => {
+  //     switch (estado) {
+  //       case "generado":
+  //         return setEstilo("buttonStatePendiente");
+
+  //       case "proceso":
+  //         return setEstilo("buttonStateProceso");
+
+  //       default:
+  //         break;
+  //     }
+  //   };
+  //   stateChange();
+  // }, [orderCompleto]);

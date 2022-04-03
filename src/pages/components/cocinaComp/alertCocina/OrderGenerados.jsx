@@ -9,7 +9,6 @@ import { AllOrderGenerados } from "././AllOrderGenerados";
 export const OrderGenerados = ({ orderByID }) => {
   const [allOrder, setAllOrder] = useState([]);
   const [ordersGeneradas, SetOrdersGeneradas] = useState([]);
-  // const [currentState, SetCurrentState] = useState("generado");
 
   useEffect(
     () =>
@@ -28,11 +27,12 @@ export const OrderGenerados = ({ orderByID }) => {
 
   return (
     <div className="bodyAlertCocina">
-      <div className="descriptionStateAlertCocina">
-        Pedidos pendientes
-      </div>
+      <div className="descriptionStateAlertCocina">Pedidos pendientes</div>
 
-      <AllOrderGenerados ordersGeneradas={ordersGeneradas} />
+      <AllOrderGenerados
+        orderByID={orderByID}
+        ordersGeneradas={ordersGeneradas}
+      />
     </div>
   );
 };
