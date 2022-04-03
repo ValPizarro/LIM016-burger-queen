@@ -11,21 +11,19 @@ export const CardOrderGenerada = ({ orderGenerada }) => {
   // //   };
   return (
     <div className="backgroundCardAlertCocina">
-    <div className="cardAlertCocina">
-
-      <div className="detailsAlertCocina">
-        {itemsOrder.map((item) => (
-          <p key={item.idItemOrder}>{item.nameItemOrder}</p>
-        ))}
-         </div>   
-      <div className="headerCardChef">
-        {/* <p className="descriptionCampo"> Estado: </p> */}
-        {/* <p>{stateOrder}</p> */}
-        <span className="descriptionCampo"> Tiempo:</span>
-        <p> {FunctionTime(startTime)}</p>
+      <div className="cardAlertCocina">
+        <div className="detailsAlertCocina">
+          {itemsOrder.map((item) => (
+            <p key={item.idItemOrder}>{item.nameItemOrder}</p>
+          ))}
+          </div>
+        <div className="headerCardChef">
+          {/* <p className="descriptionCampo"> Estado: </p> */}
+          {/* <p>{stateOrder}</p> */}
+          <span className="descriptionCampo"> Tiempo:</span>
+          <p> {FunctionTime(startTime)}</p>
+        </div>
       </div>
-  
-    </div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import DetailsCocina from "./DetailsCocina";
 import { onSnapshot, collection } from "firebase/firestore";
 import { db } from "../../../../firebase/config";
 
@@ -27,13 +27,12 @@ export const OrderGenerados = ({ orderByID }) => {
   }, [allOrder]);
 
   return (
-    <div className="bodyAlertCocina">
-      <div className="descriptionStateAlertCocina">
-        Pedidos pendientes
+ 
+      <div className="bodyAlertCocina">
+        <AllOrderGenerados ordersGeneradas={ordersGeneradas} />
+        <DetailsCocina/>
       </div>
 
-      <AllOrderGenerados ordersGeneradas={ordersGeneradas} />
-    </div>
   );
 };
 
