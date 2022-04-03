@@ -2,52 +2,72 @@
 .bodyAlertCocina{
     height: 100vh;
     width: 100%;
-    .descriptionStateAlertCocina{
-        display: flex;
-        align-items: center;
-        font-size: 2rem;
-        height:10%;
-        width:100%;
-        margin-left: 1.2%;
-    }
-    .allOrderGenerados{
-        display: flex;
-        height: 90%;
-        width: 100%;
-        flex-wrap: wrap;
-    }
-}
-.backgroundCardAlertCocina{
+    overflow: hidden;
     display: flex;
-    height: 33.3%;
-    width: 25%;
-    justify-content: center;
-    align-items: center;
-    .cardAlertCocina{
-        background-color: map-get(color.$background, "conteiners" );
-        height: 90%;
-        width: 90%;
-        border-radius: 20px;
-        padding: 5%;
-        color: white;
-        .headerCardChef{
-            height: 20%;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 50% 50%;
-            justify-items: center;
-            align-items: center;
-            span{
-                color: map-get(color.$buttons,  "color" )
-            }
-        }
-        .detailsAlertCocina{
-            height:80% ;
-            width: 100%;
-            overflow-y: scroll;
+    flex-direction: row;
+    .allOrderGenerados{
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            height: 100%;
+            width: 60%;
+            flex-wrap: wrap;
+            overflow-y: scroll;
+            .descriptionStateAlertCocina{
+                display: flex;
+                align-items: center;
+                font-size: 2rem;
+                height:10%;
+                width:100%;
+                margin-left: 2%;
+            }
+            .contentCardAlertCocina{
+                width: 100%;
+                height: 90%;
+                display: flex;
+                flex-wrap: wrap;
+                overflow-y: scroll;
+                .backgroundCardAlertCocina{
+                    display: flex;
+                    height: 33.3%;
+                    width: 50%;
+                    justify-content: center;
+                    align-items: center;
+                    .cardAlertCocina{
+                        background-color: map-get(color.$background, "conteiners" );
+                        height: 90%;
+                        width: 90%;
+                        border-radius: 20px;
+                        padding: 5%;
+                        color: white;
+                        .headerCardChef{
+                            height: 20%;
+                            width: 100%;
+                            display: grid;
+                            grid-template-columns: 50% 50%;
+                            justify-items: center;
+                            align-items: center;
+                            span{
+                                color: map-get(color.$buttons,  "color" )
+                            }
+                        }
+                        .detailsAlertCocina{
+                            height:80% ;
+                            width: 100%;
+                            overflow-y: scroll;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                        }
+                    }
+                }
+
+            }
+        
+    }
+
+
+    .detailsCocina{
+        height: 100%;
+        width: 40%;
     }
 }
+

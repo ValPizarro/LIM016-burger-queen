@@ -1,4 +1,4 @@
-import DetailsAlertSalon from "./DetailsAlertSalon";
+import OrderAlertSalon from "./OrderAlertSalon";
 
  const CardAlertSalon=({list})=>{
     const listAlert=list.itemsOrder;
@@ -9,9 +9,9 @@ import DetailsAlertSalon from "./DetailsAlertSalon";
                         <p><span>nº de mesa: </span>{list.numOrder}</p>
                         <p>{list.nameOrder}</p>
                     </div>
-                    <div className="detailsAlertSalon">
+                    <div className="orderAlertSalon">
                         {listAlert.map((details)=>(
-                            listAlert?.length>=0?<DetailsAlertSalon
+                            listAlert?.length>=0?<OrderAlertSalon
                             details={details}
                             key={details.idItemOrder}
                             />:null

@@ -28,14 +28,14 @@ const OrderCard = ({ orderCompleto, orderID, estilo, setEstilo }) => {
   const handleState = async () => {
     const orderRef = doc(db, "order", orderID);
     await updateDoc(orderRef, {
-      stateOrder: "proceso",
+      stateOrder: "Proceso",
     });
   };
 
   const handleStateEnd = async () => {
     const orderRef = doc(db, "order", orderID);
     await updateDoc(orderRef, {
-      stateOrder: "completado",
+      stateOrder: "Completado",
     }).then(() => {
       setEstilo("buttonStateCompletado");
     });
@@ -44,9 +44,9 @@ const OrderCard = ({ orderCompleto, orderID, estilo, setEstilo }) => {
   return (
     <div className="ContainerOrderCard">
       <div className="headerDescriptionOrder">
-        <button onClick={handleState} className={`buttonState ${estilo}`}>
+        <div onClick={handleState} className={`buttonState ${estilo}`}>
           {stateOrder}
-        </button>
+        </div>
 
         <p>Numero de orden: {numOrder}</p>
         <p> Tiempo: 0:10:00 </p>
