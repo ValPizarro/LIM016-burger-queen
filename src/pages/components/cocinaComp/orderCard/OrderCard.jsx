@@ -3,10 +3,13 @@ import {db} from "../../../../firebase/config";
 import { useEffect, useState } from "react";
 
 import { DetailsOrderCard } from "./DetailsOrderCard";
+import { FunctionTime } from "../../../utils/FunctionTime";
 
 
-const OrderCard = ({ orderCompleto, orderID, estilo, setEstilo }) => {
-  const { numOrder, stateOrder, itemsOrder } = orderCompleto;
+
+const OrderCard = ({ orderCompleto, orderID }) => {
+
+  const { numOrder, stateOrder,startTime, itemsOrder } = orderCompleto;
 
   const [checkboxes, setCheckboxes] = useState({});
 
@@ -25,31 +28,32 @@ const OrderCard = ({ orderCompleto, orderID, estilo, setEstilo }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [checkboxes]);
 
-  const handleState = async () => {
-    const orderRef = doc(db, "order", orderID);
-    await updateDoc(orderRef, {
-      stateOrder: "Proceso",
-    });
-  };
+  // const handleState = async () => {
+  //   const orderRef = doc(db, "order", orderID);
+  //   await updateDoc(orderRef, {
+  //     stateOrder: "proceso",
+  //   });
+  // };
 
   const handleStateEnd = async () => {
     const orderRef = doc(db, "order", orderID);
     await updateDoc(orderRef, {
-      stateOrder: "Completado",
+      stateOrder: "completado",
     }).then(() => {
-      setEstilo("buttonStateCompletado");
+      // setEstilo("buttonStateCompletado");
+      alert("Pedido entregado")
     });
   };
 
   return (
     <div className="ContainerOrderCard">
       <div className="headerDescriptionOrder">
-        <div onClick={handleState} className={`buttonState ${estilo}`}>
-          {stateOrder}
+        <div className="orderState orderStateProceso">
+          <p>En {stateOrder}</p>
         </div>
 
         <p>Numero de orden: {numOrder}</p>
-        <p> Tiempo: 0:10:00 </p>
+        <p> Tiempo: {FunctionTime(startTime)} </p>
       </div>
       <hr />
       <div className="flexOrderDescription">
@@ -58,25 +62,49 @@ const OrderCard = ({ orderCompleto, orderID, estilo, setEstilo }) => {
           <p className="description">Description</p>
         </div>
         <div className="GeneralDeilsOrderCard">
-        {itemsOrder.map((details) => (
-          <DetailsOrderCard
-            details={details}
-            key={details.idItemOrder}
-            checkHandler={setCheckboxes}
-            checkboxes={checkboxes}
-          />
-        ))}
+          {itemsOrder.map((details) => (
+            <DetailsOrderCard
+              details={details}
+              key={details.idItemOrder}
+              checkHandler={setCheckboxes}
+              checkboxes={checkboxes}
+            />
+          ))}
         </div>
         <div className="contentEntregarPedido">
-          <button disabled={!completed} onClick={handleStateEnd} className="entregarPedido">
+          <button
+            disabled={!completed}
+            onClick={handleStateEnd}
+            className="entregarPedido"
+          >
             Entregar pedido
           </button>
         </div>
-
       </div>
-
     </div>
   );
 };
 
 export default OrderCard;
+
+
+  // const [estilo, setEstilo] = useState("buttonStatePendiente");
+
+  // useEffect(() => {
+  //   const estado = orderCompleto.stateOrder;
+
+  //   console.log(estado);
+  //   const stateChange = () => {
+  //     switch (estado) {
+  //       case "generado":
+  //         return setEstilo("buttonStatePendiente");
+
+  //       case "proceso":
+  //         return setEstilo("buttonStateProceso");
+
+  //       default:
+  //         break;
+  //     }
+  //   };
+  //   stateChange();
+  // }, [orderCompleto]);

@@ -1,36 +1,37 @@
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-// import { getDoc, doc } from "firebase/firestore";
-// import { db } from "../../../../firebase/config";
+import { getDoc, doc } from "firebase/firestore";
+import { db } from "../../../../firebase/config";
 
 import NavCocina from "../navCocina/NavCocina";
 import { OrderGenerados } from "./OrderGenerados";
-// import OrderCard from "./components/cocinaComp/orderCard/OrderCard";
+import { OrderAlert } from "./orderAlert/OrderAlert";
 
-// import { Vacio } from "./components/cocinaComp/orderCard/Vacio";
+import { Vacio2 } from "./orderAlert/Vacio2";
 
 export const AlertCocina = () => {
-  // const [orderID, setOrderID] = useState("");
-  // const [orderCompleto, setOrderCompleto] = useState({});
 
-  // const orderByID = async (id) => {
-  //   setOrderID(id);
-  // };
+  const [orderAlertID, setOrderAlertID] = useState("");
+  const [newOrder, setNewOrder] = useState({});
 
-  // const getOrderByID = async (id) => {
-  //   const orderRef = doc(db, "order", id);
-  //   const order = await getDoc(orderRef);
-  //   return order.data();
-  // };
+  const orderByID = async (id) => {
+    setOrderAlertID(id);
+  };
 
-  // useEffect(() => {
-  //   async function fetchOrder() {
-  //     const orderByID = await getOrderByID(orderID);
+  const getOrderByID = async (id) => {
+    const orderRef = doc(db, "order", id);
+    const order = await getDoc(orderRef);
+    return order.data();
+  };
 
-  //     setOrderCompleto(orderByID);
-  //   }
-  //   fetchOrder();
-  // }, [orderID]);
+  useEffect(() => {
+    async function fetchOrder() {
+      const orderByID = await getOrderByID(orderAlertID);
+
+      setNewOrder(orderByID);
+    }
+    fetchOrder();
+  }, [orderAlertID]);
 
   // const [estilo, setEstilo] = useState("buttonStatePendiente");
 
@@ -52,26 +53,27 @@ export const AlertCocina = () => {
   //   stateChange();
   // }, [orderCompleto]);
 
-  // const verificacion = Object.keys(orderCompleto).length === 0;
+  const verificacion = Object.keys(newOrder).length === 0;
 
   return (
     <div className="contentCocina">
       <nav className="navCocina">
         <NavCocina />
       </nav>
-        {/* <OrderGenerados orderByID={orderByID} /> */}
-        <OrderGenerados  />
+      <div className="bodyAlertCocina">
+        <OrderGenerados orderByID={orderByID} />
 
-        {/* {verificacion === false ? (
-          <OrderCard
-            orderCompleto={orderCompleto}
-            orderID={orderID}
-            estilo={estilo}
-            setEstilo={setEstilo}
+        {verificacion === false ? (
+          <OrderAlert
+            newOrder={newOrder}
+            orderID={orderAlertID}
+            // estilo={estilo}
+            // setEstilo={setEstilo}
           />
         ) : (
-          <Vacio />
-        )} */}
+          <Vacio2 />
+        )}
+      </div>
     </div>
   );
 };

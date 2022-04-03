@@ -4,7 +4,7 @@ import { getDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 import NavCocina from "./components/cocinaComp/navCocina/NavCocina";
-import { GeneralCardsChef } from "./components/cocinaComp/GeneralCardsChef/GeneralCardsChef";
+import { GeneralCardsChef } from "./components/cocinaComp/generalCardsChef/GeneralCardsChef";
 import OrderCard from "./components/cocinaComp/orderCard/OrderCard";
 
 import { Vacio } from "./components/cocinaComp/orderCard/Vacio";
@@ -37,27 +37,6 @@ function Cocina() {
     fetchOrder();
   }, [orderID]);
 
-  const [estilo, setEstilo] = useState("buttonStatePendiente");
-
-  useEffect(() => {
-    const estado = orderCompleto.stateOrder
-
-    console.log(estado);
-    const stateChange = () => {
-      switch (estado) {
-        case "generado":
-          return setEstilo("buttonStatePendiente");
-
-        case "proceso":
-          return setEstilo("buttonStateProceso");
-
-        default:
-          break;
-      }
-    };
-    stateChange();
-  }, [orderCompleto]);
-
   const verificacion = Object.keys(orderCompleto).length === 0;
 
   return (
@@ -71,8 +50,7 @@ function Cocina() {
         {verificacion === false ? (
           <OrderCard orderCompleto={orderCompleto}
             orderID={orderID}
-            estilo={estilo}
-            setEstilo={setEstilo}/>
+          />
         ) : (
           <Vacio />
         )}

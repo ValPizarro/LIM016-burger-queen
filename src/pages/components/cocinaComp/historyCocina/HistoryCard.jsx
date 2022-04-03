@@ -2,7 +2,7 @@ import { FunctionTime } from "../../../utils/FunctionTime";
 
 export const HistoryCard = ({ orderHistory }) => {
 
-  const { itemsOrder, stateOrder, startTime } = orderHistory;
+  const { itemsOrder, startTime } = orderHistory;
 
   return (
     <div className="backgroundCardHistoryCocina">
