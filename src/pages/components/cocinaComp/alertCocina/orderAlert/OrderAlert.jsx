@@ -1,5 +1,5 @@
-import { doc, updateDoc } from "firebase/firestore";
-import { db } from "../../../../../firebase/config";
+// import { doc, updateDoc } from "firebase/firestore";
+// import { db } from "../../../../../firebase/config";
 import { DetailsAlert } from "./DetailsAlert";
 import { FunctionTime } from "../../../../utils/FunctionTime";
 
@@ -9,19 +9,22 @@ export const OrderAlert = ({ newOrder, orderAlertID }) => {
 
   // console.log(orderAlertID);
 
-  const handleState = async () => {
+  // const handleState = async () => {
 
-      console.log(orderAlertID);
+  //   const orderRef = doc(db, "order", orderAlertID);
+  //   await updateDoc(orderRef, {
+  //     stateOrder: "procesado",
+  //   })
+  //     .then(() => {
+  //       // setEstilo("buttonStateCompletado");
+  //       alert("Pedido procesado");
+  //     });
+  // };
 
-    const orderRef = doc(db, "order", orderAlertID);
-    await updateDoc(orderRef, {
-      stateOrder: "procesado",
-    })
-      .then(() => {
-        // setEstilo("buttonStateCompletado");
-        alert("Pedido procesado");
-      });
-  };
+  const handleState = () => {
+    console.log(orderAlertID);
+  
+  }
 
   return (
     <div className="detailsAlert">
