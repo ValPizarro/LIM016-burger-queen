@@ -6,6 +6,7 @@ import { db } from "../../../../firebase/config";
 import { AllOrderGenerados } from "././AllOrderGenerados";
 
 export const OrderGenerados = ({ orderByID }) => {
+
   const [allOrder, setAllOrder] = useState([]);
   const [ordersGeneradas, SetOrdersGeneradas] = useState([]);
 

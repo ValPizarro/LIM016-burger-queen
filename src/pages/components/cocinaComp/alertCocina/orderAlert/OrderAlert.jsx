@@ -1,29 +1,21 @@
-// import { doc, updateDoc } from "firebase/firestore";
-// import { db } from "../../../../../firebase/config";
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../../../../../firebase/config";
 import { DetailsAlert } from "./DetailsAlert";
 import { FunctionTime } from "../../../../utils/FunctionTime";
 
 
-export const OrderAlert = ({ newOrder, orderAlertID }) => {
+export const OrderAlert = ({ newOrder, orderAlertID,setEstilo }) => {
+
   const { stateOrder, startTime, itemsOrder } = newOrder;
-
-  // console.log(orderAlertID);
-
-  // const handleState = async () => {
-
-  //   const orderRef = doc(db, "order", orderAlertID);
-  //   await updateDoc(orderRef, {
-  //     stateOrder: "procesado",
-  //   })
-  //     .then(() => {
-  //       // setEstilo("buttonStateCompletado");
-  //       alert("Pedido procesado");
-  //     });
-  // };
-
-  const handleState = () => {
-    console.log(orderAlertID);
-  
+  const handleState = async() => {
+    const orderRef = doc(db, "order", orderAlertID);
+    await updateDoc(orderRef, {
+      stateOrder: "proceso",
+   })
+     .then(() => {
+       // setEstilo("buttonStateCompletado");
+        alert("Pedido procesado");
+     });
   }
 
   return (

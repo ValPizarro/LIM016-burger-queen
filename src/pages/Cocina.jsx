@@ -4,7 +4,7 @@ import { getDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 import NavCocina from "./components/cocinaComp/navCocina/NavCocina";
-import { GeneralCardsChef } from "./components/cocinaComp/generalCardsChef/GeneralCardsChef";
+import { GeneralCardsChef } from "./components/cocinaComp/GeneralCardsChef/GeneralCardsChef";
 import OrderCard from "./components/cocinaComp/orderCard/OrderCard";
 
 import { Vacio } from "./components/cocinaComp/orderCard/Vacio";
@@ -46,9 +46,9 @@ function Cocina() {
       </nav>
       <div className="bodyChef">
         <GeneralCardsChef orderByID={orderByID} />
-
         {verificacion === false ? (
-          <OrderCard orderCompleto={orderCompleto}
+          <OrderCard 
+            orderCompleto={orderCompleto}
             orderID={orderID}
           />
         ) : (

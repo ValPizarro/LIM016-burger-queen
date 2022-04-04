@@ -14,13 +14,15 @@ export const AlertCocina = () => {
   const [orderAlertID, setOrderAlertID] = useState("");
   const [newOrder, setNewOrder] = useState({});
 
-  const orderByID = async (id) => {
-    setOrderAlertID(id);
+  const orderByID = (id) => {
+    return setOrderAlertID(id);
   };
 
   const getOrderByID = async (id) => {
+
     const orderRef = doc(db, "order", id);
     const order = await getDoc(orderRef);
+
     return order.data();
   };
 
@@ -66,7 +68,7 @@ export const AlertCocina = () => {
         {verificacion === false ? (
           <OrderAlert
             newOrder={newOrder}
-            orderID={orderAlertID}
+            orderAlertID={orderAlertID}
             // estilo={estilo}
             // setEstilo={setEstilo}
           />

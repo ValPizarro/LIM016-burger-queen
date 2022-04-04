@@ -9,13 +9,14 @@ import { FunctionTime } from "../../../utils/FunctionTime";
 
 const OrderCard = ({ orderCompleto, orderID }) => {
 
-  const { numOrder, stateOrder,startTime, itemsOrder } = orderCompleto;
+  const { numOrder, stateOrder, startTime, itemsOrder } = orderCompleto;
 
   const [checkboxes, setCheckboxes] = useState({});
 
   const [completed, setCompleted] = useState(false);
 
   useEffect(() => {
+
     const cantidadItems = itemsOrder.length;
     const cantidadChecks = Object.keys(checkboxes).length;
 
