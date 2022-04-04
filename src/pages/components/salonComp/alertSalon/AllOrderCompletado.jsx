@@ -4,7 +4,8 @@ const AllOrderCompletado=({filterOrderCompletado,OrderById})=>{
     return(
         <div className="cardOrderCompletado">
             <div className="descriptionStateAlertSalon">
-                Pedidos Listos
+                <p>Pedidos Listos</p>
+              
             </div>
             <div className="contentCardAlertSalon">
                 {filterOrderCompletado.map((orderCompletado)=>(

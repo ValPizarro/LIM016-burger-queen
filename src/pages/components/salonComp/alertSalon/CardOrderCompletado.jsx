@@ -4,7 +4,6 @@ const CardOrderCompletado=({OrderById,orderCompletado})=>{
     const IdOrder = orderCompletado.id;
 
     const { itemsOrder, startTime,stateOrder } = orderCompletado;
-    
 
     const handleOrder = () => {
         OrderById(IdOrder);
@@ -17,9 +16,7 @@ const CardOrderCompletado=({OrderById,orderCompletado})=>{
               <p key={item.idItemOrder}>{item.nameItemOrder}</p>
             ))}
           </div>
-          <div className="headerOrderSalon">
-
-             <p><span>Estado:</span>{stateOrder}</p>
+          <div className="footerOrderSalon">
             <span className="descriptionCampo"> Tiempo:</span>
             <p> {FunctionTime(startTime)}</p>
           </div>

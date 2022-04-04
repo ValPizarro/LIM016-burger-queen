@@ -3,41 +3,48 @@ import { FunctionTime } from "../../../../utils/FunctionTime";
 import { doc,updateDoc } from "firebase/firestore";
 import { db } from "../../../../../firebase/config"
 const OrderAlert=({newOrderList,orderAlertIdSalon})=>{
-    
-    const { stateOrder, startTime, itemsOrder}= newOrderList;
+
+    const {
+        stateOrder,
+        startTime,
+        itemsOrder,
+        numOrder
+    } = newOrderList;
+
     const handleState = async() => {
         const orderRef = doc(db, "order", orderAlertIdSalon);
         await updateDoc(orderRef, {
           stateOrder: "EntregadoAlUsuario",
-       })
+        })
        .then(() => {
         // setEstilo("buttonStateCompletado");
          alert("Entregar pedido al usuario");
-      });
+        });
     }
     console.log(stateOrder)
     return(
-        <div className="detailsSalon">
+        <div className="detailsAlert">
         <div className="headerDescriptionOrder">
-            <div>
-                {stateOrder}
-            </div>
-            <p>Numero de orden: #1000</p>
-            <p> Tiempo:{FunctionTime(startTime)}</p>
+            <p><span>Estado: </span>{stateOrder}</p>
+            <p><span>Numero de orden:</span>{numOrder}</p>
+            <p><span>Tiempo: </span> {FunctionTime(startTime)}</p>
         </div>
         <hr />
-        <div className="flexOrderDescription">
-            <div className="gridTitleOrder">
+        <div className="flexOrderDescriptionAlert">
+            <div className="gridTitleOrderAlert">
             <p className="unidad">Unidad</p>
             <p className="description">Description</p>
             </div>
-            <div className="GeneralDeilsOrderCard">
+            <div className="generalDeilsOrderCardAlert">
             {itemsOrder.map((details) => (
                 <DetailsSalon details={details} key={details.idItemOrder} />
             ))}
             </div>
-            <div className="contentEntregarPedido">
-            <button className="entregarPedido" onClick={handleState}>
+            <div className="contentEntregarPedidoAlert">
+            <button
+                className="entregarPedidoAlert" 
+                onClick={handleState}
+            >
                 Entregar pedido
             </button>
             </div>
