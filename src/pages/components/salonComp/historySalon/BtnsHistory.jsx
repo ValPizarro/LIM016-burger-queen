@@ -1,4 +1,4 @@
-const BtnsHistory=({setCurrentStateHistory})=>{
+const BtnsHistory=({setCurrentStateHistory,listOrderHistory})=>{
     const HandleStateHistory = (e) => {
         const currentState = e.target.value;
         return setCurrentStateHistory(currentState);
@@ -7,27 +7,22 @@ const BtnsHistory=({setCurrentStateHistory})=>{
 return(
 
     <div className="btnsHistorySalon">
-        <div className="btnTotalOrders">
-            <button className="btnTotalOrders"
-            onClickCapture={HandleStateHistory}
-            >Todos</button>
-        </div>
         <div className="btnGenerados">
             <button className="btnGenerados"
-            value={"generado"}
+            value={"all"}
             onClickCapture={HandleStateHistory}
             >Generados</button>
         </div>
         <div className="EnProcesoChef">
             <button className=""
-            value={"proceso"}
+            value={"generado"}
             onClickCapture={HandleStateHistory}
-            >En proceso</button>
+            >Por entregar</button>
         </div>
         <div className="btnEntregadosMesero">
             <button className=""
             onClickCapture={HandleStateHistory}
-            >Entregado</button>
+            value={"EntregadoAlUsuario"}>Entregado</button>
         </div>
     </div>
 
