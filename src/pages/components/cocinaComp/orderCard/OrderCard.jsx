@@ -9,13 +9,14 @@ import { FunctionTime } from "../../../utils/FunctionTime";
 
 const OrderCard = ({ orderCompleto, orderID }) => {
 
-  const { numOrder, stateOrder,startTime, itemsOrder } = orderCompleto;
+  const { numOrder, stateOrder, startTime, itemsOrder } = orderCompleto;
 
   const [checkboxes, setCheckboxes] = useState({});
 
   const [completed, setCompleted] = useState(false);
 
   useEffect(() => {
+
     const cantidadItems = itemsOrder.length;
     const cantidadChecks = Object.keys(checkboxes).length;
 
@@ -48,12 +49,9 @@ const OrderCard = ({ orderCompleto, orderID }) => {
   return (
     <div className="ContainerOrderCard">
       <div className="headerDescriptionOrder">
-        <div className="orderState orderStateProceso">
-          <p>En {stateOrder}</p>
-        </div>
-
-        <p>Numero de orden: {numOrder}</p>
-        <p> Tiempo: {FunctionTime(startTime)} </p>
+        <p><span>Estado: </span> {stateOrder}</p>
+        <p><span>Numero de mesa: </span>{numOrder}</p>
+        <p><span>Tiempo: </span> {FunctionTime(startTime)} </p>
       </div>
       <hr />
       <div className="flexOrderDescription">

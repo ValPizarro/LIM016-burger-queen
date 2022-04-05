@@ -15,41 +15,49 @@
     padding: 4% 4% 0% 4%;
     height: 22%;
     width: 100%;
-    p{
+    p{  
+        height: 33.3%;
         font-family: "Barlow", sans-serif;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         color: #C4C4C4;
-        display: grid;
         height: 30.5%;
-        align-items: center;
+        span{
+            color: map-get(color.$buttons, "color5" );
+        }
     }
 }
 .orderState{
     width: 100%;
     height: 36%;
-    // border-radius: 16px;
+     border-radius: 16px;
     opacity: 0.8;
     zoom: 1;
     font-size: 1.2rem;
     p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
         text-align: center;
     }
 }
 
-.buttonStatePendiente{
+/* .buttonStatePendiente{
     background: map-get(color.$buttons ,"pendiente");
     color:map-get(color.$text, "textPendiente" );
 }
 .orderStateProceso{
+
     background: map-get(color.$buttons ,"proceso" );
     p{
     color:map-get(color.$text, "textProceso" );
     }
-}
+} */
 .gridTitleOrder{
     font-family: "Barlow", sans-serif;
     font-size: 1.5rem;
-    color: #C4C4C4;
+    color: map-get(color.$buttons ,"color5" );
     height: 10%;
     width: 100%;
     display: grid;
@@ -65,7 +73,7 @@
     }
 }
 .DetailsOrderCard{
-    height:24%;
+    height:30%;
     width: 100%;
     display: grid;
     grid-template-columns:15% 25% 60%;
@@ -88,13 +96,20 @@
         width: 100%;
         display: grid;
         align-items: center;
+        h3{
+            color: white;
+        }
+        p{
+            color:#C4C4C4
+        }
     }
+   
     input[type="checkbox"]:checked {
         box-shadow: 0 0 0 3px #EA7C69;
       }
 }
 
-.orderStateGenerado{
+/* .orderStateGenerado{
     background: map-get(color.$buttons ,"pendiente");
     p{
     color:map-get(color.$text, "textPendiente" );
@@ -103,7 +118,7 @@
 .buttonStateProceso{
     background: map-get(color.$buttons ,"proceso" );
     color:map-get(color.$text, "textProceso" );
-}
+} */
 .buttonStateCompletado{
     background: map-get(color.$buttons ,"completado" );
     color:map-get(color.$text, "textCompletado" );

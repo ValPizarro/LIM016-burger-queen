@@ -11,7 +11,7 @@ function NavSalon() {
           <img src={LogoQuickly} alt="Quickly" />
         </NavLink>
         <NavLink to="/cocina">
-          <i className="fa-solid fa-pen-to-square"/>
+          <i className="fa-solid fa-utensils"/>
         </NavLink>
         <NavLink to="/cocina/alert">
           <i className="fa-solid fa-bell" />

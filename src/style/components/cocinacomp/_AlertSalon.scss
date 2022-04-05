@@ -5,7 +5,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    .sectionShowAlert{
+    .cardOrderCompletado{
         display: flex;
         height: 100%;
         width: 60%;
@@ -37,9 +37,16 @@
                     border-radius: 20px;
                     padding: 5%;
                     color: white;
-
-                    .headerOrderSalon{
-                        height: 10%;
+                    .detailsAlertCocina{
+                        overflow-y: scroll;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        height:70% ;
+                        width: 100%;
+                    }
+                    .footerOrderSalon{
+                        height: 30%;
                         width: 100%;
                         display: grid;
                         grid-template-columns: 50% 50%;
@@ -69,11 +76,6 @@
             }
 
         }
-
-    }
-    .detailsSalon {
-        height: 100%;
-        width: 40%;
 
     }
 }

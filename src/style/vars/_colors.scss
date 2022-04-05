@@ -15,6 +15,7 @@ $text:(
     "textCompletado":#50D1AA,
     "textProceso":#9290FE,
     "textPendiente":#FCBA7E,
+    "textPrueba":rgba(234, 124, 105, 1),
 );
 
 $buttons:(
@@ -28,6 +29,8 @@ $buttons:(
     "icon2":#969494,
     "select": #ececec,
     "completado": rgba(107, 226, 190, 0.3),
+    "generado": rgba(255, 225, 0, 0.401),
     "proceso":rgba(146, 144, 254, 0.3),
     "pendiente":rgba(255, 181, 114, 0.3),
+    "prueba":rgba(234, 124, 105, 0.3)
 )

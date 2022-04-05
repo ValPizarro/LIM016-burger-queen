@@ -1,13 +1,14 @@
 import { FunctionTime } from "../../../utils/FunctionTime";
 
 const CardChef = ({ filterOrder, orderByID }) => {
-
+  console.log(orderByID)
   const IdOrder = filterOrder.id;
-  console.log(IdOrder);
-  const { itemsOrder, stateOrder, startTime } = filterOrder;
-  console.log(itemsOrder)
+console.log(filterOrder.stateOrder)
+  const { itemsOrder, startTime } = filterOrder;
+
   const handleOrder = () => {
-    orderByID(IdOrder);
+    console.log(IdOrder)
+    return orderByID(IdOrder);
   };
 
   return (
