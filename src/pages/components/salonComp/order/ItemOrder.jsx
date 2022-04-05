@@ -1,53 +1,126 @@
 import { useEffect, useState } from "react";
+// import { useOptionsContext } from "../../../context/OptionDish";
+import { OptionsDish } from "./OptionsDish";
 
-const ItemOrder = ({ dish, addItems }) => {
-
+const ItemOrder = ({ dish, addItems, deleteItem }) => {
   const { id, name, img, price } = dish;
-  let [num, setNum] = useState(1);
-  const totalPrice = price * num;
-  let [noteItemOrder, setNoteItemOrder] = useState("");
+  const [stateExtra1, setStateExtra1] = useState(false);
+  const [stateExtra2, setStateExtra2] = useState(false);
+
+  const [item, setItem] = useState({
+    extraOrder1: "-",
+    extraOrder2: "-",
+    idItemOrder: id,
+    nameItemOrder: name,
+    noteOrder: "",
+    numItemOrder: 1,
+    optionOrder: "",
+    priceItemOrder: price,
+    priceTotalItemOrder: price,
+  });
+
+  const handleItem = (propiedad, valor) => {
+    // if (typeof valor === "number") {
+    if (propiedad === "numItemOrder") {
+      const currentTotalPrice = valor * price;
+
+      setItem({
+        ...item,
+        numItemOrder: valor,
+        priceTotalItemOrder: currentTotalPrice,
+      });
+    } else if (propiedad === "optionOrder") {
+      // console.log(valor);
+      setItem({
+        ...item,
+        optionOrder: valor,
+      });
+    } else if (propiedad === "extraOrder1") {
+      setItem({
+        ...item,
+        extraOrder1: valor,
+      });
+    } else if (propiedad === "extraOrder2") {
+      setItem({
+        ...item,
+        extraOrder2: valor,
+      });
+    } else {
+      setItem({
+        ...item,
+        noteOrder: valor,
+      });
+    }
+  };
 
   useEffect(() => {
-    addItems({
-      extraOrder1:'huevo',
-      extraOrder2:'queso',
-      idItemOrder: id,
-      nameItemOrder: name,
-      noteOrder: noteItemOrder,
-      numItemOrder: num,
-      optionOrder:'carne',
-      priceItemOrder: price,
-      priceTotalItemOrder: totalPrice,
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [num, noteItemOrder]);
+    addItems(item);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    item,
+    item.numItemOrder,
+    item.noteOrder,
+    item.optionOrder,
+    item.extraOrder1,
+    item.extraOrder2,
+  ]);
 
   const aumentar = (e) => {
     e.preventDefault();
-    setNum(++num);
+
+    const currentAccount = ++item["numItemOrder"];
+
+    handleItem("numItemOrder", currentAccount);
   };
 
   const disminuir = (e) => {
     e.preventDefault();
-    if (num === 1) {
-      setNum(1);
+    if (item["numItemOrder"] === 1) {
+      handleItem("numItemOrder", item["numItemOrder"]);
     } else {
-      setNum(--num);
+      const currentAccount = --item["numItemOrder"];
+
+      handleItem("numItemOrder", currentAccount);
     }
   };
 
-  const deleteItem = (e) => {
-    e.preventDefault();
-    e.target.parentNode.parentNode.parentNode.remove();
+  const handleNote = (e) => {
+    const currentNote = e.target.value;
+
+    handleItem("noteOrder", currentNote);
+  };
+  const changeSelect = (e) => {
+    const currentOption = e.target.value;
+    // console.log(currentOption);
+    handleItem("optionOrder", currentOption);
   };
 
-  const handleChange = (e) => {
-    setNoteItemOrder(e.target.value);
+  const changeChecked1 = (e) => {
+    const extra1 = e.target.checked;
+
+    setStateExtra1(extra1);
+    if (extra1 === true) {
+      handleItem("extraOrder1", "huevo");
+    } else {
+      handleItem("extraOrder1", "-");
+    }
+  };
+  const changeChecked2 = (e) => {
+    const extra2 = e.target.checked;
+    setStateExtra2(extra2);
+
+    if (extra2 === true) {
+      handleItem("extraOrder2", "queso");
+    } else {
+      handleItem("extraOrder2", "-");
+    }
   };
 
   return (
+
     <div className="itemOrderBox">
+
       <div className="descriptionOrderItem">
         <div className="infoDish">
           <div className="photo">
@@ -55,13 +128,22 @@ const ItemOrder = ({ dish, addItems }) => {
           </div>
           <div className="info">
             <p>{name}</p>
-            <p>$ {price}.00</p>
+            <p>S/. {price}.00</p>
+            {name === "Hamburguesa clásica" || name === "Hamburguesa doble" ? (
+              <OptionsDish
+                changeSelect={changeSelect}
+                changeChecked1={changeChecked1}
+                stateExtra1={stateExtra1}
+                changeChecked2={changeChecked2}
+                stateExtra2={stateExtra2}
+              />
+            ) : null}
           </div>
         </div>
         <div className="noteOrder">
           <textarea
-            placeholder="Indicaciones para el chef"
-            onChange={handleChange}
+            placeholder="Indicaciones"
+            onChange={handleNote}
           />
         </div>
       </div>
@@ -69,19 +151,20 @@ const ItemOrder = ({ dish, addItems }) => {
         <div className="deleteOrder">
           <button
             className="fa-regular fa-trash-can trash"
-            onClick={deleteItem}
+            onClick={(e)=>deleteItem(id, e)}
           />
         </div>
         <div className="secondRowButtons">
-          <p>$ {totalPrice}.00 </p>
+          <p>S/. {item["priceTotalItemOrder"]}.00 </p>
         </div>
         <div className="firstRowButtons">
           <button className="fa-regular fa-square-minus" onClick={disminuir} />
-          <p>{num}</p>
+          <p>{item["numItemOrder"]}</p>
           <button className="fa-regular fa-square-plus" onClick={aumentar} />
         </div>
       </div>
     </div>
-  )}
+  );
+};
 
 export default ItemOrder;

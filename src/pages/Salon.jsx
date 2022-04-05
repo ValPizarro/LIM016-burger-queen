@@ -1,18 +1,16 @@
 import { useEffect, useState } from "react";
 
-// import Swal from "sweetalert2";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/config";
 
-import NavSalon from "../pages/components/salonComp/nav/NavSalon";
+import NavSalon from "./components/salonComp/navSalon/NavSalon";
 import { Order } from "./components/salonComp/order/Order";
 import { Menu } from "../pages/components/salonComp/menu/Menu";
-
 
 function Salon() {
 
   const [listDishes, setListDishes] = useState([]);
-  const [dishID, setDishID] = useState([]);
+  const [dishID, setDishID] = useState("");
 
   const ShowItem = async (id) => {
     setDishID(id);
@@ -21,31 +19,34 @@ function Salon() {
   const getDataByID = async (id) => {
     const dishRef = doc(db, "menu", id);
     const dish = await getDoc(dishRef);
-   // console.log(dish.data())
     return dish.data();
   };
-
+  //para las ordenes que no se repita las ordenes
   useEffect(() => {
-
+  // ¿Esto deberia estar en el useEffect?
     async function fetchData() {
       const dataByID = await getDataByID(dishID);
-     // console.log(dataByID)
-      setListDishes([...listDishes, dataByID])
+
+      const foundItem = listDishes.find((dish) => dish.id === dataByID.id);
+      if (foundItem === undefined) {
+        setListDishes([...listDishes, dataByID]);
+      }
     }
-    fetchData()
+    fetchData();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dishID]);
 
-
   return (
     <div className="salonGeneral">
-      <header className="headerSalon sectionA">
+      <nav className="headerSalon sectionA">
         <NavSalon />
-      </header>
+      </nav>
       <div className="bodySalon">
         <Menu ShowItem={ShowItem} />
-        <Order listDishes={listDishes}/>
-
+        <Order
+          listDishes={listDishes}
+          setListDishes={setListDishes}
+        />
       </div>
     </div>
   );

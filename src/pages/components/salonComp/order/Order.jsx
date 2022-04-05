@@ -1,30 +1,33 @@
 import { useState } from "react";
+
 import TotalItems from "./TotalItemsOrder";
+import BtnSubmitOrder from "./BtnSubmitOrder";
 
-import BtnSubmitOrder from './btnSubmitOrder';
 
-export const Order = ({ listDishes }) => {
+export const Order = ({ listDishes, setListDishes }) => {
   const initialOrderInfo = {
     nameOrder: "",
     numOrder: 0,
-    totalPriceOrder: 0,
     stateOrder: "generado",
   };
-/*orden*/
+  /*orden*/
   const initialOrder = {
+    endTime: 0,
     itemsOrder: [],
     nameOrder: "",
-    numOrder:0,
+    numOrder: 0,
+    startTime: 0,
     stateOrder: "generado",
     totalPriceOrder: 0,
   };
 
   const [infoOrder, setinfoOrder] = useState(initialOrderInfo);
   const [order, setOrder] = useState(initialOrder);
-  
-  const addOrder =(newOrder) => {
+  const [totalOrder, setTotalOrder] = useState(0);
+  const [arrayItemsOrder, setArrayItemsOrder] = useState([]);
+
+  const addOrder = (newOrder) => {
     setOrder(newOrder);
-    console.log(order);
   };
 
   const handleChange = (e) => {
@@ -34,11 +37,30 @@ export const Order = ({ listDishes }) => {
     });
   };
 
+  const clearOrder = () => {
+    setListDishes([]);
+    setOrder(initialOrder);
+    setinfoOrder(initialOrderInfo);
+    setTotalOrder(0);
+    setArrayItemsOrder([]);
+  };
+
+  const deleteItem = (id, e) => {
+    e.preventDefault();
+    e.target.parentNode.parentNode.parentNode.remove();
+
+    const newArrayItemsOrder = arrayItemsOrder.filter(
+      (item) => item.idItemOrder !== id
+    );
+
+    setArrayItemsOrder(newArrayItemsOrder);
+  };
+
   return (
     <>
-      <form className="formOrder" >
+      <form className="formOrder">
         <div className="headerOrder">
-          <BtnSubmitOrder order={order}/>
+          <BtnSubmitOrder order={order} clearOrder={clearOrder} />
           <div className="infoOrder">
             <input
               name="nameOrder"
@@ -56,13 +78,18 @@ export const Order = ({ listDishes }) => {
               onChange={handleChange}
               value={infoOrder.numOrder}
             />
+          <hr/>
           </div>
-
         </div>
         <TotalItems
           listDishes={listDishes}
           infoOrder={infoOrder}
           addOrder={addOrder}
+          totalOrder={totalOrder}
+          setTotalOrder={setTotalOrder}
+          arrayItemsOrder={arrayItemsOrder}
+          setArrayItemsOrder={setArrayItemsOrder}
+          deleteItem={deleteItem}
         />
       </form>
     </>
