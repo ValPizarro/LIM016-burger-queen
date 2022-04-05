@@ -1,6 +1,6 @@
 const vacioAlert =()=>{
     return(
-        <p>hoa</p>
+        <div className="vacioAlert"></div>
     )
 }
 export default vacioAlert
