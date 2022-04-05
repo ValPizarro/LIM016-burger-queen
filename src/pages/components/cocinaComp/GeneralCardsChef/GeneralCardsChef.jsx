@@ -29,7 +29,7 @@ export const GeneralCardsChef = ({ orderByID }) => {
   return (
     <div className="MenuCardsChef">
       <div className="gridBtnChef">
-        <h2>Pedidos en proceso</h2>
+        Pedidos en proceso
       </div>
 
       <AllCardsChef filterOrders={filterOrders} orderByID={orderByID} />

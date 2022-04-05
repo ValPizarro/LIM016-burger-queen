@@ -12,7 +12,7 @@ const ItemOrder = ({ dish, addItems, deleteItem }) => {
     extraOrder2: "-",
     idItemOrder: id,
     nameItemOrder: name,
-    noteOrder: "Este es el Item",
+    noteOrder: "",
     numItemOrder: 1,
     optionOrder: "",
     priceItemOrder: price,
@@ -142,7 +142,7 @@ const ItemOrder = ({ dish, addItems, deleteItem }) => {
         </div>
         <div className="noteOrder">
           <textarea
-            placeholder="Indicaciones para el chef"
+            placeholder="Indicaciones"
             onChange={handleNote}
           />
         </div>
