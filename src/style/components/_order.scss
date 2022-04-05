@@ -11,8 +11,6 @@
       color: map-get(color.$text , "color");
     justify-content: center;
 
-
-
     .infoOrder{
         display: flex;
         flex-direction: column;
@@ -155,7 +153,6 @@
                     width: 7px;
                     background-color: map-get(color.$background, "textarea");
                     border-radius: 9px;
-
                 }
         }
     }

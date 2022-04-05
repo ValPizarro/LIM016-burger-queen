@@ -36,12 +36,6 @@ function Salon() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dishID]);
 
-  const deleteDish = (id) => {
-
-    const newListDishes = listDishes.filter((item) => item.id !== id);
-    console.log(newListDishes);
-    setListDishes(newListDishes);
-  };
 
   return (
     <div className="salonGeneral">
@@ -53,7 +47,6 @@ function Salon() {
         <Order
           listDishes={listDishes}
           setListDishes={setListDishes}
-          deleteDish={deleteDish}
         />
       </div>
     </div>
