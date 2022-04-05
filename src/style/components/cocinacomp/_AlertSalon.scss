@@ -5,11 +5,19 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    .vacioAlert{
+        height: 100%;
+        width: 40%;
+        background-image: url(../../../img/Chef.jpg);
+    }
     .cardOrderCompletado{
+        
         display: flex;
         height: 100%;
         width: 60%;
         flex-direction: column;
+        font-family: "Barlow", sans-serif;
+
         .descriptionStateAlertSalon{
             display: flex;
             align-items: center;

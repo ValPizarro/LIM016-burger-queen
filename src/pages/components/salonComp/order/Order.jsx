@@ -54,7 +54,6 @@ export const Order = ({ listDishes, setListDishes, deleteDish }) => {
     );
 
     setArrayItemsOrder(newArrayItemsOrder);
-    deleteDish(id)
   };
 
   return (

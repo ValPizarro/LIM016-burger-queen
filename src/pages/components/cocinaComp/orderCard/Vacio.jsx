@@ -1,3 +1,3 @@
 export const Vacio = () => {
-    return  <p>Esta vacio </p>
+    return  <div className="vacioOrderCard"></div>
 }

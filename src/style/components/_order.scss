@@ -116,9 +116,9 @@
                 flex-direction: column;
                 width: 70%;
                 p{
+                    font-size: 1rem;
                     width: 100%;
                     font-weight: 500;
-                    font-size: 14px;
                     line-height: 130%;
                     color: map-get(color.$text , "title");
                 }
@@ -129,6 +129,7 @@
             justify-content: flex-end;
             margin-right: 2%;
                 textarea{
+                    font-family: 'Barlow', sans-serif;
                     padding: 5px;
                     width: 75%;
                     height: 2rem;
@@ -187,7 +188,6 @@
         justify-content: space-around;
         p{
             align-self: center;
-            font-weight: bold;
         }
         button{
             background: none;
