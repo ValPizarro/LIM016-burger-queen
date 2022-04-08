@@ -27,6 +27,7 @@ const TotalItems = ({
   }, [arrayItemsOrder, nameOrder, numOrder, totalOrder]);
 
   const addItems = (itemOrder) => {
+
         const {
           idItemOrder,
           extraOrder1,
@@ -85,14 +86,14 @@ const TotalItems = ({
             key={dish.id}
           />
         ))}
-         
+
       </div>
-      <hr/>  
+      <hr/>
       <div className="priceOrder">
         <p className="item1">Total: </p>
         <p className="item2">S/. {totalOrder}.00</p>
       </div>
- 
+
     </>
   );
 };
