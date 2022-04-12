@@ -19,7 +19,6 @@ function NavSalon(){
             <NavLink to="/salon/history">
               <i className="fa-solid fa-clock-rotate-left" />
             </NavLink>
-  
         </nav>
       </>
     );
