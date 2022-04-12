@@ -47,20 +47,22 @@
                     color: white;
                     .detailsAlertCocina{
                         overflow-y: scroll;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
                         height:70% ;
                         width: 100%;
+                        font-family: "Bitter", serif;
+                        p{
+                            margin: 10px 0px;
+                        }
                     }
+
                     .footerOrderSalon{
                         height: 30%;
                         width: 100%;
                         display: grid;
                         grid-template-columns: 50% 50%;
-                        justify-items: center;
                         align-items: center;
                         span{
+                            font-weight: bolder;
                             color: map-get(color.$buttons,  "color" )
                         }
                     }

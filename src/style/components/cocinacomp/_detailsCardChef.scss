@@ -22,7 +22,9 @@
         color: #C4C4C4;
         height: 30.5%;
         span{
+            margin: 0px 20px 0px 0px;;
             color: map-get(color.$buttons, "color5" );
+            font-weight: bold;
         }
     }
 }

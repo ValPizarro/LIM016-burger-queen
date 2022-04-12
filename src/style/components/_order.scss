@@ -24,6 +24,7 @@
             font-family: "Barlow", sans-serif;
             border: none;
             outline: none;
+            background: #f0f2f559;
         }
         input:active{
             border: none;
@@ -69,6 +70,7 @@
     overflow-x: hidden;
     height: 72%;
     width: 96%;
+    background: #f0f2f559;
 }
 .itemsTotalOrder::-webkit-scrollbar{
     height: 90%;
@@ -87,8 +89,9 @@
     display: flex;
     width: 98%;
     // height: 20%;
+    
     color: map-get(color.$background , "title");
-    border: map-get(color.$background , "border") solid 1px;
+    border: #363d57 solid 1px;
     border-radius: 8px;
 }
 
@@ -118,9 +121,8 @@
                 p{
                     font-size: 1rem;
                     width: 100%;
-                    font-weight: 500;
                     line-height: 130%;
-                    color: map-get(color.$text , "title");
+                    color: #1F1D2B;
                 }
             }
 
@@ -198,6 +200,7 @@
     .secondRowButtons{
         display: flex;
         p{
+            color: #1F1D2B;
             width: 100%;
             text-align: center;
         }
@@ -214,12 +217,18 @@
     justify-content: center;
     height: 5%;
     align-items: center;
+    font-size: 1.3rem;
     .item1{
+        color: #EA7C69;
+        font-weight: bolder;
         margin:  0 10px 0 20px;
         width: 60%;
-        font-weight: bold;
+    }
+    .item2{
+        color: #1F1D2B;
     }
 }
+
 
 .optionsOrder{
     display: flex;

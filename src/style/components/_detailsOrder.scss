@@ -53,6 +53,7 @@
             justify-content: center;
             align-items: center;
             justify-items: center;
+            font-weight: bold;
         }
         .generalDeilsOrderCardAlert{
             display:flex;
@@ -88,6 +89,7 @@
                         color: #C4C4C4;
                         height:20%;
                         span{
+                            margin: 0px 10px 0px 0px;
                             color:map-get(color.$buttons, "color5" )
                         }
                     }
