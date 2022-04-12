@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const quicklyWhite = require("../img/brand/quickly_white.png");
 
 function Login() {
@@ -6,15 +7,15 @@ function Login() {
       <div className="ContentLogin">
         <img src={quicklyWhite} alt=""/>
         <section className="SectionBtnLogin">
-          <a href="/salon" className="BoxButton">
+          <Link to="/salon" className="BoxButton">
             <button className="BtnLogin">
               Salón
             </button>
 
-          </a>
-          <a href="/cocina" className="BoxButton">
+          </Link>
+          <Link to="/cocina" className="BoxButton">
             <button className="BtnLogin" >Cocina</button>
-          </a>
+          </Link>
         </section>
         <section className="capa"></section>
       </div>
