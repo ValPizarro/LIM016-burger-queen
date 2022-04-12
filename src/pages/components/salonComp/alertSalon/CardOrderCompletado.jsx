@@ -13,7 +13,7 @@ const CardOrderCompletado=({OrderById,orderCompletado})=>{
         <div className="cardAlertSalon">
           <div className="detailsAlertCocina">
             {itemsOrder.map((item) => (
-              <p key={item.idItemOrder}>{item.nameItemOrder}</p>
+              <p key={item.idItemOrder}>○ {item.nameItemOrder}</p>
             ))}
           </div>
           <div className="footerOrderSalon">

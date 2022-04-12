@@ -25,7 +25,6 @@ export const Menu = ({ ShowItem }) => {
     if (curretMenu === "Bebida") {
       SetMenuDishes(allDishes.filter((dishes) => dishes.type === curretMenu));
     } else {
-
       SetMenuDishes(allDishes.filter((dishes) => dishes.menu === curretMenu));
     }
   }, [curretMenu, allDishes]);
@@ -33,7 +32,7 @@ export const Menu = ({ ShowItem }) => {
   return (
     <div className="menu sectionB">
       <div className="headerMenu">
-{/*         <div className="titleMenu">
+        {/*<div className="titleMenu">
           <h2>Salón</h2>
         </div> */}
         <SelectMenu SetCurrentMenu={SetCurrentMenu} />
