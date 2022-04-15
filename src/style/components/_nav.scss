@@ -2,8 +2,9 @@
 
 .headerSalon{
     display: flex;
-    width: 10%;
-    height: 98%;
+    flex-direction: column;
+    width: 10.5%;
+    height: 100%;
     align-items: center;
     justify-content: center;
 }

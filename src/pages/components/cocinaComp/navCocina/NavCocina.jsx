@@ -6,7 +6,6 @@ function NavSalon() {
   return (
     <>
       <nav className="navSalon">
-
         <NavLink to="/">
           <img src={LogoQuickly} alt="Quickly" />
         </NavLink>
