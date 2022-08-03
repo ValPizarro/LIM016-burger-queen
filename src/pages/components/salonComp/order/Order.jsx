@@ -4,7 +4,6 @@ import TotalItems from "./TotalItemsOrder";
 import BtnSubmitOrder from "./BtnSubmitOrder";
 
 export const Order = ({ listDishes, setListDishes}) => {
-
   const initialOrderInfo = {
     nameOrder: "",
     numOrder: "",

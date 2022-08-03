@@ -54,6 +54,7 @@
     border-radius: 8px;
     background-color: map-get(color.$buttons , "color");
     color: map-get(color.$background , "general");
+    cursor: pointer;
 }
 .btnSubmitOrder:hover{
     opacity: 1;
@@ -167,6 +168,9 @@
     justify-content: space-evenly;
     width: 30%;
     padding: 0 2%;
+    button{
+        cursor: pointer;
+    }
     .deleteOrder{
         display: flex;
         justify-content: flex-end;
