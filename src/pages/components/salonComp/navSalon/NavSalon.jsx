@@ -21,7 +21,6 @@ function NavSalon(){
               <i className="fa-solid fa-clock-rotate-left" />
               <span>Historial</span>
             </NavLink>
-  
         </nav>
       </>
     );

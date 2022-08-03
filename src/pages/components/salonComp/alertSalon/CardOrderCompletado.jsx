@@ -20,6 +20,7 @@ const CardOrderCompletado=({OrderById,orderCompletado})=>{
               <span className="descriptionCampo"> Tiempo:</span>
               <p> {FunctionTime(startTime)}</p>
             </div>
+
           </div>
       </div>
     )

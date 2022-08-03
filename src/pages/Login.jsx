@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 const quicklyWhite = require("../img/brand/quickly_white.png");
 
 function Login() {

@@ -40,6 +40,7 @@ export const OrderAlert = ({ newOrder, orderAlertID,setEstilo }) => {
           <button className="entregarPedidoAlert" onClick={handleState}>
             Preparar
           </button>
+
         </div>
       </div>
     </div>

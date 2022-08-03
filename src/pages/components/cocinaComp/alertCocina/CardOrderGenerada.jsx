@@ -15,6 +15,7 @@ export const CardOrderGenerada = ({ orderGenerada, orderByID }) => {
         <div className="detailsAlertCocina">
           {itemsOrder.map((item) => (
            <p key={item.idItemOrder}>○ {item.nameItemOrder}</p>
+
           ))}
         </div>
         <div className="footerCardChef">
